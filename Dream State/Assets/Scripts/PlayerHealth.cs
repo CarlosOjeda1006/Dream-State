@@ -1,10 +1,14 @@
+using System;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour, IDamageable
 {
+    public event Action<float> OnHealthChanged;
+    public event Action<float> OnDamageTaken;
+    public event Action OnDeath;
+
     public float maxHealth = 100f;
-    public float currentHealth = 100f;
-    public bool destroyOnDeath;
+    float currentHealth;
 
     bool isDead;
 
@@ -15,12 +19,17 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if (isDead || damage <= 0f)
+        if (isDead)
             return;
+
+        damage = Mathf.Max(damage, 0f);
 
         currentHealth -= damage;
 
-        if (currentHealth <= 0f)
+        OnHealthChanged?.Invoke(currentHealth);
+        OnDamageTaken?.Invoke(currentHealth);
+
+        if (currentHealth <= 0)
         {
             currentHealth = 0f;
             Die();
@@ -29,9 +38,10 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
-        isDead = true;
+        if (isDead) return;
 
-        if (destroyOnDeath)
-            Destroy(gameObject);
+        isDead = true;
+        OnDeath?.Invoke();
+        gameObject.SetActive(false);
     }
 }

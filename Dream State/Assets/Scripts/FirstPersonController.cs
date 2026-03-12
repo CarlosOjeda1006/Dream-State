@@ -12,6 +12,12 @@ public class FirstPersonController : MonoBehaviour
     public float mouseSensitivity = 2f;
     public float lookXLimit = 80f;
 
+    string axisH = "Horizontal";
+    string axisV = "Vertical";
+
+    string axisX = "Mouse X";
+    string axisY = "Mouse Y";
+
     Vector3 velocity;
     float cameraRotationX;
     bool cursorLocked = true;
@@ -33,8 +39,8 @@ public class FirstPersonController : MonoBehaviour
 
     void HandleMouseLook()
     {
-        float mouseX = Input.GetAxisRaw("Mouse X") * mouseSensitivity;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSensitivity;
+        float mouseX = Input.GetAxisRaw(axisX) * mouseSensitivity * 100f * Time.deltaTime;
+        float mouseY = Input.GetAxisRaw(axisY) * mouseSensitivity * 100f * Time.deltaTime;
 
         cameraRotationX -= mouseY;
         cameraRotationX = Mathf.Clamp(cameraRotationX, -lookXLimit, lookXLimit);
@@ -47,8 +53,8 @@ public class FirstPersonController : MonoBehaviour
     {
         bool isGrounded = characterController.isGrounded;
 
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveZ = Input.GetAxisRaw("Vertical");
+        float moveX = Input.GetAxisRaw(axisH);
+        float moveZ = Input.GetAxisRaw(axisV);
 
         Vector3 move = (transform.right * moveX + transform.forward * moveZ).normalized;
         float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed;

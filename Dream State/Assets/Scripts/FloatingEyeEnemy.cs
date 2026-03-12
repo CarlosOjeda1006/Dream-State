@@ -15,25 +15,34 @@ public class FloatingEyeEnemy : MonoBehaviour
     public float loseTargetDistance = 14f;
     public bool chasePlayer = true;
 
+    float detectionRangeSqr;
+    float attackRangeSqr;
+    float loseTargetDistanceSqr;
+    float distanceSqr;
+
     Vector3 startPosition;
-    PlayerHealth playerHealth;
+    IDamageable damageable;
     float nextDamageTime;
     bool hasDetectedPlayer;
 
     void Start()
     {
+        detectionRangeSqr = detectionRange * detectionRange;
+        attackRangeSqr = attackRange * attackRange;
+        loseTargetDistanceSqr = loseTargetDistance * loseTargetDistance;
+
         startPosition = transform.position;
 
         if (target == null)
         {
-            GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+            GameObject playerObject = PlayerSingle.instance.gameObject;
 
             if (playerObject != null)
                 target = playerObject.transform;
         }
 
         if (target != null)
-            playerHealth = target.GetComponent<PlayerHealth>();
+            damageable = target.GetComponent<IDamageable>();
     }
 
     void Update()
@@ -43,20 +52,21 @@ public class FloatingEyeEnemy : MonoBehaviour
         if (target == null)
             return;
 
-        float distanceToPlayer = Vector3.Distance(transform.position, target.position);
+        Vector3 offset = target.position - transform.position;
+        distanceSqr = offset.sqrMagnitude;
 
-        if (!hasDetectedPlayer && distanceToPlayer <= detectionRange)
+        if (!hasDetectedPlayer && distanceSqr <= detectionRangeSqr)
             hasDetectedPlayer = true;
 
-        if (hasDetectedPlayer && distanceToPlayer > loseTargetDistance)
+        if (hasDetectedPlayer && distanceSqr > loseTargetDistanceSqr)
             hasDetectedPlayer = false;
 
         if (hasDetectedPlayer && chasePlayer)
-            ChasePlayer(distanceToPlayer);
+            ChasePlayer(distanceSqr);
         else
             LookForward();
 
-        TryAttack(distanceToPlayer);
+        TryAttack(distanceSqr);
     }
 
     void Hover()
@@ -72,7 +82,7 @@ public class FloatingEyeEnemy : MonoBehaviour
         Vector3 targetPosition = target.position;
         targetPosition.y = transform.position.y;
 
-        if (distanceToPlayer > attackRange)
+        if (distanceToPlayer > attackRangeSqr)
         {
             Vector3 direction = (targetPosition - transform.position).normalized;
             transform.position += direction * moveSpeed * Time.deltaTime;
@@ -96,25 +106,25 @@ public class FloatingEyeEnemy : MonoBehaviour
 
     void TryAttack(float distanceToPlayer)
     {
-        if (!hasDetectedPlayer || playerHealth == null)
+        if (!hasDetectedPlayer || damageable == null)
             return;
 
-        if (distanceToPlayer <= attackRange && Time.time >= nextDamageTime)
+        if (distanceSqr <= attackRangeSqr && Time.time >= nextDamageTime)
         {
             nextDamageTime = Time.time + damageCooldown;
-            playerHealth.TakeDamage(damage);
+            damageable?.TakeDamage(damage);
         }
     }
 
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, detectionRange);
+        Gizmos.DrawWireSphere(transform.position, detectionRangeSqr);
 
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
+        Gizmos.DrawWireSphere(transform.position, attackRangeSqr);
 
         Gizmos.color = Color.gray;
-        Gizmos.DrawWireSphere(transform.position, loseTargetDistance);
+        Gizmos.DrawWireSphere(transform.position, loseTargetDistanceSqr);
     }
 }
