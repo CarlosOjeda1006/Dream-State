@@ -12,6 +12,9 @@ public class FirstPersonController : MonoBehaviour
     public float mouseSensitivity = 2f;
     public float lookXLimit = 80f;
 
+    private bool playingFootsteps = false;
+    public float footstepSpeed = 0.5f;
+
     string axisH = "Horizontal";
     string axisV = "Vertical";
 
@@ -32,6 +35,9 @@ public class FirstPersonController : MonoBehaviour
 
     void Update()
     {
+        //PARA QUE NO SE MUEVA LA CÁMARA AL ABRIR EL MENU
+        if (MenuController.isMenuOpen) return;
+
         HandleMouseLook();
         HandleMovement();
         HandleCursorToggle();
@@ -39,6 +45,7 @@ public class FirstPersonController : MonoBehaviour
 
     void HandleMouseLook()
     {
+
         float mouseX = Input.GetAxisRaw(axisX) * mouseSensitivity * 100f * Time.deltaTime;
         float mouseY = Input.GetAxisRaw(axisY) * mouseSensitivity * 100f * Time.deltaTime;
 
@@ -62,13 +69,35 @@ public class FirstPersonController : MonoBehaviour
         characterController.Move(move * currentSpeed * Time.deltaTime);
 
         if (isGrounded && velocity.y < 0f)
+        {
             velocity.y = groundedGravity;
+        }
+            
+
 
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
 
         velocity.y += gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
+
+        //FOOTSTEPS
+        bool isMoving = moveX != 0 || moveZ != 0;
+
+        if (isGrounded && isMoving)
+        {
+            if (!playingFootsteps)
+            {
+                StartFootsteps();
+            }
+        }
+        else
+        {
+            if (playingFootsteps)
+            {
+                StopFootsteps();
+            }
+        }
     }
 
     void HandleCursorToggle()
@@ -85,5 +114,20 @@ public class FirstPersonController : MonoBehaviour
         cursorLocked = locked;
         Cursor.lockState = locked ? CursorLockMode.Locked : CursorLockMode.None;
         Cursor.visible = !locked;
+    }
+
+    void StartFootsteps()
+    {
+        playingFootsteps = true;
+        InvokeRepeating(nameof(PlayFootstep), 0f, footstepSpeed);
+    }
+    void StopFootsteps()
+    {
+        playingFootsteps = false;
+        CancelInvoke(nameof(PlayFootstep));
+    }
+    void PlayFootstep()
+    {
+        SoundEffectManager.Play("Footstep");
     }
 }
