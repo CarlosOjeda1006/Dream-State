@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class FirstPersonController : MonoBehaviour
 {
+    private Animator animator;
+
     public CharacterController characterController;
     public Transform cameraHolder;
     public float walkSpeed = 5f;
@@ -29,6 +31,7 @@ public class FirstPersonController : MonoBehaviour
     {
         if (characterController == null)
             characterController = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
 
         LockCursor(true);
     }
@@ -41,6 +44,10 @@ public class FirstPersonController : MonoBehaviour
         HandleMouseLook();
         HandleMovement();
         HandleCursorToggle();
+
+        //animations
+        animator.SetBool("isRunning", Input.GetAxisRaw("Vertical") != 0);
+        animator.SetBool("isJumping", !characterController.isGrounded);
     }
 
     void HandleMouseLook()

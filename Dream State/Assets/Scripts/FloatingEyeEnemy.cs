@@ -43,6 +43,8 @@ public class FloatingEyeEnemy : MonoBehaviour
 
         if (target != null)
             damageable = target.GetComponent<IDamageable>();
+        
+
     }
 
     void Update()
@@ -66,6 +68,8 @@ public class FloatingEyeEnemy : MonoBehaviour
         else
             LookForward();
 
+        Debug.Log("Quiero atacar");
+        Debug.Log(hasDetectedPlayer);
         TryAttack(distanceSqr);
     }
 
@@ -108,11 +112,12 @@ public class FloatingEyeEnemy : MonoBehaviour
     {
         if (!hasDetectedPlayer || damageable == null)
             return;
-
-        if (distanceSqr <= attackRangeSqr && Time.time >= nextDamageTime)
+        //distanceSqr <= attackRangeSqr &&
+        if ( Time.time >= nextDamageTime)
         {
             nextDamageTime = Time.time + damageCooldown;
             damageable?.TakeDamage(damage);
+            Debug.Log("Estoy intentando atacar");
         }
     }
 

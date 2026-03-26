@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public event Action OnDeath;
 
     public float maxHealth = 100f;
-    float currentHealth;
+    public float currentHealth;
 
     bool isDead;
 
