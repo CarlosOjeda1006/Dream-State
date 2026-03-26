@@ -112,8 +112,8 @@ public class FloatingEyeEnemy : MonoBehaviour
     {
         if (!hasDetectedPlayer || damageable == null)
             return;
-        //distanceSqr <= attackRangeSqr &&
-        if ( Time.time >= nextDamageTime)
+
+        if (distanceSqr <= attackRangeSqr && Time.time >= nextDamageTime)
         {
             nextDamageTime = Time.time + damageCooldown;
             damageable?.TakeDamage(damage);
