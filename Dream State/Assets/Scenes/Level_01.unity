@@ -1307,7 +1307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FloatingEyeEnemy
   target: {fileID: 1147048433}
   detectionRange: 10
-  attackRange: 1.8
+  attackRange: 3
   moveSpeed: 3
   rotationSpeed: 6
   hoverHeight: 2
