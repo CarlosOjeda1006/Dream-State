@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class FloatingEyeEnemy : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class FloatingEyeEnemy : MonoBehaviour
     public float damageCooldown = 1f;
     public float loseTargetDistance = 14f;
     public bool chasePlayer = true;
+    public NavMeshAgent agent;
 
     float detectionRangeSqr;
     float attackRangeSqr;
@@ -24,6 +26,7 @@ public class FloatingEyeEnemy : MonoBehaviour
     IDamageable damageable;
     float nextDamageTime;
     bool hasDetectedPlayer;
+    float baseOffsetStart;
 
     void Start()
     {
@@ -32,6 +35,17 @@ public class FloatingEyeEnemy : MonoBehaviour
         loseTargetDistanceSqr = loseTargetDistance * loseTargetDistance;
 
         startPosition = transform.position;
+
+        if (agent == null)
+            agent = GetComponent<NavMeshAgent>();
+
+        if (agent != null)
+        {
+            agent.speed = moveSpeed;
+            agent.stoppingDistance = attackRange;
+            agent.updateRotation = false;
+            baseOffsetStart = agent.baseOffset;
+        }
 
         if (target == null)
         {
@@ -43,8 +57,6 @@ public class FloatingEyeEnemy : MonoBehaviour
 
         if (target != null)
             damageable = target.GetComponent<IDamageable>();
-        
-
     }
 
     void Update()
@@ -66,7 +78,12 @@ public class FloatingEyeEnemy : MonoBehaviour
         if (hasDetectedPlayer && chasePlayer)
             ChasePlayer(distanceSqr);
         else
+        {
+            if (agent != null)
+                agent.isStopped = true;
+
             LookForward();
+        }
 
         Debug.Log("Quiero atacar");
         Debug.Log(hasDetectedPlayer);
@@ -75,21 +92,30 @@ public class FloatingEyeEnemy : MonoBehaviour
 
     void Hover()
     {
-        Vector3 position = transform.position;
+        if (agent == null)
+            return;
+
         float hoverOffset = Mathf.Sin(Time.time * hoverFrequency) * hoverAmplitude;
-        position.y = startPosition.y + hoverOffset;
-        transform.position = position;
+        agent.baseOffset = baseOffsetStart + hoverOffset;
     }
 
     void ChasePlayer(float distanceToPlayer)
     {
         Vector3 targetPosition = target.position;
-        targetPosition.y = transform.position.y;
 
-        if (distanceToPlayer > attackRangeSqr)
+        if (agent != null)
         {
-            Vector3 direction = (targetPosition - transform.position).normalized;
-            transform.position += direction * moveSpeed * Time.deltaTime;
+            agent.speed = moveSpeed;
+
+            if (distanceToPlayer > attackRangeSqr)
+            {
+                agent.isStopped = false;
+                agent.SetDestination(targetPosition);
+            }
+            else
+            {
+                agent.isStopped = true;
+            }
         }
 
         Vector3 lookDirection = target.position - transform.position;
