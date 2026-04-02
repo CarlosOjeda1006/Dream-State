@@ -18,17 +18,17 @@ public class FloatingEyeEnemy : MonoBehaviour
     public NavMeshAgent agent;
 
     float detectionRangeSqr;
-    float attackRangeSqr;
+    protected float attackRangeSqr;
     float loseTargetDistanceSqr;
-    float distanceSqr;
+    protected float distanceSqr;
 
     Vector3 startPosition;
     IDamageable damageable;
-    float nextDamageTime;
-    bool hasDetectedPlayer;
+    protected float nextDamageTime;
+    protected bool hasDetectedPlayer;
     float baseOffsetStart;
 
-    void Start()
+    protected virtual void Start()
     {
         detectionRangeSqr = detectionRange * detectionRange;
         attackRangeSqr = attackRange * attackRange;
@@ -59,7 +59,7 @@ public class FloatingEyeEnemy : MonoBehaviour
             damageable = target.GetComponent<IDamageable>();
     }
 
-    void Update()
+    protected virtual void Update()
     {
         Hover();
 
@@ -133,8 +133,11 @@ public class FloatingEyeEnemy : MonoBehaviour
         Vector3 euler = transform.eulerAngles;
         transform.rotation = Quaternion.Euler(0f, euler.y, 0f);
     }
+    protected virtual void OnAttack()
+    {
+    }
 
-    void TryAttack(float distanceToPlayer)
+    protected virtual void TryAttack(float distanceToPlayer)
     {
         if (!hasDetectedPlayer || damageable == null)
             return;
@@ -143,7 +146,8 @@ public class FloatingEyeEnemy : MonoBehaviour
         {
             nextDamageTime = Time.time + damageCooldown;
             damageable?.TakeDamage(damage);
-            Debug.Log("Estoy intentando atacar");
+            OnAttack();
+            Debug.Log("Base attack triggered");
         }
     }
 
