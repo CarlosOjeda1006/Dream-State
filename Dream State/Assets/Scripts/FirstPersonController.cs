@@ -27,6 +27,9 @@ public class FirstPersonController : MonoBehaviour
     float cameraRotationX;
     bool cursorLocked = true;
 
+
+
+
     void Start()
     {
         if (characterController == null)
