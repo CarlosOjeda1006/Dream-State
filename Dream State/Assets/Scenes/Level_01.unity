@@ -239,6 +239,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 40101557}
+  - component: {fileID: 40101558}
   - component: {fileID: 40101556}
   m_Layer: 0
   m_Name: yellowDoorR_Drawing
@@ -321,6 +322,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2021420649}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90.685}
+--- !u!114 &40101558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40101555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb25bc1ce1aa72146bc5bbf2f596ad74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DataHandling
+  color: 2
+  dir: 0
 --- !u!1 &51575168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1834,6 +1849,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 329202633}
+  - component: {fileID: 329202634}
   - component: {fileID: 329202632}
   m_Layer: 0
   m_Name: yellowDoorL_Drawing
@@ -1916,6 +1932,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2021420649}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: -83.879}
+--- !u!114 &329202634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329202631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb25bc1ce1aa72146bc5bbf2f596ad74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DataHandling
+  color: 2
+  dir: 1
 --- !u!1 &331394458 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -393431757816502282, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
@@ -4073,6 +4103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 694096374}
+  - component: {fileID: 694096375}
   - component: {fileID: 694096373}
   m_Layer: 0
   m_Name: greenDoorL_Drawing
@@ -4155,6 +4186,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2021420649}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: -93.429}
+--- !u!114 &694096375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694096372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb25bc1ce1aa72146bc5bbf2f596ad74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DataHandling
+  color: 3
+  dir: 1
 --- !u!1 &699841759
 GameObject:
   m_ObjectHideFlags: 0
@@ -5866,6 +5911,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 861499757}
+  - component: {fileID: 861499758}
   - component: {fileID: 861499756}
   m_Layer: 0
   m_Name: redDoorL_Drawing
@@ -5948,6 +5994,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2021420649}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: -90}
+--- !u!114 &861499758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861499755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb25bc1ce1aa72146bc5bbf2f596ad74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DataHandling
+  color: 0
+  dir: 1
 --- !u!1 &877140943 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4817006609396733786, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
@@ -6135,6 +6195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 898587457}
+  - component: {fileID: 898587458}
   - component: {fileID: 898587456}
   m_Layer: 0
   m_Name: purpleDoorR_Drawing
@@ -6217,6 +6278,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2021420649}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 89.924}
+--- !u!114 &898587458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898587455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb25bc1ce1aa72146bc5bbf2f596ad74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DataHandling
+  color: 4
+  dir: 0
 --- !u!1001 &919531180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6584,8 +6659,6 @@ MonoBehaviour:
   - {fileID: 2136193547}
   - {fileID: 694096372}
   - {fileID: 1463188671}
-  correctColor: 0
-  correctDir: 0
 --- !u!1 &964033789 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4528895491531538585, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
@@ -8034,6 +8107,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1300001289}
+  - component: {fileID: 1300001291}
   - component: {fileID: 1300001290}
   m_Layer: 0
   m_Name: orangeDoorL_Drawing
@@ -8116,6 +8190,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1300001291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300001288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb25bc1ce1aa72146bc5bbf2f596ad74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DataHandling
+  color: 5
+  dir: 1
 --- !u!1 &1313016375
 GameObject:
   m_ObjectHideFlags: 0
@@ -8440,6 +8528,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1371019959}
+  - component: {fileID: 1371019960}
   - component: {fileID: 1371019958}
   m_Layer: 0
   m_Name: purpleDoorL_Drawing
@@ -8522,6 +8611,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2021420649}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: -85.821}
+--- !u!114 &1371019960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371019957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb25bc1ce1aa72146bc5bbf2f596ad74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DataHandling
+  color: 4
+  dir: 1
 --- !u!1 &1443720422
 GameObject:
   m_ObjectHideFlags: 0
@@ -8668,6 +8771,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1463188673}
+  - component: {fileID: 1463188674}
   - component: {fileID: 1463188672}
   m_Layer: 0
   m_Name: greenDoorR_Drawing
@@ -8750,6 +8854,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2021420649}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
+--- !u!114 &1463188674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463188671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb25bc1ce1aa72146bc5bbf2f596ad74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DataHandling
+  color: 3
+  dir: 0
 --- !u!1 &1481861253
 GameObject:
   m_ObjectHideFlags: 0
@@ -9375,6 +9493,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1543951837}
+  - component: {fileID: 1543951838}
   - component: {fileID: 1543951836}
   m_Layer: 0
   m_Name: redDoorR_Drawing
@@ -9457,6 +9576,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2021420649}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90.826}
+--- !u!114 &1543951838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543951835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb25bc1ce1aa72146bc5bbf2f596ad74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DataHandling
+  color: 0
+  dir: 0
 --- !u!1001 &1551705809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9645,6 +9778,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1566989003}
+  - component: {fileID: 1566989004}
   - component: {fileID: 1566989002}
   m_Layer: 0
   m_Name: orangeDoorR_Drawing
@@ -9727,6 +9861,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2021420649}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
+--- !u!114 &1566989004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566989001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb25bc1ce1aa72146bc5bbf2f596ad74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DataHandling
+  color: 5
+  dir: 0
 --- !u!1 &1592005016 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4383079707657322369, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
@@ -11212,6 +11360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1977162102}
+  - component: {fileID: 1977162103}
   - component: {fileID: 1977162101}
   m_Layer: 0
   m_Name: blueDoorR_Drawing
@@ -11294,6 +11443,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2021420649}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 92.359}
+--- !u!114 &1977162103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977162100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb25bc1ce1aa72146bc5bbf2f596ad74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DataHandling
+  color: 1
+  dir: 0
 --- !u!1 &1980921551
 GameObject:
   m_ObjectHideFlags: 0
@@ -12397,6 +12560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2136193549}
+  - component: {fileID: 2136193550}
   - component: {fileID: 2136193548}
   m_Layer: 0
   m_Name: blueDoorL_Drawing
@@ -12479,6 +12643,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2021420649}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: -90}
+--- !u!114 &2136193550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136193547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb25bc1ce1aa72146bc5bbf2f596ad74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DataHandling
+  color: 1
+  dir: 1
 --- !u!1001 &7050935480924404961
 PrefabInstance:
   m_ObjectHideFlags: 0

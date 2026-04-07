@@ -5,29 +5,32 @@ public class DreamPuzzleManager : MonoBehaviour
     public Door[] doors;
     public GameObject[] drawings;
 
-    public Door.DoorColor correctColor;
-    public Door.DoorDir correctDir;
+    private Door.DoorColor correctColor;
+    private Door.DoorDir correctDir;
 
     void Start()
     {
-        int random = Random.Range(0, drawings.Length);
+        if (drawings.Length == 0)
+        {
+            Debug.LogError("No hay drawings asignados");
+            return;
+        }
 
+        int random = Random.Range(0, drawings.Length);
         GameObject selected = drawings[random];
+
         selected.SetActive(true);
 
-        string n = selected.name.ToLower();
+        DataHandling data = selected.GetComponent<DataHandling>();
 
-        // COLOR
-        if (n.Contains("blue")) correctColor = Door.DoorColor.Blue;
-        if (n.Contains("red")) correctColor = Door.DoorColor.Red;
-        if (n.Contains("green")) correctColor = Door.DoorColor.Green;
-        if (n.Contains("yellow")) correctColor = Door.DoorColor.Yellow;
-        if (n.Contains("purple")) correctColor = Door.DoorColor.Purple;
-        if (n.Contains("orange")) correctColor = Door.DoorColor.Orange;
+        if (data == null)
+        {
+            Debug.LogError("El drawing no tiene DrawingData: " + selected.name);
+            return;
+        }
 
-        // DIRECTION
-        if (n.Contains("r")) correctDir = Door.DoorDir.Right;
-        if (n.Contains("l")) correctDir = Door.DoorDir.Left;
+        correctColor = data.color;
+        correctDir = data.dir;
 
         Debug.Log("Selected drawing: " + selected.name);
         Debug.Log("Correct color: " + correctColor);

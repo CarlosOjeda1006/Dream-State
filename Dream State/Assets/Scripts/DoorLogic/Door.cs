@@ -152,7 +152,7 @@ public class Door : MonoBehaviour
     {
         Color startColor = directionalLight.color;
         float startIntensity = directionalLight.intensity;
-
+        
         float time = 0;
 
         while (time < transitionDuration)
