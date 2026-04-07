@@ -85,8 +85,7 @@ public class FloatingEyeEnemy : MonoBehaviour
             LookForward();
         }
 
-        Debug.Log("Quiero atacar");
-        Debug.Log(hasDetectedPlayer);
+
         TryAttack(distanceSqr);
     }
 

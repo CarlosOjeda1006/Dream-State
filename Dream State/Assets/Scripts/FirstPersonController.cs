@@ -27,9 +27,6 @@ public class FirstPersonController : MonoBehaviour
     float cameraRotationX;
     bool cursorLocked = true;
 
-
-
-
     void Start()
     {
         if (characterController == null)
@@ -82,7 +79,7 @@ public class FirstPersonController : MonoBehaviour
         {
             velocity.y = groundedGravity;
         }
-            
+
 
 
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))

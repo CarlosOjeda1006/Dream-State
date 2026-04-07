@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryController : MonoBehaviour
@@ -6,6 +7,8 @@ public class InventoryController : MonoBehaviour
     public GameObject slotPrefab;
     public int slotCount;
     public GameObject[] itemPrefabs;
+
+    public string[] requiredDreamItems;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -44,6 +47,37 @@ public class InventoryController : MonoBehaviour
 
         Debug.Log("Inventory is full");
         return false;
+    }
+
+    public bool HasRequiredDreamItems()
+    {
+        List<string> inventoryItems = new List<string>();
+
+        foreach (Transform slotTransform in inventoryPanel.transform)
+        {
+            Slot slot = slotTransform.GetComponent<Slot>();
+
+            if (slot != null && slot.currentItem != null)
+            {
+                ItemDragHandler drag = slot.currentItem.GetComponent<ItemDragHandler>();
+
+                if (drag != null && drag.linkedItem != null)
+                {
+                    inventoryItems.Add(drag.linkedItem.Name);
+                }
+            }
+        }
+
+        foreach (string required in requiredDreamItems)
+        {
+            if (!inventoryItems.Contains(required))
+            {
+                Debug.Log("Missing item: " + required);
+                return false;
+            }
+        }
+
+        return true;
     }
 
 

@@ -23,9 +23,5 @@ public class EyeBallController : FloatingEyeEnemy
             animator.SetBool("isSuspicious", true);
         }
     }
-    protected override void OnAttack()
-    {
-        Debug.Log("Animation attack triggered");
-        animator.SetBool("isAttacking", true);
-    }
+     
 }
