@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class FloatingEyeEnemy : MonoBehaviour
+public class FloatingEyeEnemy : MonoBehaviour, IStunneable
 {
     public Transform target;
     public float detectionRange = 10f;
@@ -27,6 +27,9 @@ public class FloatingEyeEnemy : MonoBehaviour
     protected float nextDamageTime;
     protected bool hasDetectedPlayer;
     float baseOffsetStart;
+
+    bool isStunned = false;
+    float stunTime;
 
     protected virtual void Start()
     {
@@ -62,6 +65,21 @@ public class FloatingEyeEnemy : MonoBehaviour
     protected virtual void Update()
     {
         Hover();
+
+        if (isStunned)
+        {
+            if (Time.time >= stunTime)
+            {
+                isStunned = false;
+
+                if (agent != null)
+                    agent.isStopped = false;
+            }
+            else
+            {
+                return;
+            }
+        }
 
         if (target == null)
             return;
@@ -160,5 +178,14 @@ public class FloatingEyeEnemy : MonoBehaviour
 
         Gizmos.color = Color.gray;
         Gizmos.DrawWireSphere(transform.position, loseTargetDistanceSqr);
+    }
+
+    public void Stun(float duration)
+    {
+        isStunned = true;
+        stunTime = Time.time + duration;
+
+        if (agent != null)
+            agent.isStopped = true;
     }
 }
