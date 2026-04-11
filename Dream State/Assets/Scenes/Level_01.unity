@@ -515,13 +515,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5321815077200767589, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -5188188077636821920, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4632608890863395261, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4383079707657322369, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4010380337932152728, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -3459985357629590801, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3446742483400398584, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2755387827957430985, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -393431757816502282, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -232693217002236243, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
       propertyPath: m_IsActive
@@ -551,13 +579,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4676091236189387500, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4826668023568050141, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5637391982221102939, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637391982221102939, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745570389254527396, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5777318366887019472, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
       propertyPath: m_IsActive
@@ -566,6 +606,18 @@ PrefabInstance:
     - target: {fileID: 5989032984759881291, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6019711482330795680, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6291156793135367259, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829055486167530945, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2793,7 +2845,7 @@ MonoBehaviour:
   target: {fileID: 793034232}
   detectionRange: 15
   attackRange: 3
-  moveSpeed: 3
+  moveSpeed: 6
   rotationSpeed: 6
   hoverHeight: 3
   hoverAmplitude: 0.25
@@ -2812,7 +2864,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 473520141}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.66
+  m_Radius: 1.26
   m_Speed: 3.5
   m_Acceleration: 20
   avoidancePriority: 50
