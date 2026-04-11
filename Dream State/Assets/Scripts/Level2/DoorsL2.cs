@@ -2,22 +2,17 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Door : MonoBehaviour
+public class DoorsL2 : MonoBehaviour
 {
     bool canOpen;
     bool isOpen = false;
+    bool opened = false;
 
     private Animator animator;
 
     bool isCorrectDoor;
-    public DoorColor doorColor;
-    public DoorDir doorDir;
+    public DoorSymbol doorSymbol;
 
-    public Light directionalLight;
-    public float transitionDuration = 3f;
-
-    private Color nightColor = new Color(0.2f, 0.3f, 0.6f);
-    private float nightIntensity = 0.1f;
     static bool nightmareTriggered = false;
 
     public InventoryController inventory;
@@ -26,20 +21,14 @@ public class Door : MonoBehaviour
     public static bool uiActive;
     [SerializeField] GameObject instructionsBox;
 
-    public enum DoorColor
+    public enum DoorSymbol
     {
-        Red,
-        Blue,
-        Yellow,
-        Green,
-        Purple,
-        Orange
-    }
-
-    public enum DoorDir
-    {
-        Right,
-        Left
+        Spider,
+        Snake,
+        Eye,
+        Moth,
+        Stars,
+        Sun
     }
 
     void Start()
@@ -53,8 +42,8 @@ public class Door : MonoBehaviour
         {
             animator.SetBool("isOpen", true);
             SoundEffectManager.Play("OpenDoor");
-            SoundEffectManager.Play("NightmareTrigger");
             isOpen = true;
+            opened = true;
 
             if (!nightmareTriggered)
             {
@@ -63,7 +52,7 @@ public class Door : MonoBehaviour
             }
         }
 
-        
+
         // OPEN
         if (canOpen && Input.GetKeyDown(KeyCode.E) && !isOpen && isCorrectDoor)
         {
@@ -78,14 +67,14 @@ public class Door : MonoBehaviour
             }
             else
             {
-                Debug.Log("Opal does not have the right items or the wrong ones");
+                Debug.Log("Opal does not have the right items");
 
                 SoundEffectManager.Play("LockedDoor");
 
                 StartCoroutine(ShowMissingItemsMessage());
             }
         }
-       
+
 
         // CLOSE
         /*
@@ -100,9 +89,10 @@ public class Door : MonoBehaviour
 
     void OnMouseOver()
     {
-        if (!isOpen && PlayerCasting.distanceFromTarget < 5)
+        if (PlayerCasting.distanceFromTarget < 5 && !opened)
         {
             canOpen = true;
+            
             UIController.actionText = "Abrir Puerta";
             UIController.commandText = "Abrir";
             UIController.uiActive = true;
@@ -134,41 +124,13 @@ public class Door : MonoBehaviour
 
     void LoadNextDream()
     {
-        SceneManager.LoadScene("Level_02");
+        SceneManager.LoadScene("Level_01");
     }
 
     void NightmareEffect()
     {
         Debug.Log("Nightmare triggered");
 
-        if (directionalLight != null)
-        {
-            StartCoroutine(DayToNight());
-        }
-
-
-    }
-
-    IEnumerator DayToNight()
-    {
-        Color startColor = directionalLight.color;
-        float startIntensity = directionalLight.intensity;
-        
-        float time = 0;
-
-        while (time < transitionDuration)
-        {
-            time += Time.deltaTime;
-
-            float t = time / transitionDuration;
-
-            directionalLight.color = Color.Lerp(startColor, nightColor, t);
-            directionalLight.intensity = Mathf.Lerp(startIntensity, nightIntensity, t);
-
-            RenderSettings.ambientIntensity = Mathf.Lerp(1f, 0.2f, t);
-
-            yield return null;
-        }
     }
 
     IEnumerator ShowMissingItemsMessage()

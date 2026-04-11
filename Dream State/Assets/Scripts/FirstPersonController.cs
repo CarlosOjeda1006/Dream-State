@@ -45,6 +45,7 @@ public class FirstPersonController : MonoBehaviour
         HandleMovement();
         HandleCursorToggle();
 
+
         //animations
         animator.SetBool("isRunning", Input.GetAxisRaw("Vertical") != 0);
         animator.SetBool("isJumping", !characterController.isGrounded);
@@ -137,4 +138,6 @@ public class FirstPersonController : MonoBehaviour
     {
         SoundEffectManager.Play("Footstep");
     }
+
+    
 }

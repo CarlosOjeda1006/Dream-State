@@ -3,6 +3,7 @@ using UnityEngine;
 public class LinternaController : MonoBehaviour
 {
     public Light flashlight;
+    public GameObject flashlightModel;
 
     public KeyCode toggleKey = KeyCode.Q;
 
@@ -10,7 +11,7 @@ public class LinternaController : MonoBehaviour
     public float maxBattery = 50f;
     public float drainRate = 1f;
 
-    private float currentBattery;
+    public float currentBattery;
     private bool isOn = false;
 
     void Start()
@@ -29,8 +30,14 @@ public class LinternaController : MonoBehaviour
     {
         if (Input.GetKeyDown(toggleKey) && currentBattery > 0f)
         {
+            flashlightModel.SetActive(true);
+            SoundEffectManager.Play("FlashlightOn");
             isOn = !isOn;
             flashlight.enabled = isOn;
+        }
+        if(Input.GetKeyDown(toggleKey) && !isOn)
+        {
+            flashlightModel.SetActive(false);
         }
     }
 

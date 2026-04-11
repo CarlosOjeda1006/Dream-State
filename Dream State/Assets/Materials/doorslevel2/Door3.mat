@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2075838940955294917
+--- !u!114 &-4735720559805656750
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Door1
+  m_Name: Door3
   m_Shader: {fileID: -6465566751694194690, guid: 63061fab8cbebd34e8ccadc9180125a3, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -78,7 +78,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RoomInterior:
-        m_Texture: {fileID: 8900000, guid: ba725a758a5dbf1429b582d7b28dea62, type: 3}
+        m_Texture: {fileID: 8900000, guid: dc115915baa4bcd4e890a0f029abab9e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
