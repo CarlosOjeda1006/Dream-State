@@ -31,8 +31,14 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
     bool isStunned = false;
     float stunTime;
 
+    public AudioClip playerDetectedClip;
+
+    AudioSource audioSource;
+
     protected virtual void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         detectionRangeSqr = detectionRange * detectionRange;
         attackRangeSqr = attackRange * attackRange;
         loseTargetDistanceSqr = loseTargetDistance * loseTargetDistance;
@@ -88,7 +94,10 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
         distanceSqr = offset.sqrMagnitude;
 
         if (!hasDetectedPlayer && distanceSqr <= detectionRangeSqr)
+        {
             hasDetectedPlayer = true;
+            audioSource.PlayOneShot(playerDetectedClip);
+        }
 
         if (hasDetectedPlayer && distanceSqr > loseTargetDistanceSqr)
             hasDetectedPlayer = false;

@@ -10,11 +10,13 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public float maxHealth = 100f;
     public float currentHealth;
 
+    public GameObject deathUI;
     bool isDead;
 
     void Awake()
     {
         currentHealth = maxHealth;
+        deathUI.SetActive(false);
     }
 
     public void TakeDamage(float damage)
@@ -31,6 +33,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
         if (currentHealth <= 0)
         {
+            SoundEffectManager.Play("PlayerDeath");
             currentHealth = 0f;
             Die();
         }
@@ -40,8 +43,12 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     {
         if (isDead) return;
 
+        
         isDead = true;
         OnDeath?.Invoke();
-        gameObject.SetActive(false);
+        GetComponent<CharacterController>().enabled = false;
+        GetComponent<FirstPersonController>().enabled = false;
+        deathUI.SetActive(true);
+        
     }
 }
