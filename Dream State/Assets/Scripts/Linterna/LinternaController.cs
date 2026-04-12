@@ -4,6 +4,7 @@ public class LinternaController : MonoBehaviour
 {
     public Light flashlight;
     public GameObject flashlightModel;
+    public Animator animator;
 
     public KeyCode toggleKey = KeyCode.Q;
 
@@ -34,6 +35,7 @@ public class LinternaController : MonoBehaviour
             SoundEffectManager.Play("FlashlightOn");
             isOn = !isOn;
             flashlight.enabled = isOn;
+            //animator.SetBool("isPickingUp", isOn);
         }
         if(Input.GetKeyDown(toggleKey) && !isOn)
         {

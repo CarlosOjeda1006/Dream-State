@@ -1466,6 +1466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LinternaController
   flashlight: {fileID: 481880422}
   flashlightModel: {fileID: 1070559269}
+  animator: {fileID: 793034231}
   toggleKey: 113
   maxBattery: 50
   drainRate: 1
