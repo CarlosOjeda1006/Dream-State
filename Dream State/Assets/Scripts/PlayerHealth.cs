@@ -48,6 +48,10 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         OnDeath?.Invoke();
         GetComponent<CharacterController>().enabled = false;
         GetComponent<FirstPersonController>().enabled = false;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         deathUI.SetActive(true);
         
     }

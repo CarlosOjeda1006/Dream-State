@@ -3,6 +3,7 @@ using System.Collections;
 
 public class LinternaStun : MonoBehaviour
 {
+
     public float range = 10f;
     public float stunDuration = 3f;
     public float cooldown = 1.5f;
@@ -11,14 +12,17 @@ public class LinternaStun : MonoBehaviour
 
     [Header("Efecto de Flash")]
     public Light flashLight;
+    Color originalColor;
     public float flashIntensity = 8f;
     public float flashDuration = 0.5f;
+
+    public LinternaController linterna;
 
     private float nextUseTime;
 
     void Update()
     {
-        if (Input.GetKeyDown(stunKey) && Time.time >= nextUseTime)
+        if (Input.GetKeyDown(stunKey) && Time.time >= nextUseTime && linterna.isOn)
         {
             StartCoroutine(FlashAndStun());
             nextUseTime = Time.time + cooldown;
@@ -29,6 +33,7 @@ public class LinternaStun : MonoBehaviour
     {
         Transform cam = Camera.main.transform;
         RaycastHit hit;
+
 
         float originalIntensity = flashLight.intensity;
         float originalRange = flashLight.range;
@@ -41,6 +46,9 @@ public class LinternaStun : MonoBehaviour
         float time = 0f;
         float durationUp = 0.03f;
         float durationDown = 0.4f;
+
+        originalColor = flashLight.color;
+        flashLight.color = Color.cyan;
 
         while (time < durationUp)
         {
@@ -71,6 +79,7 @@ public class LinternaStun : MonoBehaviour
 
             float t = time / durationDown;
 
+
             flashLight.intensity = Mathf.Lerp(targetIntensity, originalIntensity, t);
             flashLight.range = Mathf.Lerp(targetRange, originalRange, t);
             flashLight.spotAngle = Mathf.Lerp(targetAngle, originalAngle, t);
@@ -78,6 +87,7 @@ public class LinternaStun : MonoBehaviour
             yield return null;
         }
 
+        flashLight.color = originalColor;
         flashLight.intensity = originalIntensity;
         flashLight.range = originalRange;
         flashLight.spotAngle = originalAngle;

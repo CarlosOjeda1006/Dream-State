@@ -17,11 +17,26 @@ public class EyeBallController : FloatingEyeEnemy
 
         base.Update();
 
-        // JUST detected player this frame
-        if (!previousDetected && hasDetectedPlayer)
+        //  DETECTADO (transición)
+        animator.SetBool("isAttacking", hasDetectedPlayer && !isStunned);
+
+        //  SOSPECHA
+        if (!hasDetectedPlayer && distanceSqr <= detectionRangeSqr * 2.5f)
         {
             animator.SetBool("isSuspicious", true);
         }
+        else
+        {
+            animator.SetBool("isSuspicious", false);
+        }
+
+        //  PIERDE AL JUGADOR
+        if (previousDetected && !hasDetectedPlayer)
+        {
+            animator.SetBool("isAttacking", false);
+            animator.SetBool("isSuspicious", false);
+        }
+
     }
-     
+
 }

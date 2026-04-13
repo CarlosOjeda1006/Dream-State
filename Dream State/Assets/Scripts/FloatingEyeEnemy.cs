@@ -1,8 +1,16 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class FloatingEyeEnemy : MonoBehaviour, IStunneable
 {
+
+    Animator anim;
+
+    //icons for states
+    public Image alertIcon;
+    public Image susIcon;
+
     public Transform target;
     public float detectionRange = 10f;
     public float attackRange = 1.8f;
@@ -17,9 +25,11 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
     public bool chasePlayer = true;
     public NavMeshAgent agent;
 
-    float detectionRangeSqr;
+    public float viewAngle = 180f;
+
+    protected float detectionRangeSqr;
     protected float attackRangeSqr;
-    float loseTargetDistanceSqr;
+    protected float loseTargetDistanceSqr;
     protected float distanceSqr;
 
     Vector3 startPosition;
@@ -28,15 +38,19 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
     protected bool hasDetectedPlayer;
     float baseOffsetStart;
 
-    bool isStunned = false;
-    float stunTime;
+    protected bool isStunned = false;
+    protected float stunTime;
 
-    public AudioClip playerDetectedClip;
 
     AudioSource audioSource;
 
     protected virtual void Start()
     {
+        susIcon.gameObject.SetActive(false);
+        alertIcon.gameObject.SetActive(false);
+
+        anim = GetComponentInChildren<Animator>();
+
         audioSource = GetComponent<AudioSource>();
 
         detectionRangeSqr = detectionRange * detectionRange;
@@ -74,9 +88,12 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
 
         if (isStunned)
         {
+            anim.SetBool("isStunned", true);
+
             if (Time.time >= stunTime)
             {
                 isStunned = false;
+                anim.SetBool("isStunned", false);
 
                 if (agent != null)
                     agent.isStopped = false;
@@ -93,14 +110,40 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
         Vector3 offset = target.position - transform.position;
         distanceSqr = offset.sqrMagnitude;
 
-        if (!hasDetectedPlayer && distanceSqr <= detectionRangeSqr)
+        //  DETECTADO
+        if (!hasDetectedPlayer && distanceSqr <= detectionRangeSqr && CanSeePlayer())
         {
             hasDetectedPlayer = true;
-            audioSource.PlayOneShot(playerDetectedClip);
+
+            SoundEffectManager.Play("PlayerDetected");
+
+            susIcon.gameObject.SetActive(false);
+            alertIcon.gameObject.SetActive(true);
         }
 
+        //  SOSPECHA
+        else if (!hasDetectedPlayer && distanceSqr <= detectionRangeSqr * 2.5f && CanSeePlayer())
+        {
+            //SoundEffectManager.Play("Suspicious");
+            susIcon.gameObject.SetActive(true);
+            alertIcon.gameObject.SetActive(false);
+        }
+
+        //  NADA
+        else if (!hasDetectedPlayer)
+        {
+            susIcon.gameObject.SetActive(false);
+            alertIcon.gameObject.SetActive(false);
+        }
+
+        //  PIERDE AL JUGADOR
         if (hasDetectedPlayer && distanceSqr > loseTargetDistanceSqr)
+        {
             hasDetectedPlayer = false;
+
+            alertIcon.gameObject.SetActive(false);
+            susIcon.gameObject.SetActive(false);
+        }
 
         if (hasDetectedPlayer && chasePlayer)
             ChasePlayer(distanceSqr);
@@ -115,6 +158,8 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
 
         TryAttack(distanceSqr);
     }
+
+ 
 
     void Hover()
     {
@@ -154,6 +199,17 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
         }
     }
 
+    bool CanSeePlayer()
+    {
+        if (target == null) return false;
+
+        Vector3 directionToPlayer = (target.position - transform.position).normalized;
+
+        float angle = Vector3.Angle(transform.forward, directionToPlayer);
+
+        return angle < viewAngle / 2f;
+    }
+
     void LookForward()
     {
         Vector3 euler = transform.eulerAngles;
@@ -180,21 +236,30 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, detectionRangeSqr);
-
+        Gizmos.DrawWireSphere(transform.position, detectionRange);
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRangeSqr);
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+        Gizmos.color = Color.grey;
+        Gizmos.DrawWireSphere(transform.position, loseTargetDistance);
 
-        Gizmos.color = Color.gray;
-        Gizmos.DrawWireSphere(transform.position, loseTargetDistanceSqr);
+        Vector3 left = Quaternion.Euler(0, -viewAngle / 2, 0) * transform.forward;
+        Vector3 right = Quaternion.Euler(0, viewAngle / 2, 0) * transform.forward;
+        Gizmos.color = Color.blue;
+        Gizmos.DrawRay(transform.position, left * detectionRange);
+        Gizmos.DrawRay(transform.position, right * detectionRange);
     }
 
     public void Stun(float duration)
     {
+        SoundEffectManager.Play("StunFlash");
+        Debug.Log("STUN TRIGGERED");
         isStunned = true;
         stunTime = Time.time + duration;
 
         if (agent != null)
+        {
             agent.isStopped = true;
+            
+        }
     }
 }
