@@ -30,6 +30,7 @@ public class FaintController : MonoBehaviour
 
     IEnumerator FaintRoutine()
     {
+        blackImage.gameObject.SetActive(true);
         isFainting = true;
         playerController.enabled = false;
 
