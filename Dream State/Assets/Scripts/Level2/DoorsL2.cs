@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,6 +8,9 @@ public class DoorsL2 : MonoBehaviour
     bool canOpen;
     bool isOpen = false;
     bool opened = false;
+
+    public static event Action OnJumpscareTriggered;
+
     public bool jumpscare = false;
     public GameObject jumpscareObject;
 
@@ -153,11 +157,11 @@ public class DoorsL2 : MonoBehaviour
 
     void JumpscareEffect()
     {
+        jumpscare = false;
         if (jumpscareObject != null)
         {
-
             jumpscareObject.SetActive(true);
-
         }
+        OnJumpscareTriggered?.Invoke();
     }
 }
