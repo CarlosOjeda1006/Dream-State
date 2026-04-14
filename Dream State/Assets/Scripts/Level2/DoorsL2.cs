@@ -7,6 +7,8 @@ public class DoorsL2 : MonoBehaviour
     bool canOpen;
     bool isOpen = false;
     bool opened = false;
+    public bool jumpscare = false;
+    public GameObject jumpscareObject;
 
     private Animator animator;
 
@@ -44,6 +46,11 @@ public class DoorsL2 : MonoBehaviour
             SoundEffectManager.Play("OpenDoor");
             isOpen = true;
             opened = true;
+
+            if (jumpscare)
+            {
+                JumpscareEffect();
+            }
 
             if (!nightmareTriggered)
             {
@@ -142,5 +149,15 @@ public class DoorsL2 : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         instructionsBox.SetActive(false);
+    }
+
+    void JumpscareEffect()
+    {
+        if (jumpscareObject != null)
+        {
+
+            jumpscareObject.SetActive(true);
+
+        }
     }
 }
