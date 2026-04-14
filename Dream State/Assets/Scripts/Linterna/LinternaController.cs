@@ -18,6 +18,7 @@ public class LinternaController : MonoBehaviour
     [Header("UI")]
     public Image[] segments;
     public GameObject batteryUI;
+    float flickerSoundTimer = 0f;
 
     float originalIntensity;
 
@@ -39,26 +40,42 @@ public class LinternaController : MonoBehaviour
     {
         float percent = currentBattery / maxBattery;
 
-        int activeSegments = Mathf.FloorToInt(percent * segments.Length);
+        int activeSegments;
 
-        if (percent > 0f && activeSegments == 0)
-            activeSegments = 1; 
+        if (percent > 0.66f)
+            activeSegments = 3;
+        else if (percent > 0.33f)
+            activeSegments = 2;
+        else if (percent > 0f)
+        {
+            activeSegments = 1;
+        }
+        else
+            activeSegments = 0;
 
-        Color color = Color.white;
+        for (int i = 0; i < segments.Length; i++)
+        {
+            segments[i].enabled = i < activeSegments;
+        }
 
-        if (percent < 0.2f)
-            color = new Color(0.6f, 0f, 0f);
-        else if (percent < 0.5f)
-            color = new Color(0.7f, 0.6f, 0.2f);
-
-        foreach (var seg in segments)
-            seg.color = color;
 
         // flicker
-        if (percent < 0.1f)
+        if (percent < 0.1f && isOn)
+        {
+            flickerSoundTimer -= Time.deltaTime;
+
+            if (flickerSoundTimer <= 0f)
+            {
+                SoundEffectManager.Play("Flicker");
+                flickerSoundTimer = Random.Range(0.1f, 0.25f);
+            }
+
             flashlight.intensity = Random.Range(originalIntensity * 0.4f, originalIntensity);
+        }
         else
+        {
             flashlight.intensity = originalIntensity;
+        }
 
         batteryUI.SetActive(isOn);
     }
@@ -90,5 +107,11 @@ public class LinternaController : MonoBehaviour
             flashlight.enabled = false;
             flashlightModel.SetActive(false);
         }
+    }
+
+    public void AddBattery(float amount)
+    {
+        currentBattery += amount;
+        currentBattery = Mathf.Clamp(currentBattery, 0f, maxBattery);
     }
 }

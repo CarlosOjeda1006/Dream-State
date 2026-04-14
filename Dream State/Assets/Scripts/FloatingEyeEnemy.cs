@@ -41,6 +41,21 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
     protected bool isStunned = false;
     protected float stunTime;
 
+    //Memory
+    Vector3 lastKnownPosition;
+    bool hasLastKnownPosition = false;
+
+    public float memoryDuration = 5f;
+    float memoryTimer = 0f;
+    //en modo busqueda
+    public float scanAngle = 60f;
+    public float scanSpeed = 2f;
+
+    float scanTimer = 0f;
+
+    //afecta la linterna
+    public float flashlightDetectionMultiplier = 1.5f;
+    LinternaController playerFlashlight;
 
     AudioSource audioSource;
 
@@ -79,7 +94,10 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
         }
 
         if (target != null)
+        {
             damageable = target.GetComponent<IDamageable>();
+            playerFlashlight = target.GetComponent<LinternaController>();
+        }
     }
 
     protected virtual void Update()
@@ -110,10 +128,25 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
         Vector3 offset = target.position - transform.position;
         distanceSqr = offset.sqrMagnitude;
 
+        float currentDetectionRange = detectionRange;
+
+        //con la luz incrementa su rango de detección
+        if (playerFlashlight != null && playerFlashlight.isOn)
+        {
+            currentDetectionRange *= flashlightDetectionMultiplier;
+        }
+        float currentDetectionRangeSqr = currentDetectionRange * currentDetectionRange;
+
         //  DETECTADO
-        if (!hasDetectedPlayer && distanceSqr <= detectionRangeSqr && CanSeePlayer())
+        if (!hasDetectedPlayer && distanceSqr <= currentDetectionRangeSqr && CanSeePlayer())
         {
             hasDetectedPlayer = true;
+            scanTimer = 0f;
+
+            //recuerda su última posición
+            lastKnownPosition = target.position;
+            hasLastKnownPosition = true;
+            memoryTimer = memoryDuration;
 
             SoundEffectManager.Play("PlayerDetected");
 
@@ -121,8 +154,15 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
             alertIcon.gameObject.SetActive(true);
         }
 
+        //va acatualizando
+        if (hasDetectedPlayer && CanSeePlayer())
+        {
+            lastKnownPosition = target.position;
+            memoryTimer = memoryDuration;
+        }
+
         //  SOSPECHA
-        else if (!hasDetectedPlayer && distanceSqr <= detectionRangeSqr * 2.5f && CanSeePlayer())
+        else if (!hasDetectedPlayer && distanceSqr <= currentDetectionRangeSqr * 2.5f && CanSeePlayer())
         {
             //SoundEffectManager.Play("Suspicious");
             susIcon.gameObject.SetActive(true);
@@ -130,7 +170,7 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
         }
 
         //  NADA
-        else if (!hasDetectedPlayer)
+        else if (!hasDetectedPlayer && !hasLastKnownPosition)
         {
             susIcon.gameObject.SetActive(false);
             alertIcon.gameObject.SetActive(false);
@@ -141,12 +181,31 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
         {
             hasDetectedPlayer = false;
 
-            alertIcon.gameObject.SetActive(false);
-            susIcon.gameObject.SetActive(false);
+        }
+        //MEMORY COUNTDOWN
+        if (!hasDetectedPlayer && hasLastKnownPosition)
+        {
+            memoryTimer -= Time.deltaTime;
+
+            if (memoryTimer <= 0f)
+            {
+                hasLastKnownPosition = false;
+
+                alertIcon.gameObject.SetActive(false);
+                susIcon.gameObject.SetActive(false);
+            }
         }
 
+        //Debug.Log("Detected: " + hasDetectedPlayer +" | HasMemory: " + hasLastKnownPosition);
+
         if (hasDetectedPlayer && chasePlayer)
+        {
             ChasePlayer(distanceSqr);
+        }
+        else if (hasLastKnownPosition)
+        {
+            SearchLastPosition();
+        }
         else
         {
             if (agent != null)
@@ -231,6 +290,53 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
             OnAttack();
             Debug.Log("Base attack triggered");
         }
+    }
+
+    void SearchLastPosition()
+    {
+        Debug.Log("SEARCHING...");
+        if (agent == null) return;
+
+        agent.isStopped = false;
+        agent.SetDestination(lastKnownPosition);
+
+        Vector3 dir = lastKnownPosition - transform.position;
+        dir.y = 0f;
+
+        if (dir.sqrMagnitude > 0.1f)
+        {
+            Quaternion rot = Quaternion.LookRotation(dir);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rot, rotationSpeed * Time.deltaTime);
+        }
+
+        if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance + 0.2f)
+        {
+            agent.isStopped = true;
+
+            susIcon.gameObject.SetActive(true);
+            alertIcon.gameObject.SetActive(false);
+
+            ScanAround();
+        }
+    }
+
+    void ScanAround()
+    {
+        Debug.Log("SCANNING...");
+        scanSpeed = Mathf.Lerp(2f, 0.8f, 1f - (memoryTimer / memoryDuration));//empieza rápido y se va alentando
+
+        scanTimer += Time.deltaTime * scanSpeed;
+
+        float angle = Mathf.Sin(scanTimer) * scanAngle;
+
+        Quaternion baseRotation = Quaternion.LookRotation(lastKnownPosition - transform.position);
+        Quaternion scanRotation = Quaternion.Euler(0f, angle, 0f);
+
+        transform.rotation = Quaternion.Slerp(
+            transform.rotation,
+            baseRotation * scanRotation,
+            rotationSpeed * Time.deltaTime
+        );
     }
 
     void OnDrawGizmosSelected()
