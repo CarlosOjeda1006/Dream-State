@@ -14,7 +14,7 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
     public Transform target;
     public float detectionRange = 10f;
     public float attackRange = 1.8f;
-    public float moveSpeed = 3f;
+    public float moveSpeed = 2f;
     public float rotationSpeed = 6f;
     public float hoverHeight = 2f;
     public float hoverAmplitude = 0.25f;

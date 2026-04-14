@@ -22,6 +22,10 @@ public class Door : MonoBehaviour
 
     public InventoryController inventory;
 
+    public GameObject ojo1;
+    public GameObject ojo2;
+    public GameObject ojo3;
+
     public static string instructionsText;
     public static bool uiActive;
     [SerializeField] GameObject instructionsBox;
@@ -146,6 +150,9 @@ public class Door : MonoBehaviour
             StartCoroutine(DayToNight());
         }
 
+        ojo1.SetActive(true);
+        ojo2.SetActive(true);
+        ojo3.SetActive(true);
 
     }
 
