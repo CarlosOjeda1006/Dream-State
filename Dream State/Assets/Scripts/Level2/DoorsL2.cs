@@ -160,6 +160,7 @@ public class DoorsL2 : MonoBehaviour
         jumpscare = false;
         if (jumpscareObject != null)
         {
+            SoundEffectManager.Play("Jumpscare");
             jumpscareObject.SetActive(true);
         }
         OnJumpscareTriggered?.Invoke();
