@@ -55,7 +55,7 @@ public class FaintController : MonoBehaviour
         color.a = 1;
         blackImage.color = color;
         isFainting = false;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("ThankYou4Playing");
     }
 }
