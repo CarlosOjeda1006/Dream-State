@@ -3,37 +3,52 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu_Script : MonoBehaviour
 {
-    public GameObject pauseMenuUI;
+    public GameObject menuPausa;
+    private bool enPausa = false;
 
-    private bool isPaused = false;
+    void Start()
+    {
+        menuPausa.SetActive(false);
+    }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused)
-                Resume();
+            if (enPausa)
+            {
+                Reanudar();
+            }
             else
-                Pause();
+            {
+                Pausar();
+            }
         }
     }
 
-    public void Resume()
+    public void Reanudar()
     {
-        pauseMenuUI.SetActive(false);
+        menuPausa.SetActive(false);
         Time.timeScale = 1f;
-        isPaused = false;
+        enPausa = false;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
-    void Pause()
+    public void Pausar()
     {
-        pauseMenuUI.SetActive(true);
+        menuPausa.SetActive(true);
         Time.timeScale = 0f;
-        isPaused = true;
+        enPausa = true;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
-    public void QuitToMenu()
+    public void IrAlMenuPrincipal()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 }
