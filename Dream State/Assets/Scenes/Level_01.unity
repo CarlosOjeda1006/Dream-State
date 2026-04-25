@@ -496,9 +496,10 @@ MonoBehaviour:
   target: {fileID: 0}
   detectionRange: 10
   attackRange: 3
+  susRange: 20
   moveSpeed: 5
   rotationSpeed: 6
-  hoverHeight: 3
+  hoverHeight: 2
   hoverAmplitude: 0.25
   hoverFrequency: 2
   damage: 40
@@ -748,6 +749,7 @@ MonoBehaviour:
   target: {fileID: 0}
   detectionRange: 10
   attackRange: 1.8
+  susRange: 20
   moveSpeed: 3
   rotationSpeed: 6
   hoverHeight: 2
@@ -3499,9 +3501,10 @@ MonoBehaviour:
   target: {fileID: 0}
   detectionRange: 10
   attackRange: 3
+  susRange: 20
   moveSpeed: 5
   rotationSpeed: 6
-  hoverHeight: 3
+  hoverHeight: 2
   hoverAmplitude: 0.25
   hoverFrequency: 2
   damage: 40
@@ -4756,9 +4759,10 @@ MonoBehaviour:
   target: {fileID: 0}
   detectionRange: 10
   attackRange: 3
+  susRange: 20
   moveSpeed: 4
   rotationSpeed: 6
-  hoverHeight: 3
+  hoverHeight: 2
   hoverAmplitude: 0.25
   hoverFrequency: 2
   damage: 40
@@ -6241,6 +6245,41 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 146595621849633541, guid: 89b3430c766ab024287225275a0dcced, type: 3}
   m_PrefabInstance: {fileID: 835107279843875639}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &689179970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 689179971}
+  m_Layer: 5
+  m_Name: DamageUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &689179971
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689179970}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1891694079}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &694096372
 GameObject:
   m_ObjectHideFlags: 0
@@ -8192,6 +8231,7 @@ MonoBehaviour:
   target: {fileID: 0}
   detectionRange: 10
   attackRange: 1.8
+  susRange: 20
   moveSpeed: 3
   rotationSpeed: 6
   hoverHeight: 2
@@ -11536,6 +11576,7 @@ MonoBehaviour:
   target: {fileID: 0}
   detectionRange: 10
   attackRange: 1.8
+  susRange: 20
   moveSpeed: 3
   rotationSpeed: 6
   hoverHeight: 2
@@ -13282,6 +13323,7 @@ MonoBehaviour:
   target: {fileID: 0}
   detectionRange: 10
   attackRange: 1.8
+  susRange: 20
   moveSpeed: 3
   rotationSpeed: 6
   hoverHeight: 2
@@ -15380,9 +15422,10 @@ MonoBehaviour:
   target: {fileID: 0}
   detectionRange: 10
   attackRange: 3
+  susRange: 20
   moveSpeed: 5
   rotationSpeed: 6
-  hoverHeight: 3
+  hoverHeight: 2
   hoverAmplitude: 0.25
   hoverFrequency: 2
   damage: 40
@@ -19443,6 +19486,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4530870085141934302, guid: 89b3430c766ab024287225275a0dcced, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1081948549}
+    - targetCorrespondingSourceObject: {fileID: 4530870085141934302, guid: 89b3430c766ab024287225275a0dcced, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 689179971}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89b3430c766ab024287225275a0dcced, type: 3}
 --- !u!1001 &7050935480924404961

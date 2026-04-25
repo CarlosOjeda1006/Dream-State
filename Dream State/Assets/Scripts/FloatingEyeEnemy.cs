@@ -4,17 +4,18 @@ using UnityEngine.UI;
 
 public class FloatingEyeEnemy : MonoBehaviour, IStunneable
 {
-
     Animator anim;
 
-    //icons for states
+    // Icons
     public Image alertIcon;
     public Image susIcon;
 
     public Transform target;
+
     public float detectionRange = 10f;
     public float attackRange = 1.8f;
-    public float moveSpeed = 2f;
+    public float susRange = 20f;
+    public float moveSpeed = 3f;
     public float rotationSpeed = 6f;
     public float hoverHeight = 2f;
     public float hoverAmplitude = 0.25f;
@@ -22,7 +23,9 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
     public float damage = 10f;
     public float damageCooldown = 1f;
     public float loseTargetDistance = 14f;
+
     public bool chasePlayer = true;
+
     public NavMeshAgent agent;
 
     public float viewAngle = 180f;
@@ -33,27 +36,30 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
     protected float distanceSqr;
 
     Vector3 startPosition;
+
     IDamageable damageable;
+
     protected float nextDamageTime;
     protected bool hasDetectedPlayer;
+
     float baseOffsetStart;
 
     protected bool isStunned = false;
     protected float stunTime;
 
-    //Memory
+    // Memory
     Vector3 lastKnownPosition;
     bool hasLastKnownPosition = false;
 
     public float memoryDuration = 5f;
     float memoryTimer = 0f;
-    //en modo busqueda
+
+    // Scan
     public float scanAngle = 60f;
     public float scanSpeed = 2f;
-
     float scanTimer = 0f;
 
-    //afecta la linterna
+    // Flashlight
     public float flashlightDetectionMultiplier = 1.5f;
     LinternaController playerFlashlight;
 
@@ -65,10 +71,10 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
         alertIcon.gameObject.SetActive(false);
 
         anim = GetComponentInChildren<Animator>();
-
-        audioSource = GetComponent<AudioSource>();
+        
 
         detectionRangeSqr = detectionRange * detectionRange;
+        
         attackRangeSqr = attackRange * attackRange;
         loseTargetDistanceSqr = loseTargetDistance * loseTargetDistance;
 
@@ -104,14 +110,18 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
     {
         Hover();
 
+        // STUN
         if (isStunned)
         {
-            anim.SetBool("isStunned", true);
+            if (anim != null)
+                anim.SetBool("isStunned", true);
 
             if (Time.time >= stunTime)
             {
                 isStunned = false;
-                anim.SetBool("isStunned", false);
+
+                if (anim != null)
+                    anim.SetBool("isStunned", false);
 
                 if (agent != null)
                     agent.isStopped = false;
@@ -130,20 +140,22 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
 
         float currentDetectionRange = detectionRange;
 
-        //con la luz incrementa su rango de detección
+        // Flashlight effect
         if (playerFlashlight != null && playerFlashlight.isOn)
-        {
             currentDetectionRange *= flashlightDetectionMultiplier;
-        }
-        float currentDetectionRangeSqr = currentDetectionRange * currentDetectionRange;
 
-        //  DETECTADO
-        if (!hasDetectedPlayer && distanceSqr <= currentDetectionRangeSqr && CanSeePlayer())
+        float currentDetectionRangeSqr = currentDetectionRange * currentDetectionRange;
+        float susRangeSqr = susRange * susRange;
+
+        bool inCloseRange = distanceSqr <= currentDetectionRangeSqr;
+        bool inVision = CanSeePlayer();
+
+        // DETECT
+        if (!hasDetectedPlayer && (inCloseRange || inVision))
         {
             hasDetectedPlayer = true;
             scanTimer = 0f;
 
-            //recuerda su última posición
             lastKnownPosition = target.position;
             hasLastKnownPosition = true;
             memoryTimer = memoryDuration;
@@ -154,35 +166,34 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
             alertIcon.gameObject.SetActive(true);
         }
 
-        //va acatualizando
+        // UPDATE MEMORY
         if (hasDetectedPlayer && CanSeePlayer())
         {
             lastKnownPosition = target.position;
             memoryTimer = memoryDuration;
         }
 
-        //  SOSPECHA
-        else if (!hasDetectedPlayer && distanceSqr <= currentDetectionRangeSqr * 2.5f && CanSeePlayer())
+        // SUSPICIOUS
+        else if (!hasDetectedPlayer && distanceSqr <= susRangeSqr && CanSeePlayer())
         {
-            //SoundEffectManager.Play("Suspicious");
             susIcon.gameObject.SetActive(true);
             alertIcon.gameObject.SetActive(false);
         }
 
-        //  NADA
+        // IDLE
         else if (!hasDetectedPlayer && !hasLastKnownPosition)
         {
             susIcon.gameObject.SetActive(false);
             alertIcon.gameObject.SetActive(false);
         }
 
-        //  PIERDE AL JUGADOR
-        if (hasDetectedPlayer && distanceSqr > loseTargetDistanceSqr)
+        // LOSE PLAYER
+        if (hasDetectedPlayer && (!CanSeePlayer() || distanceSqr > loseTargetDistanceSqr))
         {
             hasDetectedPlayer = false;
-
         }
-        //MEMORY COUNTDOWN
+
+        // MEMORY TIMER
         if (!hasDetectedPlayer && hasLastKnownPosition)
         {
             memoryTimer -= Time.deltaTime;
@@ -196,8 +207,7 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
             }
         }
 
-        //Debug.Log("Detected: " + hasDetectedPlayer +" | HasMemory: " + hasLastKnownPosition);
-
+        // FSM
         if (hasDetectedPlayer && chasePlayer)
         {
             ChasePlayer(distanceSqr);
@@ -214,11 +224,8 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
             LookForward();
         }
 
-
         TryAttack(distanceSqr);
     }
-
- 
 
     void Hover()
     {
@@ -231,30 +238,25 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
 
     void ChasePlayer(float distanceToPlayer)
     {
-        Vector3 targetPosition = target.position;
+        if (agent == null) return;
 
-        if (agent != null)
+        if (distanceToPlayer > attackRangeSqr)
         {
-            agent.speed = moveSpeed;
-
-            if (distanceToPlayer > attackRangeSqr)
-            {
-                agent.isStopped = false;
-                agent.SetDestination(targetPosition);
-            }
-            else
-            {
-                agent.isStopped = true;
-            }
+            agent.isStopped = false;
+            agent.SetDestination(target.position);
+        }
+        else
+        {
+            agent.isStopped = true;
         }
 
-        Vector3 lookDirection = target.position - transform.position;
-        lookDirection.y = 0f;
+        Vector3 dir = target.position - transform.position;
+        dir.y = 0f;
 
-        if (lookDirection.sqrMagnitude > 0.001f)
+        if (dir.sqrMagnitude > 0.001f)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            Quaternion rot = Quaternion.LookRotation(dir);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rot, rotationSpeed * Time.deltaTime);
         }
     }
 
@@ -262,20 +264,21 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
     {
         if (target == null) return false;
 
-        Vector3 directionToPlayer = (target.position - transform.position).normalized;
+        Vector3 dir = (target.position - transform.position).normalized;
+        float angle = Vector3.Angle(transform.forward, dir);
 
-        float angle = Vector3.Angle(transform.forward, directionToPlayer);
+        if (angle > viewAngle / 2f)
+            return false;
 
-        return angle < viewAngle / 2f;
+        float maxVisionDistance = 25f;
+
+        return (target.position - transform.position).sqrMagnitude <= maxVisionDistance * maxVisionDistance;
     }
 
     void LookForward()
     {
         Vector3 euler = transform.eulerAngles;
         transform.rotation = Quaternion.Euler(0f, euler.y, 0f);
-    }
-    protected virtual void OnAttack()
-    {
     }
 
     protected virtual void TryAttack(float distanceToPlayer)
@@ -286,15 +289,12 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
         if (distanceSqr <= attackRangeSqr && Time.time >= nextDamageTime)
         {
             nextDamageTime = Time.time + damageCooldown;
-            damageable?.TakeDamage(damage);
-            OnAttack();
-            Debug.Log("Base attack triggered");
+            damageable.TakeDamage(damage);
         }
     }
 
     void SearchLastPosition()
     {
-        Debug.Log("SEARCHING...");
         if (agent == null) return;
 
         agent.isStopped = false;
@@ -322,50 +322,31 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
 
     void ScanAround()
     {
-        Debug.Log("SCANNING...");
-        scanSpeed = Mathf.Lerp(2f, 0.8f, 1f - (memoryTimer / memoryDuration));//empieza rápido y se va alentando
-
+        scanSpeed = Mathf.Lerp(2f, 0.8f, 1f - (memoryTimer / memoryDuration));
         scanTimer += Time.deltaTime * scanSpeed;
 
         float angle = Mathf.Sin(scanTimer) * scanAngle;
 
-        Quaternion baseRotation = Quaternion.LookRotation(lastKnownPosition - transform.position);
-        Quaternion scanRotation = Quaternion.Euler(0f, angle, 0f);
+        Vector3 dir = lastKnownPosition - transform.position;
+        dir.y = 0f;
 
-        transform.rotation = Quaternion.Slerp(
-            transform.rotation,
-            baseRotation * scanRotation,
-            rotationSpeed * Time.deltaTime
-        );
-    }
+        if (dir.sqrMagnitude < 0.01f)
+            dir = transform.forward;
 
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, detectionRange);
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
-        Gizmos.color = Color.grey;
-        Gizmos.DrawWireSphere(transform.position, loseTargetDistance);
+        Quaternion baseRot = Quaternion.LookRotation(dir);
+        Quaternion scanRot = Quaternion.Euler(0f, angle, 0f);
 
-        Vector3 left = Quaternion.Euler(0, -viewAngle / 2, 0) * transform.forward;
-        Vector3 right = Quaternion.Euler(0, viewAngle / 2, 0) * transform.forward;
-        Gizmos.color = Color.blue;
-        Gizmos.DrawRay(transform.position, left * detectionRange);
-        Gizmos.DrawRay(transform.position, right * detectionRange);
+        transform.rotation = Quaternion.Slerp(transform.rotation, baseRot * scanRot, rotationSpeed * Time.deltaTime);
     }
 
     public void Stun(float duration)
     {
         SoundEffectManager.Play("StunFlash");
-        Debug.Log("STUN TRIGGERED");
+
         isStunned = true;
         stunTime = Time.time + duration;
 
         if (agent != null)
-        {
             agent.isStopped = true;
-            
-        }
     }
 }
