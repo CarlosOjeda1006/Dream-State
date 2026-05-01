@@ -145,37 +145,11 @@ public class Door : MonoBehaviour
     {
         Debug.Log("Nightmare triggered");
 
-        if (directionalLight != null)
-        {
-            StartCoroutine(DayToNight());
-        }
 
         ojo1.SetActive(true);
         ojo2.SetActive(true);
         ojo3.SetActive(true);
 
-    }
-
-    IEnumerator DayToNight()
-    {
-        Color startColor = directionalLight.color;
-        float startIntensity = directionalLight.intensity;
-        
-        float time = 0;
-
-        while (time < transitionDuration)
-        {
-            time += Time.deltaTime;
-
-            float t = time / transitionDuration;
-
-            directionalLight.color = Color.Lerp(startColor, nightColor, t);
-            directionalLight.intensity = Mathf.Lerp(startIntensity, nightIntensity, t);
-
-            RenderSettings.ambientIntensity = Mathf.Lerp(1f, 0.2f, t);
-
-            yield return null;
-        }
     }
 
     IEnumerator ShowMissingItemsMessage()
