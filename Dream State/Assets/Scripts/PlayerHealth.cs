@@ -16,6 +16,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     bool isDead;
 
     public HealthBar healthBar;
+    TakeDamage damageFX;
+
 
     void Awake()
     {
@@ -24,6 +26,10 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
         deathUI.SetActive(false);
     }
+    void Start()
+    {
+        damageFX = GetComponentInChildren<TakeDamage>();
+    }
 
     public void TakeDamage(float damage)
     {
@@ -31,6 +37,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
             return;
 
         damage = Mathf.Max(damage, 0f);
+        damageFX.TriggerDamageEffect();
 
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);

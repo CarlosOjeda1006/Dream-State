@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -6,12 +8,11 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
 {
     Animator anim;
 
-    // Icons
+    [Header ("Icons")]
     public Image alertIcon;
     public Image susIcon;
 
-    public Transform target;
-
+    [Header("Enemy values")]
     public float detectionRange = 10f;
     public float attackRange = 1.8f;
     public float susRange = 20f;
@@ -26,6 +27,8 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
 
     public bool chasePlayer = true;
 
+    [Header("NavMesh")]
+    public Transform target;
     public NavMeshAgent agent;
 
     public float viewAngle = 180f;
@@ -47,21 +50,23 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
     protected bool isStunned = false;
     protected float stunTime;
 
-    // Memory
+    [Header("Memory")]
     Vector3 lastKnownPosition;
     bool hasLastKnownPosition = false;
 
     public float memoryDuration = 5f;
     float memoryTimer = 0f;
 
-    // Scan
+    [Header("Scan")]
     public float scanAngle = 60f;
     public float scanSpeed = 2f;
     float scanTimer = 0f;
 
-    // Flashlight
+    [Header("Flashlight")]
     public float flashlightDetectionMultiplier = 1.5f;
     LinternaController playerFlashlight;
+
+
 
     AudioSource audioSource;
 
@@ -104,6 +109,7 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
             damageable = target.GetComponent<IDamageable>();
             playerFlashlight = target.GetComponent<LinternaController>();
         }
+
     }
 
     protected virtual void Update()

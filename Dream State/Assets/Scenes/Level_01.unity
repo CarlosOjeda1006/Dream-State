@@ -529,7 +529,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FloatingEyeEnemy
   alertIcon: {fileID: 1792098966}
   susIcon: {fileID: 203201817}
-  target: {fileID: 0}
   detectionRange: 10
   attackRange: 3
   susRange: 20
@@ -542,6 +541,7 @@ MonoBehaviour:
   damageCooldown: 3
   loseTargetDistance: 14
   chasePlayer: 1
+  target: {fileID: 0}
   agent: {fileID: 0}
   viewAngle: 180
   memoryDuration: 5
@@ -782,7 +782,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EyeBallController
   alertIcon: {fileID: 1815103277}
   susIcon: {fileID: 2080126543}
-  target: {fileID: 0}
   detectionRange: 10
   attackRange: 1.8
   susRange: 20
@@ -795,6 +794,7 @@ MonoBehaviour:
   damageCooldown: 1
   loseTargetDistance: 13.9
   chasePlayer: 1
+  target: {fileID: 0}
   agent: {fileID: 0}
   viewAngle: 180
   memoryDuration: 5
@@ -1012,7 +1012,6 @@ RectTransform:
   m_Children:
   - {fileID: 468202646}
   - {fileID: 1822449937}
-  - {fileID: 411753770}
   m_Father: {fileID: 1891694079}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3706,7 +3705,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FloatingEyeEnemy
   alertIcon: {fileID: 1815103277}
   susIcon: {fileID: 2080126543}
-  target: {fileID: 0}
   detectionRange: 10
   attackRange: 3
   susRange: 20
@@ -3719,6 +3717,7 @@ MonoBehaviour:
   damageCooldown: 3
   loseTargetDistance: 14
   chasePlayer: 1
+  target: {fileID: 0}
   agent: {fileID: 0}
   viewAngle: 180
   memoryDuration: 5
@@ -4329,81 +4328,6 @@ MonoBehaviour:
   lowPass: {fileID: 1606535685}
   minCutoff: 500
   eye: {fileID: 473520141}
---- !u!1 &411753769
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 411753770}
-  - component: {fileID: 411753772}
-  - component: {fileID: 411753771}
-  m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &411753770
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 411753769}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.2, y: 2.2, z: 2.2}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 132158276}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -18.400024, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &411753771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 411753769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.42138356, g: 0.42138356, b: 0.42138356, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e827bab773f0218488ba8fb6dd00ce36, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &411753772
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 411753769}
-  m_CullTransparentMesh: 1
 --- !u!1 &414729669
 GameObject:
   m_ObjectHideFlags: 0
@@ -5204,6 +5128,7 @@ GameObject:
   - component: {fileID: 473520144}
   - component: {fileID: 473520145}
   - component: {fileID: 473520146}
+  - component: {fileID: 473520147}
   m_Layer: 0
   m_Name: FloatingEyeEnemy
   m_TagString: Untagged
@@ -5291,7 +5216,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FloatingEyeEnemy
   alertIcon: {fileID: 236644631}
   susIcon: {fileID: 365846148}
-  target: {fileID: 0}
   detectionRange: 10
   attackRange: 3
   susRange: 20
@@ -5304,6 +5228,7 @@ MonoBehaviour:
   damageCooldown: 3
   loseTargetDistance: 14
   chasePlayer: 1
+  target: {fileID: 0}
   agent: {fileID: 0}
   viewAngle: 180
   memoryDuration: 5
@@ -5332,6 +5257,103 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!82 &473520147
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473520141}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &480822347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11080,6 +11102,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 11378e291f754514cb8d28061ee9907a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1059416510}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 11378e291f754514cb8d28061ee9907a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1064458241}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11378e291f754514cb8d28061ee9907a, type: 3}
       insertIndex: -1
@@ -11628,6 +11653,70 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1765933385248429853, guid: 8ffe10237ac1ac047bc23ceaaca6c736, type: 3}
   m_PrefabInstance: {fileID: 699817836}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1064458240
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1064458241}
+  - component: {fileID: 1064458244}
+  - component: {fileID: 1064458245}
+  m_Layer: 7
+  m_Name: PostProcessingGO
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1064458241
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064458240}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 793034232}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1064458244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064458240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeecf94dd3e068649a8073a2ccb762ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TakeDamage
+  maxIntensity: 0.5
+  fadeSpeed: 1.5
+--- !u!114 &1064458245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064458240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 55ee2fc7b8221ce4e8b232541a9de588, type: 2}
 --- !u!1 &1070559269 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -954525803841429054, guid: 0d5c547428f330049832ff5833fba4c2, type: 3}
@@ -12054,7 +12143,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EyeBallController
   alertIcon: {fileID: 313329308}
   susIcon: {fileID: 1709476018}
-  target: {fileID: 0}
   detectionRange: 10
   attackRange: 1.8
   susRange: 20
@@ -12067,6 +12155,7 @@ MonoBehaviour:
   damageCooldown: 1
   loseTargetDistance: 13.9
   chasePlayer: 1
+  target: {fileID: 0}
   agent: {fileID: 0}
   viewAngle: 180
   memoryDuration: 5
@@ -13837,7 +13926,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EyeBallController
   alertIcon: {fileID: 1792098966}
   susIcon: {fileID: 203201817}
-  target: {fileID: 0}
   detectionRange: 10
   attackRange: 1.8
   susRange: 20
@@ -13850,6 +13938,7 @@ MonoBehaviour:
   damageCooldown: 1
   loseTargetDistance: 13.9
   chasePlayer: 1
+  target: {fileID: 0}
   agent: {fileID: 0}
   viewAngle: 180
   memoryDuration: 5
@@ -16080,7 +16169,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FloatingEyeEnemy
   alertIcon: {fileID: 313329308}
   susIcon: {fileID: 1709476018}
-  target: {fileID: 0}
   detectionRange: 10
   attackRange: 3
   susRange: 20
@@ -16093,6 +16181,7 @@ MonoBehaviour:
   damageCooldown: 3
   loseTargetDistance: 14
   chasePlayer: 1
+  target: {fileID: 0}
   agent: {fileID: 0}
   viewAngle: 180
   memoryDuration: 5
@@ -19739,6 +19828,7 @@ GameObject:
   - component: {fileID: 2071725332}
   - component: {fileID: 2071725331}
   - component: {fileID: 2071725330}
+  - component: {fileID: 2071725333}
   m_Layer: 0
   m_Name: PlayerCamara
   m_TagString: MainCamera
@@ -19782,10 +19872,10 @@ MonoBehaviour:
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
+    m_Bits: 128
+  m_VolumeTrigger: {fileID: 2071725329}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -19865,6 +19955,66 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &2071725333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071725328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Postprocessing.Runtime::UnityEngine.Rendering.PostProcessing.PostProcessLayer
+  volumeTrigger: {fileID: 2071725329}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1001 &2078313573
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20323,6 +20473,10 @@ PrefabInstance:
     - target: {fileID: 3833753287382238306, guid: 89b3430c766ab024287225275a0dcced, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833753287382238306, guid: 89b3430c766ab024287225275a0dcced, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3952515060531558661, guid: 89b3430c766ab024287225275a0dcced, type: 3}
       propertyPath: m_AnchorMax.y
