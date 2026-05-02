@@ -141,6 +141,8 @@ GameObject:
   - component: {fileID: 40101557}
   - component: {fileID: 40101558}
   - component: {fileID: 40101556}
+  - component: {fileID: 40101560}
+  - component: {fileID: 40101559}
   m_Layer: 0
   m_Name: yellowDoorR_Drawing
   m_TagString: Untagged
@@ -174,7 +176,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -236,6 +238,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DataHandling
   color: 2
   dir: 0
+--- !u!114 &40101559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40101555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12a4b6f09be3a5479b27eaaa337d476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OpalLines
+  instructionsBox: {fileID: 699841759}
+--- !u!65 &40101560
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40101555}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 117.75964, y: 114.74516, z: 64.388306}
+  m_Center: {x: 4.175286, y: 5.348258, z: -32.09415}
 --- !u!1001 &41588126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3024,6 +3060,8 @@ GameObject:
   - component: {fileID: 329202633}
   - component: {fileID: 329202634}
   - component: {fileID: 329202632}
+  - component: {fileID: 329202635}
+  - component: {fileID: 329202636}
   m_Layer: 0
   m_Name: yellowDoorL_Drawing
   m_TagString: Untagged
@@ -3057,7 +3095,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3119,6 +3157,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DataHandling
   color: 2
   dir: 1
+--- !u!114 &329202635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329202631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12a4b6f09be3a5479b27eaaa337d476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OpalLines
+  instructionsBox: {fileID: 699841759}
+--- !u!65 &329202636
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329202631}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 117.75964, y: 114.74516, z: 64.388306}
+  m_Center: {x: 4.175286, y: 5.348258, z: -32.09415}
 --- !u!1 &331394458 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -393431757816502282, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
@@ -4233,17 +4305,17 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0.5798787
       value: 0.86248904
-      inSlope: -0.95086485
-      outSlope: -0.95086485
+      inSlope: -1.1704803
+      outSlope: -1.1704803
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.9750061
-      value: 0.204763
-      inSlope: -1.6645923
-      outSlope: -1.6645923
+      value: 0.031210892
+      inSlope: -2.103823
+      outSlope: -2.103823
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -6622,6 +6694,8 @@ GameObject:
   - component: {fileID: 694096374}
   - component: {fileID: 694096375}
   - component: {fileID: 694096373}
+  - component: {fileID: 694096376}
+  - component: {fileID: 694096377}
   m_Layer: 0
   m_Name: greenDoorL_Drawing
   m_TagString: Untagged
@@ -6655,7 +6729,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6717,6 +6791,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DataHandling
   color: 3
   dir: 1
+--- !u!114 &694096376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694096372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12a4b6f09be3a5479b27eaaa337d476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OpalLines
+  instructionsBox: {fileID: 699841759}
+--- !u!65 &694096377
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694096372}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 117.75964, y: 114.74516, z: 64.388306}
+  m_Center: {x: 4.175286, y: 5.348258, z: -32.09415}
 --- !u!1001 &699817836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8922,6 +9030,8 @@ GameObject:
   - component: {fileID: 861499757}
   - component: {fileID: 861499758}
   - component: {fileID: 861499756}
+  - component: {fileID: 861499759}
+  - component: {fileID: 861499760}
   m_Layer: 0
   m_Name: redDoorL_Drawing
   m_TagString: Untagged
@@ -8955,7 +9065,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9017,6 +9127,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DataHandling
   color: 0
   dir: 1
+--- !u!114 &861499759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861499755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12a4b6f09be3a5479b27eaaa337d476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OpalLines
+  instructionsBox: {fileID: 699841759}
+--- !u!65 &861499760
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861499755}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 117.75964, y: 114.74516, z: 64.388306}
+  m_Center: {x: 4.175286, y: 5.348258, z: -32.09415}
 --- !u!4 &862942181 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 357555469206900567, guid: 2b5684b36636e3947ba657269d00571a, type: 3}
@@ -9351,6 +9495,8 @@ GameObject:
   - component: {fileID: 898587457}
   - component: {fileID: 898587458}
   - component: {fileID: 898587456}
+  - component: {fileID: 898587459}
+  - component: {fileID: 898587460}
   m_Layer: 0
   m_Name: purpleDoorR_Drawing
   m_TagString: Untagged
@@ -9384,7 +9530,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9446,6 +9592,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DataHandling
   color: 4
   dir: 0
+--- !u!114 &898587459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898587455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12a4b6f09be3a5479b27eaaa337d476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OpalLines
+  instructionsBox: {fileID: 699841759}
+--- !u!65 &898587460
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898587455}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 117.75964, y: 114.74516, z: 64.388306}
+  m_Center: {x: 4.175286, y: 5.348258, z: -32.09415}
 --- !u!1001 &902902026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12758,6 +12938,8 @@ GameObject:
   - component: {fileID: 1300001289}
   - component: {fileID: 1300001291}
   - component: {fileID: 1300001290}
+  - component: {fileID: 1300001292}
+  - component: {fileID: 1300001293}
   m_Layer: 0
   m_Name: orangeDoorL_Drawing
   m_TagString: Untagged
@@ -12806,7 +12988,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12853,6 +13035,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DataHandling
   color: 5
   dir: 1
+--- !u!114 &1300001292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300001288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12a4b6f09be3a5479b27eaaa337d476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OpalLines
+  instructionsBox: {fileID: 699841759}
+--- !u!65 &1300001293
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300001288}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 117.75964, y: 114.74516, z: 64.388306}
+  m_Center: {x: 4.175286, y: 5.348258, z: -32.09415}
 --- !u!1 &1309360315
 GameObject:
   m_ObjectHideFlags: 0
@@ -13673,6 +13889,8 @@ GameObject:
   - component: {fileID: 1371019959}
   - component: {fileID: 1371019960}
   - component: {fileID: 1371019958}
+  - component: {fileID: 1371019961}
+  - component: {fileID: 1371019962}
   m_Layer: 0
   m_Name: purpleDoorL_Drawing
   m_TagString: Untagged
@@ -13706,7 +13924,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13768,6 +13986,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DataHandling
   color: 4
   dir: 1
+--- !u!114 &1371019961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371019957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12a4b6f09be3a5479b27eaaa337d476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OpalLines
+  instructionsBox: {fileID: 699841759}
+--- !u!65 &1371019962
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371019957}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 117.75964, y: 114.74516, z: 64.388306}
+  m_Center: {x: 4.175286, y: 5.348258, z: -32.09415}
 --- !u!1001 &1373866185
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14227,6 +14479,8 @@ GameObject:
   - component: {fileID: 1463188673}
   - component: {fileID: 1463188674}
   - component: {fileID: 1463188672}
+  - component: {fileID: 1463188675}
+  - component: {fileID: 1463188676}
   m_Layer: 0
   m_Name: greenDoorR_Drawing
   m_TagString: Untagged
@@ -14260,7 +14514,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14322,6 +14576,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DataHandling
   color: 3
   dir: 0
+--- !u!114 &1463188675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463188671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12a4b6f09be3a5479b27eaaa337d476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OpalLines
+  instructionsBox: {fileID: 699841759}
+--- !u!65 &1463188676
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463188671}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 117.75964, y: 114.74516, z: 64.388306}
+  m_Center: {x: 4.175286, y: 5.348258, z: -32.09415}
 --- !u!1 &1487473008 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6112270136706424169, guid: 70a9f5ffad54beb4280a6bd5422a42b6, type: 3}
@@ -15070,6 +15358,8 @@ GameObject:
   - component: {fileID: 1543951837}
   - component: {fileID: 1543951838}
   - component: {fileID: 1543951836}
+  - component: {fileID: 1543951839}
+  - component: {fileID: 1543951840}
   m_Layer: 0
   m_Name: redDoorR_Drawing
   m_TagString: Untagged
@@ -15103,7 +15393,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15165,6 +15455,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DataHandling
   color: 0
   dir: 0
+--- !u!114 &1543951839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543951835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12a4b6f09be3a5479b27eaaa337d476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OpalLines
+  instructionsBox: {fileID: 699841759}
+--- !u!65 &1543951840
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543951835}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 117.75964, y: 114.74516, z: 64.388306}
+  m_Center: {x: 4.175286, y: 5.348258, z: -32.09415}
 --- !u!1001 &1551705809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15358,6 +15682,8 @@ GameObject:
   - component: {fileID: 1566989003}
   - component: {fileID: 1566989004}
   - component: {fileID: 1566989002}
+  - component: {fileID: 1566989005}
+  - component: {fileID: 1566989006}
   m_Layer: 0
   m_Name: orangeDoorR_Drawing
   m_TagString: Untagged
@@ -15391,7 +15717,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15453,6 +15779,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DataHandling
   color: 5
   dir: 0
+--- !u!114 &1566989005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566989001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12a4b6f09be3a5479b27eaaa337d476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OpalLines
+  instructionsBox: {fileID: 699841759}
+--- !u!65 &1566989006
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566989001}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 117.75964, y: 114.74516, z: 64.388306}
+  m_Center: {x: 4.175286, y: 5.348258, z: -32.09415}
 --- !u!4 &1573388313 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5573079539878795174, guid: 286b6f720dd13984eb2b791a8e5baf8d, type: 3}
@@ -18481,6 +18841,8 @@ GameObject:
   - component: {fileID: 1977162102}
   - component: {fileID: 1977162103}
   - component: {fileID: 1977162101}
+  - component: {fileID: 1977162104}
+  - component: {fileID: 1977162105}
   m_Layer: 0
   m_Name: blueDoorR_Drawing
   m_TagString: Untagged
@@ -18514,7 +18876,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18576,6 +18938,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DataHandling
   color: 1
   dir: 0
+--- !u!114 &1977162104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977162100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12a4b6f09be3a5479b27eaaa337d476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OpalLines
+  instructionsBox: {fileID: 699841759}
+--- !u!65 &1977162105
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977162100}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 117.75964, y: 114.74516, z: 64.388306}
+  m_Center: {x: 4.175286, y: 5.348258, z: -32.09415}
 --- !u!1001 &1980722912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19713,6 +20109,8 @@ GameObject:
   - component: {fileID: 2136193549}
   - component: {fileID: 2136193550}
   - component: {fileID: 2136193548}
+  - component: {fileID: 2136193551}
+  - component: {fileID: 2136193552}
   m_Layer: 0
   m_Name: blueDoorL_Drawing
   m_TagString: Untagged
@@ -19746,7 +20144,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19808,6 +20206,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DataHandling
   color: 1
   dir: 1
+--- !u!114 &2136193551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136193547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12a4b6f09be3a5479b27eaaa337d476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OpalLines
+  instructionsBox: {fileID: 699841759}
+--- !u!65 &2136193552
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136193547}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 117.75964, y: 114.74516, z: 64.388306}
+  m_Center: {x: 4.175286, y: 5.348258, z: -32.09415}
 --- !u!1001 &835107279843875639
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20254,7 +20686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8145830877642111313, guid: 70a9f5ffad54beb4280a6bd5422a42b6, type: 3}
       propertyPath: soundEffectGroups.Array.size
-      value: 20
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 8145830877642111313, guid: 70a9f5ffad54beb4280a6bd5422a42b6, type: 3}
       propertyPath: soundEffectGroups.Array.data[9].name
@@ -20301,6 +20733,14 @@ PrefabInstance:
       value: Lost
       objectReference: {fileID: 0}
     - target: {fileID: 8145830877642111313, guid: 70a9f5ffad54beb4280a6bd5422a42b6, type: 3}
+      propertyPath: soundEffectGroups.Array.data[20].name
+      value: MeanSomething
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145830877642111313, guid: 70a9f5ffad54beb4280a6bd5422a42b6, type: 3}
+      propertyPath: soundEffectGroups.Array.data[21].name
+      value: MissingSomething
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145830877642111313, guid: 70a9f5ffad54beb4280a6bd5422a42b6, type: 3}
       propertyPath: soundEffectGroups.Array.data[9].audioClips.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -20342,6 +20782,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8145830877642111313, guid: 70a9f5ffad54beb4280a6bd5422a42b6, type: 3}
       propertyPath: soundEffectGroups.Array.data[19].audioClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145830877642111313, guid: 70a9f5ffad54beb4280a6bd5422a42b6, type: 3}
+      propertyPath: soundEffectGroups.Array.data[20].audioClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145830877642111313, guid: 70a9f5ffad54beb4280a6bd5422a42b6, type: 3}
+      propertyPath: soundEffectGroups.Array.data[21].audioClips.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8145830877642111313, guid: 70a9f5ffad54beb4280a6bd5422a42b6, type: 3}
@@ -20408,6 +20856,18 @@ PrefabInstance:
       propertyPath: 'soundEffectGroups.Array.data[19].audioClips.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: cfa804e8f966c084e89b9856a81fd685, type: 3}
+    - target: {fileID: 8145830877642111313, guid: 70a9f5ffad54beb4280a6bd5422a42b6, type: 3}
+      propertyPath: 'soundEffectGroups.Array.data[20].audioClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 35c989def05c551438d8500ac8cb9224, type: 3}
+    - target: {fileID: 8145830877642111313, guid: 70a9f5ffad54beb4280a6bd5422a42b6, type: 3}
+      propertyPath: 'soundEffectGroups.Array.data[20].audioClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 35c989def05c551438d8500ac8cb9224, type: 3}
+    - target: {fileID: 8145830877642111313, guid: 70a9f5ffad54beb4280a6bd5422a42b6, type: 3}
+      propertyPath: 'soundEffectGroups.Array.data[21].audioClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 05189510eb28c6f4da9ad35c36564277, type: 3}
     - target: {fileID: 8698179910348465349, guid: 70a9f5ffad54beb4280a6bd5422a42b6, type: 3}
       propertyPath: sfxSlider
       value: 

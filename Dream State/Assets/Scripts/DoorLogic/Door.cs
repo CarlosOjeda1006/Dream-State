@@ -156,7 +156,8 @@ public class Door : MonoBehaviour
     {
         instructionsBox.SetActive(true);
 
-        instructionsBox.GetComponent<TMPro.TMP_Text>().text = "Me faltan objetos.";
+        instructionsBox.GetComponent<TMPro.TMP_Text>().text = "I'm missing something.";
+        SoundEffectManager.Play("MissingSomething");
 
         yield return new WaitForSeconds(2f);
 
