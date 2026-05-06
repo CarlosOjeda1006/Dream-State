@@ -98,10 +98,7 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
 
         if (target == null)
         {
-            GameObject playerObject = PlayerSingle.instance.gameObject;
-
-            if (playerObject != null)
-                target = playerObject.transform;
+            target = PlayerSingle.instance.gameObject.transform;
         }
 
         if (target != null)
