@@ -166,6 +166,7 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
             hasLastKnownPosition = true;
             memoryTimer = memoryDuration;
 
+            Debug.Log("spam");
             SoundEffectManager.Play("PlayerDetected");
 
             susIcon.gameObject.SetActive(false);
@@ -193,9 +194,10 @@ public class FloatingEyeEnemy : MonoBehaviour, IStunneable
             alertIcon.gameObject.SetActive(false);
         }
 
-        // LOSE PLAYER
-        if (hasDetectedPlayer && (!CanSeePlayer() || distanceSqr > loseTargetDistanceSqr))
+        // LOSE PLAYER  || distanceSqr > loseTargetDistanceSqr
+        if (hasDetectedPlayer && (!CanSeePlayer()))
         {
+            Debug.Log("me lo perdí");
             hasDetectedPlayer = false;
         }
 
