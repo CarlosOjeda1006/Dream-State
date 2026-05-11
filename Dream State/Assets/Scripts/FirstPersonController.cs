@@ -14,6 +14,9 @@ public class FirstPersonController : MonoBehaviour
     public float mouseSensitivity = 2f;
     public float lookXLimit = 80f;
 
+    [HideInInspector]
+    public float speedMultiplier = 1f;
+
     private bool playingFootsteps = false;
     public float footstepSpeed = 0.5f;
 
@@ -72,7 +75,8 @@ public class FirstPersonController : MonoBehaviour
         float moveZ = Input.GetAxisRaw(axisV);
 
         Vector3 move = (transform.right * moveX + transform.forward * moveZ).normalized;
-        float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed;
+        float baseSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed;
+        float currentSpeed = baseSpeed * speedMultiplier;
 
         characterController.Move(move * currentSpeed * Time.deltaTime);
 
