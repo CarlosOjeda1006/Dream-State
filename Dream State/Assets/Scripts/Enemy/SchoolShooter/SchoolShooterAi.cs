@@ -71,6 +71,7 @@ public class SchoolShooterAI : MonoBehaviour
 
         if (agent.remainingDistance <= agent.stoppingDistance)
         {
+            Debug.Log("Patrol update");
             GoToNextPatrolPoint();
         }
     }
@@ -81,6 +82,8 @@ public class SchoolShooterAI : MonoBehaviour
             return;
 
         agent.SetDestination(target.position);
+
+        Debug.Log("Charging");
 
         float distSqr = (target.position - transform.position).sqrMagnitude;
 
@@ -98,6 +101,7 @@ public class SchoolShooterAI : MonoBehaviour
         currentState = State.Aim;
 
         agent.isStopped = true;
+        Debug.Log("Detecting");
 
         StartCoroutine(
             combat.AttackSequence(BeginCharge)
