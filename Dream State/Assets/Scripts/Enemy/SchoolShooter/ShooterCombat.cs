@@ -72,7 +72,7 @@ public class ShooterCombat : MonoBehaviour
 
         if (status != null)
         {
-            status.ApplySlow(0.8f, 3f);
+            status.ApplySlow(0.2f, 6f);
         }
         
         // VFX
