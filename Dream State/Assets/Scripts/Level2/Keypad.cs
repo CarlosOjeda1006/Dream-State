@@ -10,17 +10,21 @@ public class Keypad : MonoBehaviour
     public GameObject keypadOB;
     public GameObject hud;
 
+    public SymbolPuzzleLogic puzzleLogic;
+
     public GameObject animateOB;
     public Animator ANI;
-
+    
     public TMP_Text textOB;
-    public string answer = "12345";
 
     public bool animate;
+
+
 
     private void Start()
     {
         keypadOB.SetActive(false);
+        
     }
     public void Number(int number)
     {
@@ -29,10 +33,11 @@ public class Keypad : MonoBehaviour
     }
     public void Execute()
     {
-        if(textOB.text == answer)
+        if(textOB.text == puzzleLogic.correctAnswer)
         {
             SoundEffectManager.Play("CorrectKeypad");
             textOB.text = "Right";
+            puzzleLogic.correctSol.SetActive(true);
         }
         else
         {
