@@ -3860,6 +3860,7 @@ MonoBehaviour:
   keypadOB: {fileID: 348868959}
   hud: {fileID: 540436909}
   puzzleLogic: {fileID: 2037441891}
+  canOpenDoors: 0
   animateOB: {fileID: 106110968}
   ANI: {fileID: 106110969}
   textOB: {fileID: 642371128}
@@ -9970,7 +9971,7 @@ PrefabInstance:
       objectReference: {fileID: 1169467872}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: soundEffectGroups.Array.size
-      value: 26
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: soundEffectGroups.Array.data[22].name
@@ -9990,7 +9991,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: soundEffectGroups.Array.data[26].name
-      value: CorrectKeypad
+      value: SomethingFirst
       objectReference: {fileID: 0}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: soundEffectGroups.Array.data[22].audioClips.Array.size
@@ -10031,7 +10032,7 @@ PrefabInstance:
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: 'soundEffectGroups.Array.data[26].audioClips.Array.data[0]'
       value: 
-      objectReference: {fileID: 8300000, guid: d20b02d1a7ad5db4d872635407656183, type: 3}
+      objectReference: {fileID: 8300000, guid: c90df9e0687fa684ab54c6ff88dec4a7, type: 3}
     - target: {fileID: 4102280344842044839, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: m_Name
       value: GameController Variant
@@ -22106,7 +22107,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 2023298086}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.72
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -22247,6 +22248,7 @@ MonoBehaviour:
   - {fileID: 1101840748}
   - {fileID: 1466383074}
   correctAnswer: 
+  correctSol: {fileID: 0}
   correctSymbol: 0
 --- !u!4 &2042150090 stripped
 Transform:

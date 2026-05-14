@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class DoorsL2 : MonoBehaviour
 {
     bool canOpen;
+    Keypad keypadLogic;
     bool isOpen = false;
     bool opened = false;
 
@@ -48,7 +49,7 @@ public class DoorsL2 : MonoBehaviour
 
     void Update()
     {
-        if (canOpen && Input.GetKeyDown(KeyCode.E) && !isOpen && !isCorrectDoor)
+        if (keypadLogic.canOpenDoors && canOpen && Input.GetKeyDown(KeyCode.E) && !isOpen && !isCorrectDoor)
         {
             animator.SetBool("isOpen", true);
             SoundEffectManager.Play("OpenDoor");
@@ -69,7 +70,7 @@ public class DoorsL2 : MonoBehaviour
 
 
         // OPEN
-        if (canOpen && Input.GetKeyDown(KeyCode.E) && !isOpen && isCorrectDoor)
+        if (keypadLogic.canOpenDoors && canOpen && Input.GetKeyDown(KeyCode.E) && !isOpen && isCorrectDoor)
         {
 
             if (inventory.HasRequiredDreamItems())
@@ -88,6 +89,10 @@ public class DoorsL2 : MonoBehaviour
 
                 StartCoroutine(ShowMissingItemsMessage());
             }
+        }
+        else
+        {
+            StartCoroutine(ShowMessage());
         }
 
 
@@ -168,5 +173,17 @@ public class DoorsL2 : MonoBehaviour
             jumpscareObject.SetActive(true);
         }
         OnJumpscareTriggered?.Invoke();
+    }
+
+    IEnumerator ShowMessage()
+    {
+        instructionsBox.SetActive(true);
+
+        instructionsBox.GetComponent<TMPro.TMP_Text>().text = "Need to do something first.";
+        SoundEffectManager.Play("SomethingFirst");
+
+        yield return new WaitForSeconds(2f);
+
+        instructionsBox.SetActive(false);
     }
 }

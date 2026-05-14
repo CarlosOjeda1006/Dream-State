@@ -11,6 +11,7 @@ public class Keypad : MonoBehaviour
     public GameObject hud;
 
     public SymbolPuzzleLogic puzzleLogic;
+    public bool canOpenDoors = false;
 
     public GameObject animateOB;
     public Animator ANI;
@@ -38,6 +39,7 @@ public class Keypad : MonoBehaviour
             SoundEffectManager.Play("CorrectKeypad");
             textOB.text = "Right";
             puzzleLogic.correctSol.SetActive(true);
+            canOpenDoors = true;
         }
         else
         {
