@@ -27,6 +27,8 @@ public class SchoolShooterAI : MonoBehaviour
     [Header("Kill")]
     public float killDistance = 1.5f;
 
+    private Animator animator;
+
     State currentState;
 
     int patrolIndex;
@@ -48,6 +50,8 @@ public class SchoolShooterAI : MonoBehaviour
         agent.speed = patrolSpeed;
 
         GoToNextPatrolPoint();
+
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -84,6 +88,7 @@ public class SchoolShooterAI : MonoBehaviour
         agent.SetDestination(target.position);
 
         Debug.Log("Charging");
+        animator.SetBool("isCharging", true);
 
         float distSqr = (target.position - transform.position).sqrMagnitude;
 

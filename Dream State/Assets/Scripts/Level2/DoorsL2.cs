@@ -34,6 +34,10 @@ public class DoorsL2 : MonoBehaviour
         Eye,
         Moth,
         Stars,
+        Moon,
+        Cat,
+        Dragon,
+        Hand,
         Sun
     }
 
@@ -135,7 +139,7 @@ public class DoorsL2 : MonoBehaviour
 
     void LoadNextDream()
     {
-        SceneManager.LoadScene("Level_01");
+        SceneManager.LoadScene("Level_03");
     }
 
     void NightmareEffect()

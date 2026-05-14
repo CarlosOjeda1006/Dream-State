@@ -14,7 +14,12 @@ public class ShooterCombat : MonoBehaviour
     public float delayBeforeCharge = 1.5f;
 
     bool isAttacking;
+    private Animator animator;
 
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
     public IEnumerator AttackSequence(System.Action onCharge)
     {
         if (isAttacking)
@@ -66,6 +71,7 @@ public class ShooterCombat : MonoBehaviour
     void Shoot()
     {
         Debug.Log("BANG");
+        animator.SetBool("isShooting", true);
 
         // PLAYER RECIBE SLOW
         PlayerStatus status = target.GetComponent<PlayerStatus>();

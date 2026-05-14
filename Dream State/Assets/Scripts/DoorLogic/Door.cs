@@ -107,8 +107,8 @@ public class Door : MonoBehaviour
         if (!isOpen && PlayerCasting.distanceFromTarget < 5)
         {
             canOpen = true;
-            UIController.actionText = "Abrir Puerta";
-            UIController.commandText = "Abrir";
+            UIController.actionText = "Open Door";
+            UIController.commandText = "Open";
             UIController.uiActive = true;
         }
         else

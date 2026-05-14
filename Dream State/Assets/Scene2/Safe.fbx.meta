@@ -3,7 +3,27 @@ guid: 6fd17b53690bd534ea46ac159f982be8
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base_Mat
+    second: {fileID: 2100000, guid: 1e3b03f9837fb8f4e82be746009e5e4a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamp
+    second: {fileID: 2100000, guid: 90ee67b36aaf839418e9052ff24444d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Safe_Mat
+    second: {fileID: 2100000, guid: 9c106cbf6aa161f40a126be4ba6cb71f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: keypadMat
+    second: {fileID: 2100000, guid: 6615129b094d34f429741fcf9546b655, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
