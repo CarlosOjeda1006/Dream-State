@@ -75,7 +75,7 @@ public class FirstPersonController : MonoBehaviour
         float moveZ = Input.GetAxisRaw(axisV);
 
         Vector3 move = (transform.right * moveX + transform.forward * moveZ).normalized;
-        float baseSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed;
+        float baseSpeed = Input.GetButton("Run") ? sprintSpeed : walkSpeed;
         float currentSpeed = baseSpeed * speedMultiplier;
 
         characterController.Move(move * currentSpeed * Time.deltaTime);
@@ -86,9 +86,14 @@ public class FirstPersonController : MonoBehaviour
         }
 
 
-
+        /*
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        */
+        if (isGrounded && (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump")))
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
 
         velocity.y += gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
