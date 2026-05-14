@@ -82,7 +82,7 @@ public class LinternaController : MonoBehaviour
 
     void HandleToggle()
     {
-        if (Input.GetKeyDown(toggleKey) && currentBattery > 0f)
+        if (Input.GetButtonDown("Linterna") && currentBattery > 0f)
         {
             isOn = !isOn;
 
