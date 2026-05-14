@@ -3,7 +3,13 @@ using UnityEngine;
 
 public class PlayerCameraFlash : MonoBehaviour
 {
-    public Action OnPhotoTaken;
+    public Action<RaycastHit> OnPhotoTaken;
+
+    [Header("References")]
+    public Camera playerCamera;
+
+    [Header("Photo")]
+    public float photoRange = 30f;
 
     void Update()
     {
@@ -19,6 +25,21 @@ public class PlayerCameraFlash : MonoBehaviour
         // SONIDO
         // UI
 
-        OnPhotoTaken?.Invoke();
+        Debug.DrawRay(
+            playerCamera.transform.position,
+            playerCamera.transform.forward * photoRange,
+            Color.red,
+            1f
+        );
+        RaycastHit hit;
+
+        Physics.Raycast(
+            playerCamera.transform.position,
+            playerCamera.transform.forward,
+            out hit,
+            photoRange
+        );
+        Debug.Log("foto tomada");
+        OnPhotoTaken?.Invoke(hit);
     }
 }

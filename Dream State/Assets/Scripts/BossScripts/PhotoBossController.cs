@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PhotoBossController : MonoBehaviour
 {
@@ -52,10 +53,11 @@ public class PhotoBossController : MonoBehaviour
     void PickNextDirection()
     {
         currentState = BossState.WaitingForPhoto;
-
+        
         currentPoint =
             points[Random.Range(0, points.Length)];
-
+        Debug.Log(currentPoint);
+        transform.position = currentPoint.transform.position;
         // AQUI:
         // reproducir sonido direccional
         // activar whisper
@@ -77,34 +79,44 @@ public class PhotoBossController : MonoBehaviour
         KillPlayer();
     }
 
-    void HandlePhotoTaken()
+    void HandlePhotoTaken(RaycastHit hit)
     {
         if (currentState != BossState.WaitingForPhoto)
-            return;
-
-        if (PlayerIsLookingCorrectDirection())
         {
+            Debug.Log("primer stop");
+            return;
+        }
+
+        if (hit.collider == null)
+        {
+            Debug.Log("Hit collider null");
+            return;
+        }
+
+        BossPhotoTarget target =
+            hit.collider.GetComponent<BossPhotoTarget>();
+
+        if (target == null)
+        {
+            Debug.Log("Target null");
+            return;
+        }
+
+        Debug.Log("Nada");
+        Debug.Log(hit.collider.transform.position);
+        Debug.Log(currentPoint.transform.position);
+
+
+        if (hit.collider.transform.position == currentPoint.transform.position)
+        {
+            Debug.Log("Succesful");
             SuccessfulPhoto();
         }
     }
 
-    bool PlayerIsLookingCorrectDirection()
-    {
-        Vector3 dirToPoint =
-            (currentPoint.transform.position
-            - playerCameraTransform.position).normalized;
-
-        float dot =
-            Vector3.Dot(
-                playerCameraTransform.forward,
-                dirToPoint
-            );
-
-        return dot >= 0.92f;
-    }
-
     void SuccessfulPhoto()
     {
+        Debug.Log("Succesfully conectido");
         StopCoroutine(currentRoutine);
 
         currentSuccesses++;
