@@ -22,7 +22,7 @@ public class PlayerCameraFlash : MonoBehaviour
     void TakePhoto()
     {
         // FLASH
-        // SONIDO
+        SoundEffectManager.Play("Flash");
         // UI
 
         Debug.DrawRay(
