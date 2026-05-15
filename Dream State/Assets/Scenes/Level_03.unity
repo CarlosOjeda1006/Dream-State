@@ -1948,6 +1948,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &626022272 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 70411c129801b93418367e64bcda148c, type: 3}
+  m_PrefabInstance: {fileID: 1295106139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &652109593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2560,7 +2565,7 @@ MonoBehaviour:
   itemUIPrefab: {fileID: 3341248199769408129, guid: d3b038e31aefc024d93787ec58da14b3, type: 3}
   Name: FuelCan
   refillsGenerator: 1
-  pickupIcon: {fileID: 21300000, guid: 568bd1fda0c5f6f45926e80de71852a0, type: 3}
+  pickupIcon: {fileID: 21300000, guid: 40ebd795b2e706a4cbd541107bebb807, type: 3}
 --- !u!65 &822288632
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2589,7 +2594,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822288630}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2647,13 +2652,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822288630}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 81.05, y: 0.59, z: 50.9}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 71.863, y: 0.57, z: 41.166}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 626022272}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &822288636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5924,6 +5930,63 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0015646219, y: 0.015000009, z: 0.07031429}
   m_Center: {x: -0.00030793052, y: 0.0014555703, z: -0.013964513}
+--- !u!1001 &1295106139
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 822288635}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 70411c129801b93418367e64bcda148c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 70411c129801b93418367e64bcda148c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 70411c129801b93418367e64bcda148c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 70411c129801b93418367e64bcda148c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 70411c129801b93418367e64bcda148c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 70411c129801b93418367e64bcda148c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 70411c129801b93418367e64bcda148c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 70411c129801b93418367e64bcda148c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 70411c129801b93418367e64bcda148c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 70411c129801b93418367e64bcda148c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 70411c129801b93418367e64bcda148c, type: 3}
+      propertyPath: m_Name
+      value: fuel_can
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 70411c129801b93418367e64bcda148c, type: 3}
 --- !u!65 &1332332832
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7547,7 +7610,7 @@ MonoBehaviour:
   generatorSystem: {fileID: 1531503397}
   fuelInventoryConsumer: {fileID: 606545859}
   player: {fileID: 0}
-  interactionDistance: 3
+  interactionDistance: 5
   interactKey: 101
   requireFuelItem: 1
 --- !u!65 &1551761783
