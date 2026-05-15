@@ -15,6 +15,8 @@ public class SchoolShooterAI : MonoBehaviour
     public ShooterVision vision;
     public ShooterCombat combat;
 
+    public ShooterHearingTrigger hearing;
+
     public Transform target;
 
     [Header("Patrol")]
@@ -36,11 +38,13 @@ public class SchoolShooterAI : MonoBehaviour
     void OnEnable()
     {
         vision.OnPlayerDetected += HandleDetection;
+        hearing.OnPlayerHeard += HandleDetection;
     }
 
     void OnDisable()
     {
         vision.OnPlayerDetected -= HandleDetection;
+        hearing.OnPlayerHeard -= HandleDetection;
     }
 
     void Start()
