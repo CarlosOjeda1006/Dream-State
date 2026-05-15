@@ -119,7 +119,7 @@ public class FirstPersonController : MonoBehaviour
 
     void HandleCursorToggle()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.X))
             LockCursor(false);
 
         if (Input.GetMouseButtonDown(0) && !cursorLocked)
