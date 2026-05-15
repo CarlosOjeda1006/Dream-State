@@ -3,12 +3,13 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DoorsL2 : MonoBehaviour
+public class DoorsL2 : MonoBehaviour, IInteractable
 {
     bool canOpen;
-    Keypad keypadLogic;
+    [SerializeField] public Keypad keypadLogic;
     bool isOpen = false;
     bool opened = false;
+    public bool CanInteract => !opened;
 
     public static event Action OnJumpscareTriggered;
 
@@ -46,95 +47,72 @@ public class DoorsL2 : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
-
-    void Update()
+    public void Interact()
     {
-        if (keypadLogic.canOpenDoors && canOpen && Input.GetKeyDown(KeyCode.E) && !isOpen && !isCorrectDoor)
+        if (isOpen) return;
+        else
+        {
+            OpenDoor();
+        }
+
+    }
+    void OpenDoor()
+    {
+        // Door system locked
+        if (!keypadLogic.canOpenDoors)
+        {
+            StartCoroutine(ShowMessage());
+            return;
+        }
+
+        // Wrong door
+        if (!isCorrectDoor)
         {
             animator.SetBool("isOpen", true);
+
             SoundEffectManager.Play("OpenDoor");
+
             isOpen = true;
             opened = true;
-
+            
             if (jumpscare)
             {
                 JumpscareEffect();
             }
-
+            
             if (!nightmareTriggered)
             {
                 nightmareTriggered = true;
                 NightmareEffect();
             }
+
+            return;
         }
 
-
-        // OPEN
-        if (keypadLogic.canOpenDoors && canOpen && Input.GetKeyDown(KeyCode.E) && !isOpen && isCorrectDoor)
+        // Correct door
+        if (inventory.HasRequiredDreamItems())
         {
+            Debug.Log("All dream items correct");
 
-            if (inventory.HasRequiredDreamItems())
-            {
-                Debug.Log("All dream items correct");
-                animator.SetBool("isOpen", true);
-                SoundEffectManager.Play("OpenDoor");
-                isOpen = true;
-                Invoke("LoadNextDream", 2f);
-            }
-            else
-            {
-                Debug.Log("Opal does not have the right items");
+            animator.SetBool("isOpen", true);
 
-                SoundEffectManager.Play("LockedDoor");
+            SoundEffectManager.Play("OpenDoor");
 
-                StartCoroutine(ShowMissingItemsMessage());
-            }
+            isOpen = true;
+            opened = true;
+
+            Invoke("LoadNextDream", 2f);
         }
         else
         {
-            StartCoroutine(ShowMessage());
-        }
+            Debug.Log("Opal does not have the right items");
 
+            SoundEffectManager.Play("LockedDoor");
 
-        // CLOSE
-        /*
-        if (isOpen && PlayerCasting.distanceFromTarget > 5)
-        {
-            animator.SetBool("isOpen", false);
-            SoundEffectManager.Play("CloseDoor");
-            isOpen = false;
-        }
-        */
-    }
-
-    void OnMouseOver()
-    {
-        if (PlayerCasting.distanceFromTarget < 5 && !opened)
-        {
-            canOpen = true;
-            
-            UIController.actionText = "Abrir Puerta";
-            UIController.commandText = "Abrir";
-            UIController.uiActive = true;
-        }
-        else
-        {
-            ResetUI();
+            StartCoroutine(ShowMissingItemsMessage());
         }
     }
 
-    void OnMouseExit()
-    {
-        ResetUI();
-    }
-
-    void ResetUI()
-    {
-        canOpen = false;
-        UIController.actionText = "";
-        UIController.commandText = "";
-        UIController.uiActive = false;
-    }
 
     public void SetCorrect(bool value)
     {
@@ -164,6 +142,7 @@ public class DoorsL2 : MonoBehaviour
         instructionsBox.SetActive(false);
     }
 
+    
     void JumpscareEffect()
     {
         jumpscare = false;
@@ -174,7 +153,7 @@ public class DoorsL2 : MonoBehaviour
         }
         OnJumpscareTriggered?.Invoke();
     }
-
+    
     IEnumerator ShowMessage()
     {
         instructionsBox.SetActive(true);

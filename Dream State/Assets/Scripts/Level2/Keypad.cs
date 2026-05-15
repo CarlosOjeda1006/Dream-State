@@ -11,6 +11,7 @@ public class Keypad : MonoBehaviour
     public GameObject hud;
 
     public SymbolPuzzleLogic puzzleLogic;
+    public GameObject notesTab;
     public bool canOpenDoors = false;
 
     public GameObject animateOB;
@@ -34,12 +35,24 @@ public class Keypad : MonoBehaviour
     }
     public void Execute()
     {
-        if(textOB.text == puzzleLogic.correctAnswer)
+        if (textOB.text == puzzleLogic.correctAnswer)
         {
             SoundEffectManager.Play("CorrectKeypad");
             textOB.text = "Right";
+
+            notesTab.SetActive(true);
             puzzleLogic.correctSol.SetActive(true);
+            Debug.Log(puzzleLogic.correctSol);
             canOpenDoors = true;
+
+            keypadController.isSolved = true;
+
+            if (animate)
+            {
+                ANI.SetBool("isOpen", true);
+            }
+
+            Exit();
         }
         else
         {
@@ -59,7 +72,6 @@ public class Keypad : MonoBehaviour
     public void Exit()
     {
         keypadOB.SetActive(false);
-
         hud.SetActive(true);
 
         player.GetComponent<FirstPersonController>().enabled = true;
@@ -70,15 +82,4 @@ public class Keypad : MonoBehaviour
         keypadController.isOpen = false;
     }
 
-
-    void Update()
-    {
-        if(textOB.text == "Right" && animate)
-        {
-            ANI.SetBool("isOpen", true);
-            Debug.Log("Safe is open");
-            keypadOB.SetActive(false);
-        }
-        
-    }
 }

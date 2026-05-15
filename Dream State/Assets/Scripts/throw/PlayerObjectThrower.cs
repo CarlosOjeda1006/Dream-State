@@ -6,9 +6,9 @@ public class PlayerObjectThrower : MonoBehaviour
     public Transform holdPoint;
     public float pickupDistance = 3f;
     public float throwForce = 12f;
+
     public KeyCode pickupKey = KeyCode.E;
     public KeyCode dropKey = KeyCode.R;
-    public LayerMask pickupLayers = ~0;
 
     ThrowableDistractionObject heldObject;
 
@@ -30,8 +30,6 @@ public class PlayerObjectThrower : MonoBehaviour
         }
         else
         {
-            UpdateHeldObject();
-
             if (Input.GetMouseButtonDown(0))
                 ThrowHeldObject();
 
@@ -42,43 +40,44 @@ public class PlayerObjectThrower : MonoBehaviour
 
     void TryPickup()
     {
-        if (playerCamera == null || holdPoint == null)
-            return;
-
         Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
 
-        if (!Physics.Raycast(ray, out RaycastHit hit, pickupDistance, pickupLayers))
-            return;
+        if (Physics.Raycast(ray, out RaycastHit hit, pickupDistance))
+        {
+            ThrowableDistractionObject throwable =
+                hit.collider.GetComponentInParent<ThrowableDistractionObject>();
 
-        ThrowableDistractionObject throwable = hit.collider.GetComponentInParent<ThrowableDistractionObject>();
+            if (throwable == null) return;
 
-        if (throwable == null)
-            return;
+            heldObject = throwable;
 
-        heldObject = throwable;
-        heldObject.transform.parent = holdPoint;
-        heldObject.transform.localPosition = Vector3.zero;
-        heldObject.transform.localRotation = Quaternion.identity;
-        heldObject.SetHeld(true);
-    }
+            heldObject.SetHeld(true);
 
-    void UpdateHeldObject()
-    {
-        heldObject.transform.localPosition = Vector3.zero;
-        heldObject.transform.localRotation = Quaternion.identity;
+            heldObject.transform.SetParent(holdPoint);
+            heldObject.transform.localPosition = Vector3.zero;
+            heldObject.transform.localRotation = Quaternion.identity;
+        }
     }
 
     void ThrowHeldObject()
     {
-        ThrowableDistractionObject objectToThrow = heldObject;
+        if (heldObject == null) return;
+
+        ThrowableDistractionObject obj = heldObject;
         heldObject = null;
-        objectToThrow.Throw(playerCamera.transform.forward, throwForce);
+
+        obj.transform.SetParent(null);
+        obj.Throw(playerCamera.transform.forward, throwForce);
     }
 
     void DropHeldObject()
     {
-        ThrowableDistractionObject objectToDrop = heldObject;
+        if (heldObject == null) return;
+
+        ThrowableDistractionObject obj = heldObject;
         heldObject = null;
-        objectToDrop.Drop();
+
+        obj.transform.SetParent(null);
+        obj.Drop();
     }
 }

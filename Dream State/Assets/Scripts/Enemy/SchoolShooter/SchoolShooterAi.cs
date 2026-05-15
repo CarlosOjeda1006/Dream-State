@@ -26,6 +26,9 @@ public class SchoolShooterAI : MonoBehaviour
     public float patrolSpeed = 3f;
     public float chargeSpeed = 7f;
 
+    [Header("Territory")]
+    public Transform territoryCenter;
+
     [Header("Kill")]
     public float killDistance = 1.5f;
 
@@ -55,7 +58,7 @@ public class SchoolShooterAI : MonoBehaviour
 
         GoToNextPatrolPoint();
 
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -111,6 +114,8 @@ public class SchoolShooterAI : MonoBehaviour
 
         agent.isStopped = true;
         Debug.Log("Detecting");
+        animator.SetBool("detectedSomething", true);
+        SoundEffectManager.Play("BeastDetecting");
 
         StartCoroutine(
             combat.AttackSequence(BeginCharge)
@@ -137,7 +142,14 @@ public class SchoolShooterAI : MonoBehaviour
         }
     }
 
-    void GoToNextPatrolPoint()
+    public void ResetAnimations()
+    {
+        animator.SetBool("isCharging", false);
+        animator.SetBool("detectedSomething", false);
+        animator.SetBool("detectedPlayer", false);
+    }
+
+    public void GoToNextPatrolPoint()
     {
         if (patrolPoints.Length == 0)
             return;

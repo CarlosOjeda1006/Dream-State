@@ -4,8 +4,9 @@ using UnityEngine.AI;
 
 public class SpiderDistractionController : MonoBehaviour
 {
-    public SpiderMain spiderMain;
+    public SchoolShooterAI shooterMain;
     public NavMeshAgent agent;
+
     public float distractionStoppingDistance = 1.2f;
     public float lookAroundTime = 2f;
     public float distractionWaitTime = 3f;
@@ -16,21 +17,23 @@ public class SpiderDistractionController : MonoBehaviour
     public float navMeshSearchRadius = 3f;
 
     Coroutine distractionRoutine;
+
     Vector3 homePosition;
     float originalStoppingDistance;
 
+    bool isInvestigating;
+
     void Awake()
     {
-        if (spiderMain == null)
-            spiderMain = GetComponent<SpiderMain>();
+        if (shooterMain == null)
+            shooterMain = GetComponent<SchoolShooterAI>();
 
         if (agent == null)
             agent = GetComponent<NavMeshAgent>();
 
-        if (spiderMain != null && spiderMain.territoryCenter != null)
-            homePosition = spiderMain.territoryCenter.position;
-        else
-            homePosition = transform.position;
+        homePosition = shooterMain != null && shooterMain.territoryCenter != null
+            ? shooterMain.territoryCenter.position
+            : transform.position;
 
         if (agent != null)
             originalStoppingDistance = agent.stoppingDistance;
@@ -38,6 +41,9 @@ public class SpiderDistractionController : MonoBehaviour
 
     public void HearDistraction(Vector3 position, float duration)
     {
+        if (isInvestigating && Vector3.Distance(transform.position, position) > 1f)
+            return; // optional priority rule
+
         if (distractionRoutine != null)
             StopCoroutine(distractionRoutine);
 
@@ -46,62 +52,74 @@ public class SpiderDistractionController : MonoBehaviour
 
     IEnumerator DistractionRoutine(Vector3 position, float duration)
     {
-        if (spiderMain != null)
-            spiderMain.enabled = false;
+        isInvestigating = true;
 
-        Vector3 distractionPosition = GetValidNavMeshPosition(position);
+        Vector3 targetPos = GetValidNavMeshPosition(position);
 
-        yield return MoveToPosition(distractionPosition, distractionStoppingDistance, maxDistractionTravelTime);
+        yield return MoveToPosition(targetPos, distractionStoppingDistance, maxDistractionTravelTime);
 
-        float lookTimer = 0f;
+        yield return LookAround(targetPos);
 
-        while (lookTimer < lookAroundTime)
-        {
-            lookTimer += Time.deltaTime;
-            RotateTowards(distractionPosition);
-            yield return null;
-        }
+        yield return WaitAtPoint(duration);
 
-        float waitTimer = 0f;
-        float finalWaitTime = Mathf.Max(duration, distractionWaitTime);
+        Vector3 returnPos = GetValidNavMeshPosition(homePosition);
 
-        while (waitTimer < finalWaitTime)
-        {
-            waitTimer += Time.deltaTime;
-            yield return null;
-        }
-
-        Vector3 returnPosition = GetValidNavMeshPosition(homePosition);
-
-        yield return MoveToPosition(returnPosition, returnStoppingDistance, maxReturnTravelTime);
+        yield return MoveToPosition(returnPos, returnStoppingDistance, maxReturnTravelTime);
 
         if (agent != null)
         {
-            agent.isStopped = true;
             agent.stoppingDistance = originalStoppingDistance;
             agent.ResetPath();
         }
 
-        if (spiderMain != null)
-            spiderMain.enabled = true;
+        if (shooterMain != null)
+            shooterMain.GoToNextPatrolPoint();
 
+        isInvestigating = false;
         distractionRoutine = null;
+    }
+
+    IEnumerator LookAround(Vector3 center)
+    {
+        float t = 0f;
+
+        while (t < lookAroundTime)
+        {
+            t += Time.deltaTime;
+            RotateTowards(center);
+            yield return null;
+        }
+    }
+
+    IEnumerator WaitAtPoint(float duration)
+    {
+        float t = 0f;
+
+        while (t < Mathf.Max(duration, distractionWaitTime))
+        {
+            t += Time.deltaTime;
+            yield return null;
+        }
     }
 
     IEnumerator MoveToPosition(Vector3 position, float stoppingDistance, float maxTravelTime)
     {
-        if (agent == null)
-            yield break;
+        if (agent == null) yield break;
+
+        Animator anim = GetComponentInChildren<Animator>();
 
         agent.isStopped = false;
         agent.stoppingDistance = stoppingDistance;
         agent.SetDestination(position);
+
+        if (anim) anim.SetBool("isWalking", true);
 
         float timer = 0f;
 
         while (timer < maxTravelTime)
         {
             timer += Time.deltaTime;
+
             RotateTowards(position);
 
             if (!agent.pathPending && agent.remainingDistance <= stoppingDistance + 0.2f)
@@ -109,6 +127,8 @@ public class SpiderDistractionController : MonoBehaviour
 
             yield return null;
         }
+
+        if (anim) anim.SetBool("isWalking", false);
     }
 
     Vector3 GetValidNavMeshPosition(Vector3 position)
@@ -121,13 +141,16 @@ public class SpiderDistractionController : MonoBehaviour
 
     void RotateTowards(Vector3 position)
     {
-        Vector3 direction = position - transform.position;
-        direction.y = 0f;
+        Vector3 dir = position - transform.position;
+        dir.y = 0f;
 
-        if (direction.sqrMagnitude <= 0.001f)
-            return;
+        if (dir.sqrMagnitude < 0.001f) return;
 
-        Quaternion rotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+        Quaternion rot = Quaternion.LookRotation(dir);
+        transform.rotation = Quaternion.Slerp(
+            transform.rotation,
+            rot,
+            rotationSpeed * Time.deltaTime
+        );
     }
 }

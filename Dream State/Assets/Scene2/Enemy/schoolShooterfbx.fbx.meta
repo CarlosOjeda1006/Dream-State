@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: 9d9cde18280faab4a8cbb15df1dde50a
+guid: fb291d3a9aecfa949899f003f02ea178
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 57733ae830dd3d64eaac54cfb53b35c5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: weapons.001
-    second: {fileID: 2100000, guid: 8ca14de98308e41439c4db998f0da37d, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -32,7 +22,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -41,11 +31,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: ShooterWalk
+      name: walkShooter
       takeName: Armature|SHOTGUNwalk.001
       internalID: 2336502098410668918
       firstFrame: 0
-      lastFrame: 28
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -70,18 +60,18 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: ShooterSuspicious
+      name: SearchingShooter
       takeName: Armature|SHOTGUNwalk.001
-      internalID: -4727404552567900927
+      internalID: -5235939474259452142
       firstFrame: 71
-      lastFrame: 144
+      lastFrame: 145
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -99,11 +89,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: ShooterDetected
+      name: DetectedShooter
       takeName: Armature|SHOTGUNwalk.001
       internalID: 6576266027856777037
-      firstFrame: 144
-      lastFrame: 168
+      firstFrame: 145
+      lastFrame: 176
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -128,11 +118,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: shooterRun
+      name: RunShooter
       takeName: Armature|SHOTGUNwalk.001
       internalID: 6658198445500556983
       firstFrame: 179
-      lastFrame: 205
+      lastFrame: 202
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -157,11 +147,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: ShooterShoot
+      name: ShootShooter
       takeName: Armature|SHOTGUNwalk.001
       internalID: 8645829157422856789
       firstFrame: 227
-      lastFrame: 240
+      lastFrame: 248
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -249,13 +239,13 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0

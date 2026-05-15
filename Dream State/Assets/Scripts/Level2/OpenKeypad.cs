@@ -1,59 +1,35 @@
 using UnityEngine;
 
-public class OpenKeypad : MonoBehaviour
+public class OpenKeypad : MonoBehaviour, IInteractable
 {
     public GameObject keypadOB;
 
     public bool isOpen;
-    private bool canOpen;
+    public bool isSolved = false;
+
+    public bool CanInteract => !isSolved;
 
     public GameObject hud;
     public GameObject player;
 
-    void Update()
+    public void Interact()
     {
-        if (canOpen && Input.GetKeyDown(KeyCode.E) && !isOpen)
-        {
-            keypadOB.SetActive(true);
+        if (!CanInteract) return;
 
-            hud.SetActive(false);
-
-            player.GetComponent<FirstPersonController>().enabled = false;
-
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-
-            isOpen = true;
-        }
+        if (!isOpen)
+            OpenKeyPad();
     }
 
-    void OnMouseOver()
+    void OpenKeyPad()
     {
-        if (!isOpen && PlayerCasting.distanceFromTarget < 5)
-        {
-            canOpen = true;
+        keypadOB.SetActive(true);
+        hud.SetActive(false);
 
-            UIController.actionText = "Open Safe";
-            UIController.commandText = "Open";
-            UIController.uiActive = true;
-        }
-        else
-        {
-            ResetUI();
-        }
-    }
+        player.GetComponent<FirstPersonController>().enabled = false;
 
-    void OnMouseExit()
-    {
-        ResetUI();
-    }
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
 
-    void ResetUI()
-    {
-        UIController.actionText = "";
-        UIController.commandText = "";
-        UIController.uiActive = false;
-
-        canOpen = false;
+        isOpen = true;
     }
 }

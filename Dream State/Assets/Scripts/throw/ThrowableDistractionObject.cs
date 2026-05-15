@@ -9,16 +9,12 @@ public class ThrowableDistractionObject : MonoBehaviour
     public float impactCooldown = 0.5f;
 
     Rigidbody rb;
-    Collider[] objectColliders;
     bool isHeld;
     float nextImpactTime;
-
-    public Rigidbody Rigidbody => rb;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        objectColliders = GetComponentsInChildren<Collider>();
     }
 
     public void SetHeld(bool held)
@@ -27,57 +23,57 @@ public class ThrowableDistractionObject : MonoBehaviour
 
         rb.isKinematic = held;
         rb.useGravity = !held;
+
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
 
-        for (int i = 0; i < objectColliders.Length; i++)
-            objectColliders[i].enabled = !held;
-    }
-
-    public void Throw(Vector3 direction, float force)
-    {
-        SetHeld(false);
-        transform.parent = null;
-        rb.AddForce(direction.normalized * force, ForceMode.Impulse);
+        rb.detectCollisions = !held;
     }
 
     public void Drop()
     {
         SetHeld(false);
-        transform.parent = null;
+        transform.SetParent(null);
+    }
+
+    public void Throw(Vector3 direction, float force)
+    {
+        SetHeld(false);
+        transform.SetParent(null);
+
+        rb.detectCollisions = true;
+        rb.AddForce(direction.normalized * force, ForceMode.Impulse);
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (isHeld)
-            return;
-
-        if (Time.time < nextImpactTime)
-            return;
-
-        if (collision.relativeVelocity.magnitude < minImpactVelocity)
-            return;
+        if (isHeld) return;
+        if (Time.time < nextImpactTime) return;
+        if (collision.relativeVelocity.magnitude < minImpactVelocity) return;
 
         nextImpactTime = Time.time + impactCooldown;
+
         NotifyDistraction();
     }
 
     void NotifyDistraction()
     {
-        SpiderDistractionController[] spiders = Object.FindObjectsByType<SpiderDistractionController>(FindObjectsSortMode.None);
+        SpiderDistractionController[] spiders =
+            Object.FindObjectsByType<SpiderDistractionController>(FindObjectsSortMode.None);
+
+        Vector3 pos = transform.position;
+        float radiusSqr = distractionRadius * distractionRadius;
 
         for (int i = 0; i < spiders.Length; i++)
         {
-            float distanceSqr = (spiders[i].transform.position - transform.position).sqrMagnitude;
+            Vector3 diff = spiders[i].transform.position - pos;
 
-            if (distanceSqr <= distractionRadius * distractionRadius)
-                spiders[i].HearDistraction(transform.position, distractionDuration);
+            if (diff.sqrMagnitude <= radiusSqr)
+            {
+                spiders[i].HearDistraction(pos, distractionDuration);
+            }
         }
     }
-
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, distractionRadius);
-    }
+    void OnPickup(Transform holdPoint);
+    void OnDrop(Vector3 force);
 }

@@ -13,12 +13,16 @@ public class ShooterCombat : MonoBehaviour
     [Header("Charge")]
     public float delayBeforeCharge = 1.5f;
 
+    [Header("Flash")]
+    public GameObject gunFlash;
+    public float flashDuration = 0.05f;
+
     bool isAttacking;
     private Animator animator;
 
     void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
     public IEnumerator AttackSequence(System.Action onCharge)
     {
@@ -70,8 +74,9 @@ public class ShooterCombat : MonoBehaviour
 
     void Shoot()
     {
+        animator.SetBool("detectedPlayer", true);
         Debug.Log("BANG");
-        animator.SetBool("isShooting", true);
+        animator.SetTrigger("Shoot");
 
         // PLAYER RECIBE SLOW
         PlayerStatus status = target.GetComponent<PlayerStatus>();
@@ -80,9 +85,19 @@ public class ShooterCombat : MonoBehaviour
         {
             status.ApplySlow(0.2f, 6f);
         }
-        
+
         // VFX
-        // SONIDO
+        SoundEffectManager.Play("GunShot");
         // FLASH
+        StartCoroutine(GunFlash());
+    }
+    IEnumerator GunFlash()
+    {
+        yield return new WaitForSeconds(0.5f);
+        gunFlash.SetActive(true);
+
+        yield return new WaitForSeconds(flashDuration);
+
+        gunFlash.SetActive(false);
     }
 }

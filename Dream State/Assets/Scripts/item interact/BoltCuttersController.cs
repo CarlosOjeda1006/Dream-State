@@ -1,50 +1,23 @@
-using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
-public class BoltCuttersController : MonoBehaviour
+public class BoltCuttersController : MonoBehaviour, IInteractable
 {
-    public static bool uiActive;
-    bool canPickUp;
-    public GameObject boltcutters;
     public static bool hasBoltCutters = false;
+    bool alreadyPickedUp = false;
+    public bool CanInteract => !alreadyPickedUp;
 
-    void Update()
-    {
-        if (canPickUp && Input.GetKeyDown(KeyCode.E))
-        {
-            hasBoltCutters = true;
-            boltcutters.SetActive(false);
-            SoundEffectManager.Play("ItemPickUp");
-            ResetUI();
-        }
-    }
+    public GameObject Visual;
 
-    void OnMouseOver()
+    public void Interact()
     {
-        if (PlayerCasting.distanceFromTarget < 5)
-        {
-            canPickUp = true;
-            UIController.actionText = "Pick up Bolt Cutters";
-            UIController.commandText = "Pick Up";
-            UIController.uiActive = true;
-            
-        }
-        else
-        {
-            ResetUI();
-        }
-    }
+        if (hasBoltCutters) return;
 
-    void OnMouseExit()
-    {
-        ResetUI();
-    }
+        hasBoltCutters = true;
+        alreadyPickedUp=true;
 
-    void ResetUI()
-    {
-        canPickUp = false;
-        UIController.actionText = "";
-        UIController.commandText = "";
-        UIController.uiActive = false;
+        if (Visual != null)
+            Visual.SetActive(false);
+
+        SoundEffectManager.Play("ItemPickUp");
     }
 }
