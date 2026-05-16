@@ -5,12 +5,31 @@ public class DeathUIController : MonoBehaviour
 {
     public void MainMenu()
     {
-        Debug.Log("go to Main menu");
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
+
+        StopAllAudio();
+
         SceneManager.LoadScene("MainMenu");
     }
+
     public void Retry()
     {
-        Debug.Log("go to Main menu");
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
+
+        StopAllAudio();
+
         SceneManager.LoadScene("Level_01");
+    }
+
+    void StopAllAudio()
+    {
+        AudioSource[] allAudio = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+
+        foreach (AudioSource audioSource in allAudio)
+        {
+            audioSource.Stop();
+        }
     }
 }

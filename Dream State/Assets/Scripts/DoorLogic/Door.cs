@@ -2,10 +2,12 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Door : MonoBehaviour
+public class Door : MonoBehaviour, IInteractable
 {
     bool canOpen;
     bool isOpen = false;
+    bool opened = false;
+    public bool CanInteract => !opened;
 
     private Animator animator;
 
@@ -16,7 +18,7 @@ public class Door : MonoBehaviour
     public Light directionalLight;
     public float transitionDuration = 3f;
 
-    static bool nightmareTriggered = false;
+    bool nightmareTriggered = false;
 
     public InventoryController inventory;
 
@@ -49,9 +51,20 @@ public class Door : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    void Update()
+    public void Interact()
     {
-        if (canOpen && Input.GetKeyDown(KeyCode.E) && !isOpen && !isCorrectDoor)
+        if (isOpen) return;
+        else
+        {
+            OpenDoor();
+        }
+
+    }
+    void OpenDoor()
+    {
+
+        // Wrong door
+        if (!isCorrectDoor)
         {
             animator.SetBool("isOpen", true);
             SoundEffectManager.Play("OpenDoor");
@@ -63,70 +76,34 @@ public class Door : MonoBehaviour
                 nightmareTriggered = true;
                 NightmareEffect();
             }
+
+            return;
         }
 
-        
-        // OPEN
-        if (canOpen && Input.GetKeyDown(KeyCode.E) && !isOpen && isCorrectDoor)
+        // Correct door 
+        if (inventory.HasRequiredDreamItems() && isCorrectDoor)
         {
+            Debug.Log("All dream items correct");
 
-            if (inventory.HasRequiredDreamItems())
-            {
-                Debug.Log("All dream items correct");
-                animator.SetBool("isOpen", true);
-                SoundEffectManager.Play("OpenDoor");
-                isOpen = true;
-                Invoke("LoadNextDream", 2f);
-            }
-            else
-            {
-                Debug.Log("Opal does not have the right items or the wrong ones");
+            animator.SetBool("isOpen", true);
 
-                SoundEffectManager.Play("LockedDoor");
+            SoundEffectManager.Play("OpenDoor");
 
-                StartCoroutine(ShowMissingItemsMessage());
-            }
-        }
-       
+            isOpen = true;
+            opened = true;
 
-        // CLOSE
-        /*
-        if (isOpen && PlayerCasting.distanceFromTarget > 5)
-        {
-            animator.SetBool("isOpen", false);
-            SoundEffectManager.Play("CloseDoor");
-            isOpen = false;
-        }
-        */
-    }
-
-    void OnMouseOver()
-    {
-        if (!isOpen && PlayerCasting.distanceFromTarget < 5)
-        {
-            canOpen = true;
-            UIController.actionText = "Open Door";
-            UIController.commandText = "Open";
-            UIController.uiActive = true;
+            Invoke("LoadNextDream", 2f);
         }
         else
         {
-            ResetUI();
+            Debug.Log("Opal does not have the right items");
+
+            SoundEffectManager.Play("LockedDoor");
+
+            StartCoroutine(ShowMissingItemsMessage());
         }
     }
 
-    void OnMouseExit()
-    {
-        ResetUI();
-    }
-
-    void ResetUI()
-    {
-        canOpen = false;
-        UIController.actionText = "";
-        UIController.commandText = "";
-        UIController.uiActive = false;
-    }
 
     public void SetCorrect(bool value)
     {

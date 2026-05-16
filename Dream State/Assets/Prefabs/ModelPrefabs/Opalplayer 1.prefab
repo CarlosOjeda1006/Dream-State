@@ -237,6 +237,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCasting
   toTarget: 0
+--- !u!1 &6346884678160978005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7128701399864477441}
+  m_Layer: 0
+  m_Name: Hold Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7128701399864477441
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6346884678160978005}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2886959951888516744}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8667761706175204345
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,6 +302,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5332491030185094910}
+  - {fileID: 7128701399864477441}
   m_Father: {fileID: 6354743745086250324}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &7340890110970518191
@@ -536,6 +568,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11378e291f754514cb8d28061ee9907a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5049844281354067317}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11378e291f754514cb8d28061ee9907a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2372555663712287688}
   m_SourcePrefab: {fileID: 100100000, guid: 11378e291f754514cb8d28061ee9907a, type: 3}
 --- !u!4 &3919861535042955500 stripped
 Transform:
@@ -627,6 +662,7 @@ MonoBehaviour:
   groundedGravity: -5
   mouseSensitivity: 2
   lookXLimit: 80
+  speedMultiplier: 1
   footstepSpeed: 0.5
 --- !u!114 &3903464885891807772
 MonoBehaviour:
@@ -657,6 +693,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136b6d58bc0730e46be618633da2e478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerItemCollector
+--- !u!114 &2372555663712287688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4408449955476517462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 594dd9a373096e543a04bc9b7bd977da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPickUp
+  cam: {fileID: 7340890110970518191}
+  holdPoint: {fileID: 7128701399864477441}
+  interactDistance: 3
+  throwForce: 10
 --- !u!1001 &5587393923940010261
 PrefabInstance:
   m_ObjectHideFlags: 0

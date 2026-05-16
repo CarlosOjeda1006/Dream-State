@@ -31,6 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3005104723750316655}
+  - {fileID: 5494513477539476193}
   m_Father: {fileID: 1383944427373678827}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1601718002022929361
@@ -183,6 +184,37 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &8360162001706872719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5494513477539476193}
+  m_Layer: 0
+  m_Name: Hold Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5494513477539476193
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8360162001706872719}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3614711838059938362}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1494767790135981824
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -276,6 +308,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11378e291f754514cb8d28061ee9907a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3781220914681698976}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11378e291f754514cb8d28061ee9907a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 794587585397236220}
   m_SourcePrefab: {fileID: 100100000, guid: 11378e291f754514cb8d28061ee9907a, type: 3}
 --- !u!4 &1383944427373678827 stripped
 Transform:
@@ -355,6 +390,7 @@ MonoBehaviour:
   groundedGravity: -5
   mouseSensitivity: 2
   lookXLimit: 80
+  speedMultiplier: 1
   footstepSpeed: 0.5
 --- !u!114 &7899869001549816442
 MonoBehaviour:
@@ -370,6 +406,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 100
   currentHealth: 0
+  healthBarUI: {fileID: 0}
+  deathUI: {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!114 &3781220914681698976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,6 +421,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136b6d58bc0730e46be618633da2e478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerItemCollector
+--- !u!114 &794587585397236220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765150140383693393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 594dd9a373096e543a04bc9b7bd977da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPickUp
+  cam: {fileID: 6346019753787891645}
+  holdPoint: {fileID: 5494513477539476193}
+  interactDistance: 3
+  throwForce: 10
 --- !u!1001 &8090266533805090637
 PrefabInstance:
   m_ObjectHideFlags: 0
