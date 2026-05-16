@@ -21,7 +21,10 @@ public class Keypad : MonoBehaviour
 
     public bool animate;
 
-
+    [Header("Text Message")]
+    public static string instructionsText;
+    public static bool uiActive;
+    [SerializeField] GameObject instructionsBox;
 
     private void Start()
     {
@@ -44,29 +47,21 @@ public class Keypad : MonoBehaviour
             puzzleLogic.correctSol.SetActive(true);
             Debug.Log(puzzleLogic.correctSol);
             canOpenDoors = true;
-
-            keypadController.isSolved = true;
-
-            if (animate)
-            {
-                ANI.SetBool("isOpen", true);
-            }
-
-            Exit();
+            StartCoroutine(SolveSequence());
         }
         else
         {
             SoundEffectManager.Play("WrongKeypad");
             textOB.text = "Wrong";
+
+            Invoke(nameof(Clear), 1f);
         }
     }
 
     public void Clear()
     {
-        {
-            textOB.text = "";
-            SoundEffectManager.Play("PlayKeypad");
-        }
+        textOB.text = "";
+        SoundEffectManager.Play("PlayKeypad");
     }
 
     public void Exit()
@@ -80,6 +75,27 @@ public class Keypad : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         keypadController.isOpen = false;
+    }
+    IEnumerator SolveSequence()
+    {
+        keypadController.isSolved = true;
+
+        if (animate && ANI != null)
+        {
+            ANI.SetBool("isOpen", true);
+        }
+
+        instructionsBox.SetActive(true);
+
+        instructionsBox.GetComponent<TMP_Text>().text = "New Clue Added [Press TAB to view].";
+
+        SoundEffectManager.Play("Clue");
+
+        yield return new WaitForSeconds(2f);
+
+        instructionsBox.SetActive(false);
+
+        Exit();
     }
 
 }

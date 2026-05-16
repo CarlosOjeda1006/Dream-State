@@ -17,12 +17,16 @@ public class ShooterCombat : MonoBehaviour
     public GameObject gunFlash;
     public float flashDuration = 0.05f;
 
+    [Header("VFX")]
+    TakeDamage damageFX;
+
     bool isAttacking;
     private Animator animator;
 
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
+        damageFX = GetComponentInChildren<TakeDamage>();
     }
     public IEnumerator AttackSequence(System.Action onCharge)
     {
@@ -81,12 +85,14 @@ public class ShooterCombat : MonoBehaviour
         // PLAYER RECIBE SLOW
         PlayerStatus status = target.GetComponent<PlayerStatus>();
 
+
         if (status != null)
         {
             status.ApplySlow(0.2f, 6f);
         }
 
         // VFX
+        damageFX.TriggerDamageEffect();
         SoundEffectManager.Play("GunShot");
         // FLASH
         StartCoroutine(GunFlash());

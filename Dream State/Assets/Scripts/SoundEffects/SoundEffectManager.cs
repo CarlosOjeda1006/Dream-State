@@ -8,6 +8,7 @@ public class SoundEffectManager : MonoBehaviour
     private static AudioSource audioSource;
     private static SoundEffectLibrary SoundEffectLibrary;
     [SerializeField] private Slider sfxSlider;
+    public static float sfxVolume = 1f;
 
     private void Awake()
     {
@@ -43,6 +44,7 @@ public class SoundEffectManager : MonoBehaviour
 
     public static void SetVolume(float volume)
     {
+        sfxVolume = volume;
         audioSource.volume = volume;
     }
     public void OnValueChanged()

@@ -50,8 +50,6 @@ public class SymbolPuzzleLogic : MonoBehaviour
                 door.doorSymbol == correctSymbol;
 
             door.SetCorrect(correct);
-
-            Debug.Log(door.name + " is correct: " + correct);
         }
 
         switch (correctSymbol)

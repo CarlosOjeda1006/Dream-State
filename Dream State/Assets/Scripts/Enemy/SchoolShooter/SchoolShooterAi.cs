@@ -25,6 +25,8 @@ public class SchoolShooterAI : MonoBehaviour
     [Header("Movement")]
     public float patrolSpeed = 3f;
     public float chargeSpeed = 7f;
+    private float updateRate = 0.2f;
+    private float timer;
 
     [Header("Territory")]
     public Transform territoryCenter;
@@ -32,7 +34,9 @@ public class SchoolShooterAI : MonoBehaviour
     [Header("Kill")]
     public float killDistance = 1.5f;
 
+    [Header("Audio")]
     private Animator animator;
+    public ShooterEnemyAudio enemyAudio;
 
     State currentState;
 
@@ -53,6 +57,7 @@ public class SchoolShooterAI : MonoBehaviour
     void Start()
     {
         currentState = State.Patrol;
+        enemyAudio.PlayPatrol();
 
         agent.speed = patrolSpeed;
 
@@ -82,26 +87,18 @@ public class SchoolShooterAI : MonoBehaviour
 
         if (agent.remainingDistance <= agent.stoppingDistance)
         {
-            Debug.Log("Patrol update");
             GoToNextPatrolPoint();
         }
     }
 
     void ChargeUpdate()
     {
-        if (target == null)
-            return;
+        timer += Time.deltaTime;
 
-        agent.SetDestination(target.position);
-
-        Debug.Log("Charging");
-        animator.SetBool("isCharging", true);
-
-        float distSqr = (target.position - transform.position).sqrMagnitude;
-
-        if (distSqr <= killDistance * killDistance)
+        if (timer >= updateRate)
         {
-            KillPlayer();
+            timer = 0f;
+            agent.SetDestination(target.position);
         }
     }
 
@@ -113,9 +110,9 @@ public class SchoolShooterAI : MonoBehaviour
         currentState = State.Aim;
 
         agent.isStopped = true;
-        Debug.Log("Detecting");
         animator.SetBool("detectedSomething", true);
-        SoundEffectManager.Play("BeastDetecting");
+        enemyAudio.PlaySearching();
+        enemyAudio.PlayDetected();
 
         StartCoroutine(
             combat.AttackSequence(BeginCharge)
@@ -125,8 +122,10 @@ public class SchoolShooterAI : MonoBehaviour
     void BeginCharge()
     {
         currentState = State.Charge;
+        enemyAudio.PlayCharge();
 
         agent.isStopped = false;
+        animator.SetBool("isCharging", true);
 
         agent.speed = chargeSpeed;
     }

@@ -8,39 +8,56 @@ public class PlayerPickUp : MonoBehaviour
     public float throwForce = 10f;
 
     ThrowableDistractionObject currentObject;
+    ThrowableDistractionObject heldObject;
+
     IInteractable interactable;
 
     void Update()
     {
         DetectObject();
 
+        // PICKUP / INTERACT
         if (Input.GetKeyDown(KeyCode.E))
         {
             // interactables
-            if (interactable != null)
+            if (interactable != null && heldObject == null)
             {
                 interactable.Interact();
             }
+
             // pickups
-            else if (currentObject != null)
+            else if (currentObject != null && heldObject == null)
             {
                 PickUp();
             }
         }
 
-        if (Input.GetMouseButtonDown(0) && currentObject != null)
+        // THROW
+        if (Input.GetMouseButtonDown(0) && heldObject != null)
         {
             Throw();
+        }
+
+        // DROP
+        if (Input.GetKeyDown(KeyCode.R) && heldObject != null)
+        {
+            Drop();
         }
     }
 
     void DetectObject()
     {
+        if (heldObject != null)
+        {
+            UIController.uiActive = false;
+            return;
+        }
+
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
 
         if (Physics.Raycast(ray, out RaycastHit hit, interactDistance))
         {
-            // check interactable
+            // INTERACTABLE
             interactable = hit.collider.GetComponentInParent<IInteractable>();
 
             if (interactable != null && interactable.CanInteract)
@@ -52,8 +69,9 @@ public class PlayerPickUp : MonoBehaviour
                 return;
             }
 
-            // check pickable
-            currentObject = hit.collider.GetComponentInParent<ThrowableDistractionObject>();
+            // PICKUP
+            currentObject =
+                hit.collider.GetComponentInParent<ThrowableDistractionObject>();
 
             if (currentObject != null)
             {
@@ -65,7 +83,6 @@ public class PlayerPickUp : MonoBehaviour
             }
         }
 
-        // nothing hit
         currentObject = null;
         interactable = null;
 
@@ -75,17 +92,35 @@ public class PlayerPickUp : MonoBehaviour
 
     void PickUp()
     {
-        currentObject.SetHeld(true);
+        heldObject = currentObject;
 
-        currentObject.transform.SetParent(holdPoint);
-        currentObject.transform.localPosition = Vector3.zero;
-        currentObject.transform.localRotation = Quaternion.identity;
+        heldObject.SetHeld(true);
+
+        heldObject.transform.SetParent(holdPoint);
+        heldObject.transform.localPosition = Vector3.zero;
+        heldObject.transform.localRotation = Quaternion.identity;
+
+        currentObject = null;
     }
 
     void Throw()
     {
-        currentObject.transform.SetParent(null);
-        currentObject.Throw(cam.transform.forward, throwForce);
-        currentObject = null;
+        ThrowableDistractionObject obj = heldObject;
+
+        heldObject = null;
+        SoundEffectManager.Play("ThrowObject");
+
+        obj.transform.SetParent(null);
+        obj.Throw(cam.transform.forward, throwForce);
+    }
+
+    void Drop()
+    {
+        ThrowableDistractionObject obj = heldObject;
+
+        heldObject = null;
+
+        obj.transform.SetParent(null);
+        obj.Drop();
     }
 }

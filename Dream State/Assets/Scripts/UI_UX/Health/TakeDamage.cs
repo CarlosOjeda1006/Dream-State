@@ -6,7 +6,7 @@ using UnityEngine.Rendering.Universal;
 public class TakeDamage : MonoBehaviour
 {
     public float maxIntensity = 0.8f;
-    public float fadeSpeed = 1.5f;
+    public float fadeSpeed = 2f;
 
     Volume _volume;
     Vignette _vignette;

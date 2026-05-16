@@ -74,6 +74,4 @@ public class ThrowableDistractionObject : MonoBehaviour
             }
         }
     }
-    void OnPickup(Transform holdPoint);
-    void OnDrop(Vector3 force);
 }

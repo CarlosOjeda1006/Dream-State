@@ -71,6 +71,7 @@ public class DoorsL2 : MonoBehaviour, IInteractable
             animator.SetBool("isOpen", true);
 
             SoundEffectManager.Play("OpenDoor");
+            SoundEffectManager.Play("NightmareTrigger");
 
             isOpen = true;
             opened = true;
@@ -89,8 +90,8 @@ public class DoorsL2 : MonoBehaviour, IInteractable
             return;
         }
 
-        // Correct door
-        if (inventory.HasRequiredDreamItems())
+        // Correct door 
+        if (inventory.HasRequiredDreamItems() && isCorrectDoor)
         {
             Debug.Log("All dream items correct");
 

@@ -1041,6 +1041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   menuCanvas: {fileID: 8616729876619118151}
+  healthBar: {fileID: 0}
 --- !u!1 &3911650796927045167
 GameObject:
   m_ObjectHideFlags: 0

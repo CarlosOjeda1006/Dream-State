@@ -16,8 +16,6 @@ public class Door : MonoBehaviour
     public Light directionalLight;
     public float transitionDuration = 3f;
 
-    private Color nightColor = new Color(0.2f, 0.3f, 0.6f);
-    private float nightIntensity = 0.1f;
     static bool nightmareTriggered = false;
 
     public InventoryController inventory;
