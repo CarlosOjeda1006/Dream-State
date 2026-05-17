@@ -25,6 +25,11 @@ public class ShooterCombat : MonoBehaviour
 
     void Start()
     {
+        if (target == null)
+        {
+            target = PlayerSingle.instance.transform;
+        }
+
         animator = GetComponentInChildren<Animator>();
         damageFX = GetComponentInChildren<TakeDamage>();
     }
@@ -53,6 +58,8 @@ public class ShooterCombat : MonoBehaviour
         yield return new WaitForSeconds(delayBeforeCharge);
 
         onCharge?.Invoke();
+
+        isAttacking = false;
     }
 
     void RotateTowardsTarget()
@@ -80,6 +87,7 @@ public class ShooterCombat : MonoBehaviour
     {
         animator.SetBool("detectedPlayer", true);
         Debug.Log("BANG");
+        animator.ResetTrigger("Shoot");
         animator.SetTrigger("Shoot");
 
         // PLAYER RECIBE SLOW
