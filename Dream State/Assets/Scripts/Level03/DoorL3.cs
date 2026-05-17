@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static DoorsL2;
 
-public class DoorL3 : MonoBehaviour
+public class DoorL3 : MonoBehaviour, IInteractable
 {
     bool canOpen;
     bool isOpen = false;
     bool opened = false;
+    public bool CanInteract => !opened;
 
     public static event Action OnJumpscareTriggered;
 
@@ -26,7 +28,6 @@ public class DoorL3 : MonoBehaviour
     public static string instructionsText;
     public static bool uiActive;
     [SerializeField] GameObject instructionsBox;
-
     public enum DoorNumber
     {
         ochocincouno,
@@ -36,7 +37,7 @@ public class DoorL3 : MonoBehaviour
         nuevesietecinco,
         seisseircuatro,
         seisseiscinco,
-        nueveseisseis,
+        nuevenueveseis,
         seisunocuatro,
         dosceroseis
     }
@@ -45,13 +46,26 @@ public class DoorL3 : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
-
-    void Update()
+    public void Interact()
     {
-        if (canOpen && Input.GetKeyDown(KeyCode.E) && !isOpen && !isCorrectDoor)
+        if (isOpen) return;
+        else
+        {
+            OpenDoor();
+        }
+
+    }
+    void OpenDoor()
+    {
+
+        // Wrong door
+        if (!isCorrectDoor)
         {
             animator.SetBool("isOpen", true);
+
             SoundEffectManager.Play("OpenDoor");
+            SoundEffectManager.Play("NightmareTrigger");
+
             isOpen = true;
             opened = true;
 
@@ -65,71 +79,34 @@ public class DoorL3 : MonoBehaviour
                 nightmareTriggered = true;
                 NightmareEffect();
             }
+
+            return;
         }
 
-
-        // OPEN
-        if (canOpen && Input.GetKeyDown(KeyCode.E) && !isOpen && isCorrectDoor)
+        // Correct door 
+        if (inventory.HasRequiredDreamItems() && isCorrectDoor)
         {
+            Debug.Log("All dream items correct");
 
-            if (inventory.HasRequiredDreamItems())
-            {
-                Debug.Log("All dream items correct");
-                animator.SetBool("isOpen", true);
-                SoundEffectManager.Play("OpenDoor");
-                isOpen = true;
-                Invoke("LoadNextDream", 2f);
-            }
-            else
-            {
-                Debug.Log("Opal does not have the right items");
+            animator.SetBool("isOpen", true);
 
-                SoundEffectManager.Play("LockedDoor");
+            SoundEffectManager.Play("OpenDoor");
 
-                StartCoroutine(ShowMissingItemsMessage());
-            }
-        }
+            isOpen = true;
+            opened = true;
 
-
-        // CLOSE
-        /*
-        if (isOpen && PlayerCasting.distanceFromTarget > 5)
-        {
-            animator.SetBool("isOpen", false);
-            SoundEffectManager.Play("CloseDoor");
-            isOpen = false;
-        }
-        */
-    }
-
-    void OnMouseOver()
-    {
-        if (PlayerCasting.distanceFromTarget < 5 && !opened)
-        {
-            canOpen = true;
-            
-            UIController.actionText = "Abrir Puerta";
-            UIController.commandText = "Abrir";
-            UIController.uiActive = true;
+            Invoke("LoadNextDream", 2f);
         }
         else
         {
-            ResetUI();
+            Debug.Log("Opal does not have the right items");
+
+            SoundEffectManager.Play("LockedDoor");
+
+            StartCoroutine(ShowMissingItemsMessage());
         }
     }
 
-    void OnMouseExit()
-    {
-        ResetUI();
-    }
-
-    void ResetUI()
-    {
-        canOpen = false;
-        UIController.actionText = "";
-        UIController.commandText = "";
-        UIController.uiActive = false;
-    }
 
     public void SetCorrect(bool value)
     {
@@ -139,7 +116,7 @@ public class DoorL3 : MonoBehaviour
 
     void LoadNextDream()
     {
-        SceneManager.LoadScene("Level_01");
+        Debug.Log("CorrectDoorChosen");
     }
 
     void NightmareEffect()
@@ -152,12 +129,13 @@ public class DoorL3 : MonoBehaviour
     {
         instructionsBox.SetActive(true);
 
-        instructionsBox.GetComponent<TMPro.TMP_Text>().text = "Me faltan objetos.";
+        instructionsBox.GetComponent<TMPro.TMP_Text>().text = "I'm missing objects.";
 
         yield return new WaitForSeconds(2f);
 
         instructionsBox.SetActive(false);
     }
+
 
     void JumpscareEffect()
     {

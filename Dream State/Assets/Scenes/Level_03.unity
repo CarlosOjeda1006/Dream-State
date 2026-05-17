@@ -1196,23 +1196,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.00065155275, y: 0.031798523, z: 0.019700002}
   m_Center: {x: 0.005776154, y: 0.00013854224, z: 0.002657944}
---- !u!114 &283502765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716813808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ff68db9c339c56458fcb657a5b4d0a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DoorL3
-  jumpscare: 0
-  jumpscareObject: {fileID: 0}
-  doorNumber: 0
-  inventory: {fileID: 1100121872}
-  instructionsBox: {fileID: 1578688720}
 --- !u!1001 &291513738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2008,8 +1991,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.030063303, y: 0.01670357, z: 0.024978185}
-  m_Center: {x: 0.0045215753, y: -0.0022722292, z: -0.012102611}
+  m_Size: {x: 0.030063303, y: 0.018994683, z: 0.025924912}
+  m_Center: {x: 0.0045215753, y: -0.0011266678, z: -0.011629248}
 --- !u!65 &571814040
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2029,8 +2012,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.030063303, y: 0.017994305, z: 0.026301287}
-  m_Center: {x: 0.0045215753, y: -0.0030189306, z: 0.03423557}
+  m_Size: {x: 0.030063303, y: 0.020841006, z: 0.027092109}
+  m_Center: {x: 0.0045215753, y: -0.0015955764, z: 0.03384014}
 --- !u!65 &571814041
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2050,8 +2033,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.03225017, y: 0.04661386, z: 0.0020536804}
-  m_Center: {x: 0.0034472777, y: 0.027689913, z: -0.023771225}
+  m_Size: {x: 0.03225017, y: 0.046613853, z: 0.004239495}
+  m_Center: {x: 0.0034472777, y: 0.02768991, z: -0.022678316}
 --- !u!65 &571814042
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2071,8 +2054,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.030063303, y: 0.06162116, z: 0.0024381112}
-  m_Center: {x: 0.0045215753, y: 0.020186543, z: 0.046587456}
+  m_Size: {x: 0.030063303, y: 0.06162116, z: 0.007442684}
+  m_Center: {x: 0.0045215753, y: 0.020186542, z: 0.044085164}
 --- !u!65 &571814043
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2092,8 +2075,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.030063303, y: 0.0033050154, z: 0.06937225}
-  m_Center: {x: 0.0045215753, y: 0.051972695, z: 0.011538544}
+  m_Size: {x: 0.030063303, y: 0.0083817, z: 0.06937225}
+  m_Center: {x: 0.0045215753, y: 0.049434304, z: 0.011538543}
 --- !u!65 &571814044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2390,9 +2373,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorL3
   jumpscare: 0
   jumpscareObject: {fileID: 0}
-  doorNumber: 0
+  doorNumber: 3
   inventory: {fileID: 1100121872}
   instructionsBox: {fileID: 1578688720}
+--- !u!4 &713600921 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
+  m_PrefabInstance: {fileID: 933959917}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &716813805 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3999581973638440405, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
@@ -2587,7 +2575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorL3
   jumpscare: 0
   jumpscareObject: {fileID: 0}
-  doorNumber: 0
+  doorNumber: 1
   inventory: {fileID: 1100121872}
   instructionsBox: {fileID: 1578688720}
 --- !u!114 &716813832
@@ -2604,10 +2592,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorL3
   jumpscare: 0
   jumpscareObject: {fileID: 0}
-  doorNumber: 0
+  doorNumber: 4
   inventory: {fileID: 1100121872}
   instructionsBox: {fileID: 1578688720}
---- !u!95 &716813833
+--- !u!95 &716813838
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -2617,7 +2605,7 @@ Animator:
   m_GameObject: {fileID: 716813815}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8f3643288751265428b9fe5852f0a486, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1e70dde6cbcdbce409f045d08efebd75, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2629,7 +2617,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!95 &716813834
+--- !u!95 &716813841
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -2639,7 +2627,7 @@ Animator:
   m_GameObject: {fileID: 716813818}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8f3643288751265428b9fe5852f0a486, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1e70dde6cbcdbce409f045d08efebd75, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3578,42 +3566,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.38937503, y: 0.10177478, z: 0}
   m_Center: {x: -0.2038162, y: -0.01635714, z: -0.00003401158}
---- !u!114 &874631669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716813810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ff68db9c339c56458fcb657a5b4d0a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DoorL3
-  jumpscare: 0
-  jumpscareObject: {fileID: 0}
-  doorNumber: 0
-  inventory: {fileID: 1100121872}
-  instructionsBox: {fileID: 1578688720}
---- !u!114 &874631670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716813810}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63ac38bc6c3fe014bb958851d034c10c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DoorsL2
-  keypadLogic: {fileID: 0}
-  jumpscare: 0
-  jumpscareObject: {fileID: 0}
-  doorSymbol: 0
-  inventory: {fileID: 0}
-  instructionsBox: {fileID: 1578688720}
---- !u!95 &874631671
+--- !u!95 &874631675
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -3635,6 +3588,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &874631676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716813810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e39e49587c47b4fa0b608446510795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorsL2Normal
 --- !u!1001 &908202645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3701,7 +3666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3cb230cdcf8ff2047aa4dc1476435fab, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3730,9 +3695,9 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.010785765, y: 0.0011655802, z: 0.018293058}
-  m_Center: {x: -0.005392873, y: 0.00032135047, z: 0.0000000016941057}
---- !u!114 &923137713
+  m_Size: {x: 0.010785765, y: 0.0014857954, z: 0.018293058}
+  m_Center: {x: -0.005392874, y: 0.0004814585, z: 0.0000000013568356}
+--- !u!114 &923137716
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3741,15 +3706,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 716813811}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ff68db9c339c56458fcb657a5b4d0a3, type: 3}
+  m_Script: {fileID: 11500000, guid: f2e39e49587c47b4fa0b608446510795, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DoorL3
-  jumpscare: 0
-  jumpscareObject: {fileID: 0}
-  doorNumber: 0
-  inventory: {fileID: 1100121872}
-  instructionsBox: {fileID: 1578688720}
---- !u!95 &923137714
+  m_EditorClassIdentifier: Assembly-CSharp::DoorsL2Normal
+--- !u!95 &923137719
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -3759,7 +3719,7 @@ Animator:
   m_GameObject: {fileID: 716813811}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8f3643288751265428b9fe5852f0a486, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1e70dde6cbcdbce409f045d08efebd75, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3971,9 +3931,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8429118355518965402, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
+      propertyPath: m_Name
+      value: door206
+      objectReference: {fileID: 0}
+    - target: {fileID: -8391181611541042825, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
+      propertyPath: m_Name
+      value: MaintenanceDoor
+      objectReference: {fileID: 0}
     - target: {fileID: -7058507455302918411, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       propertyPath: m_TagString
       value: GeneratorLight
+      objectReference: {fileID: 0}
+    - target: {fileID: -6643336622265650088, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
+      propertyPath: m_Name
+      value: door984
+      objectReference: {fileID: 0}
+    - target: {fileID: -6329060619720327731, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
+      propertyPath: m_Name
+      value: door975
       objectReference: {fileID: 0}
     - target: {fileID: -5891073940603025775, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       propertyPath: m_TagString
@@ -3987,6 +3963,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: GeneratorLight
       objectReference: {fileID: 0}
+    - target: {fileID: -2037440046836884665, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
+      propertyPath: m_Name
+      value: door996
+      objectReference: {fileID: 0}
+    - target: {fileID: 724337494771566495, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
+      propertyPath: m_Name
+      value: CleaningSuppliesDoor
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       propertyPath: m_Name
       value: hospital levelDesignL3
@@ -3995,21 +3979,61 @@ PrefabInstance:
       propertyPath: m_Name
       value: Generator
       objectReference: {fileID: 0}
+    - target: {fileID: 2341973910796419774, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
+      propertyPath: m_Name
+      value: door614
+      objectReference: {fileID: 0}
     - target: {fileID: 3840272111657957570, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       propertyPath: m_TagString
       value: GeneratorLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980937147814969393, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
+      propertyPath: m_Name
+      value: door738
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017383611883878785, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
+      propertyPath: m_Name
+      value: FuelStorageDoor
       objectReference: {fileID: 0}
     - target: {fileID: 4974984522306558807, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       propertyPath: m_TagString
       value: GeneratorLight
       objectReference: {fileID: 0}
+    - target: {fileID: 5038495447419422307, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
+      propertyPath: m_Name
+      value: door851
+      objectReference: {fileID: 0}
     - target: {fileID: 5050422055867433376, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       propertyPath: m_TagString
       value: GeneratorLight
       objectReference: {fileID: 0}
+    - target: {fileID: 5435890168023111248, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
+      propertyPath: m_Name
+      value: door665
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559736105737238368, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
+      propertyPath: m_Name
+      value: door664
+      objectReference: {fileID: 0}
     - target: {fileID: 5958438921693756439, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6176308583540402254, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
+      propertyPath: m_Name
+      value: door682
+      objectReference: {fileID: 0}
+    - target: {fileID: 6885991516783687153, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
+      propertyPath: m_Name
+      value: GeneratorDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 6893252086627527004, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 83.688
+      objectReference: {fileID: 0}
+    - target: {fileID: 6893252086627527004, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 14.339
       objectReference: {fileID: 0}
     - target: {fileID: 7123170765161056748, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4025,7 +4049,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
+      insertIndex: 20
+      addedObject: {fileID: 1407311893}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
+      insertIndex: 24
+      addedObject: {fileID: 1908615593}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7561194759278943162, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       insertIndex: -1
@@ -4158,7 +4188,7 @@ PrefabInstance:
       addedObject: {fileID: 716813832}
     - targetCorrespondingSourceObject: {fileID: -6329060619720327731, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 716813834}
+      addedObject: {fileID: 716813841}
     - targetCorrespondingSourceObject: {fileID: 5038495447419422307, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1704602881}
@@ -4167,7 +4197,7 @@ PrefabInstance:
       addedObject: {fileID: 1704602885}
     - targetCorrespondingSourceObject: {fileID: 5038495447419422307, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1704602886}
+      addedObject: {fileID: 1704602890}
     - targetCorrespondingSourceObject: {fileID: 6176308583540402254, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       insertIndex: -1
       addedObject: {fileID: 716813822}
@@ -4188,7 +4218,7 @@ PrefabInstance:
       addedObject: {fileID: 716813831}
     - targetCorrespondingSourceObject: {fileID: -6643336622265650088, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 716813833}
+      addedObject: {fileID: 716813838}
     - targetCorrespondingSourceObject: {fileID: 5559736105737238368, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2108824708}
@@ -4203,40 +4233,37 @@ PrefabInstance:
       addedObject: {fileID: 972588957}
     - targetCorrespondingSourceObject: {fileID: -8391181611541042825, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 972588961}
+      addedObject: {fileID: 972588962}
     - targetCorrespondingSourceObject: {fileID: -8391181611541042825, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 972588962}
+      addedObject: {fileID: 972588966}
     - targetCorrespondingSourceObject: {fileID: 6885991516783687153, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1889597826}
     - targetCorrespondingSourceObject: {fileID: 6885991516783687153, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1889597830}
+      addedObject: {fileID: 1889597831}
     - targetCorrespondingSourceObject: {fileID: 6885991516783687153, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1889597831}
+      addedObject: {fileID: 1889597835}
     - targetCorrespondingSourceObject: {fileID: 724337494771566495, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       insertIndex: -1
       addedObject: {fileID: 923137709}
     - targetCorrespondingSourceObject: {fileID: 724337494771566495, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 923137713}
+      addedObject: {fileID: 923137716}
     - targetCorrespondingSourceObject: {fileID: 724337494771566495, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 923137714}
+      addedObject: {fileID: 923137719}
     - targetCorrespondingSourceObject: {fileID: 4017383611883878785, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       insertIndex: -1
       addedObject: {fileID: 421241508}
     - targetCorrespondingSourceObject: {fileID: 4017383611883878785, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 874631670}
+      addedObject: {fileID: 874631676}
     - targetCorrespondingSourceObject: {fileID: 4017383611883878785, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 874631669}
-    - targetCorrespondingSourceObject: {fileID: 4017383611883878785, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 874631671}
+      addedObject: {fileID: 874631675}
     - targetCorrespondingSourceObject: {fileID: -8429118355518965402, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       insertIndex: -1
       addedObject: {fileID: 471507322}
@@ -4251,10 +4278,10 @@ PrefabInstance:
       addedObject: {fileID: 490429236}
     - targetCorrespondingSourceObject: {fileID: -2037440046836884665, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 283502765}
+      addedObject: {fileID: 1526377345}
     - targetCorrespondingSourceObject: {fileID: -2037440046836884665, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1526377340}
+      addedObject: {fileID: 1526377344}
     - targetCorrespondingSourceObject: {fileID: 2341973910796419774, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2060099421}
@@ -4263,7 +4290,7 @@ PrefabInstance:
       addedObject: {fileID: 2060099425}
     - targetCorrespondingSourceObject: {fileID: 2341973910796419774, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2060099426}
+      addedObject: {fileID: 2060099430}
     - targetCorrespondingSourceObject: {fileID: 5435890168023111248, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
       insertIndex: -1
       addedObject: {fileID: 937843785}
@@ -5231,7 +5258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorL3
   jumpscare: 0
   jumpscareObject: {fileID: 0}
-  doorNumber: 0
+  doorNumber: 6
   inventory: {fileID: 1100121872}
   instructionsBox: {fileID: 1578688720}
 --- !u!95 &937843790
@@ -5298,23 +5325,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.010786132, y: 0.00087238057, z: 0.018293058}
   m_Center: {x: -0.0053930567, y: 0.00017475255, z: 0}
---- !u!114 &972588961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716813813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ff68db9c339c56458fcb657a5b4d0a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DoorL3
-  jumpscare: 0
-  jumpscareObject: {fileID: 0}
-  doorNumber: 0
-  inventory: {fileID: 1100121872}
-  instructionsBox: {fileID: 1578688720}
 --- !u!95 &972588962
 Animator:
   serializedVersion: 7
@@ -5325,7 +5335,7 @@ Animator:
   m_GameObject: {fileID: 716813813}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8f3643288751265428b9fe5852f0a486, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9a69a2b157ec39c448b8e626038733cb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5337,6 +5347,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &972588966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716813813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e39e49587c47b4fa0b608446510795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorsL2Normal
 --- !u!1 &986437241 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -9184319251086293130, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
@@ -6670,6 +6692,154 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0009917162, y: 0.032160345, z: 0.0197}
   m_Center: {x: 0.005850242, y: 0.000319452, z: 0.0026579434}
+--- !u!1 &1407311892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1407311893}
+  - component: {fileID: 1407311898}
+  - component: {fileID: 1407311897}
+  - component: {fileID: 1407311896}
+  - component: {fileID: 1407311895}
+  - component: {fileID: 1407311894}
+  m_Layer: 0
+  m_Name: BathroomDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1407311893
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407311892}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: 28.978, y: 1.544, z: 36.356}
+  m_LocalScale: {x: 183.14604, y: 205.94067, z: 169.53448}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 713600921}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -90}
+--- !u!114 &1407311894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407311892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e39e49587c47b4fa0b608446510795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorsL2Normal
+--- !u!95 &1407311895
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407311892}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fd3e55b2d6654d14aa96d7887e2a9178, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &1407311896
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407311892}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.010786132, y: 0.00087238057, z: 0.018293058}
+  m_Center: {x: -0.0053930567, y: 0.00017475255, z: 0}
+--- !u!23 &1407311897
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407311892}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 125570b28d5d32340bb1ce4e16445d37, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1407311898
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407311892}
+  m_Mesh: {fileID: -5710803494350009608, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
 --- !u!1 &1412213903 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5171042175507534340, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
@@ -7804,7 +7974,7 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!95 &1526377340
+--- !u!95 &1526377344
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -7814,7 +7984,7 @@ Animator:
   m_GameObject: {fileID: 716813808}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8f3643288751265428b9fe5852f0a486, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1e70dde6cbcdbce409f045d08efebd75, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7826,6 +7996,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1526377345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716813808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ff68db9c339c56458fcb657a5b4d0a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorL3
+  jumpscare: 0
+  jumpscareObject: {fileID: 0}
+  doorNumber: 7
+  inventory: {fileID: 1100121872}
+  instructionsBox: {fileID: 1578688720}
 --- !u!1 &1526546411 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2127324691570724400, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
@@ -9000,7 +9187,7 @@ MonoBehaviour:
   doorNumber: 0
   inventory: {fileID: 1100121872}
   instructionsBox: {fileID: 1578688720}
---- !u!95 &1704602886
+--- !u!95 &1704602890
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -9010,7 +9197,7 @@ Animator:
   m_GameObject: {fileID: 716813817}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8f3643288751265428b9fe5852f0a486, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1e70dde6cbcdbce409f045d08efebd75, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -9484,7 +9671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorL3
   jumpscare: 0
   jumpscareObject: {fileID: 0}
-  doorNumber: 0
+  doorNumber: 9
   inventory: {fileID: 1100121872}
   instructionsBox: {fileID: 1578688720}
 --- !u!95 &1781560625
@@ -9660,23 +9847,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.010986113, y: 0.0009723772, z: 0.018393055}
   m_Center: {x: -0.005393066, y: 0.00012475424, z: 0.000049998518}
---- !u!114 &1889597830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716813812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ff68db9c339c56458fcb657a5b4d0a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DoorL3
-  jumpscare: 0
-  jumpscareObject: {fileID: 0}
-  doorNumber: 0
-  inventory: {fileID: 1100121872}
-  instructionsBox: {fileID: 1578688720}
 --- !u!95 &1889597831
 Animator:
   serializedVersion: 7
@@ -9685,6 +9855,76 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 716813812}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9a69a2b157ec39c448b8e626038733cb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1889597835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716813812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e39e49587c47b4fa0b608446510795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorsL2Normal
+--- !u!1 &1908615592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1908615593}
+  - component: {fileID: 1908615598}
+  - component: {fileID: 1908615597}
+  - component: {fileID: 1908615596}
+  - component: {fileID: 1908615595}
+  - component: {fileID: 1908615594}
+  m_Layer: 0
+  m_Name: MorgueDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1908615593
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908615592}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7069169, y: -0.016384117, z: -0.016384115, w: 0.706917}
+  m_LocalPosition: {x: 47.616, y: 1.532, z: 80.02}
+  m_LocalScale: {x: 189.77795, y: 205.94067, z: 160.9919}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 713600921}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1908615594
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908615592}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 8f3643288751265428b9fe5852f0a486, type: 2}
@@ -9699,6 +9939,96 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1908615595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908615592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e39e49587c47b4fa0b608446510795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorsL2Normal
+--- !u!65 &1908615596
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908615592}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0107857585, y: 0.0011655755, z: 0.018293058}
+  m_Center: {x: -0.00539287, y: 0.00032135047, z: 0.0000000018685415}
+--- !u!23 &1908615597
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908615592}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 125570b28d5d32340bb1ce4e16445d37, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1908615598
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908615592}
+  m_Mesh: {fileID: 1716082169674219469, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
 --- !u!1001 &1914131692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9795,7 +10125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorL3
   jumpscare: 0
   jumpscareObject: {fileID: 0}
-  doorNumber: 0
+  doorNumber: 2
   inventory: {fileID: 1100121872}
   instructionsBox: {fileID: 1578688720}
 --- !u!95 &2023844849
@@ -9855,10 +10185,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorL3
   jumpscare: 0
   jumpscareObject: {fileID: 0}
-  doorNumber: 0
+  doorNumber: 8
   inventory: {fileID: 1100121872}
   instructionsBox: {fileID: 1578688720}
---- !u!95 &2060099426
+--- !u!95 &2060099430
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -9868,7 +10198,7 @@ Animator:
   m_GameObject: {fileID: 716813807}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8f3643288751265428b9fe5852f0a486, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1e70dde6cbcdbce409f045d08efebd75, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -10048,6 +10378,10 @@ PrefabInstance:
     - target: {fileID: 2368109485930168125, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
       propertyPath: m_Name
       value: UI Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2368109485930168125, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2390242493743042102, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
       propertyPath: m_AnchorMax.y
@@ -10369,6 +10703,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -307.85
       objectReference: {fileID: 0}
+    - target: {fileID: 5790071532370197618, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 37.52954
+      objectReference: {fileID: 0}
     - target: {fileID: 6552332397801638434, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -10649,7 +10987,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorL3
   jumpscare: 0
   jumpscareObject: {fileID: 0}
-  doorNumber: 0
+  doorNumber: 5
   inventory: {fileID: 1100121872}
   instructionsBox: {fileID: 1578688720}
 --- !u!95 &2108824713
