@@ -21,7 +21,7 @@ public class NotePickUp : MonoBehaviour, IInteractable
         {
             notesTab.SetActive(true);
             notesSolution.SetActive(true);
-            SoundEffectManager.Play("ItemPickUp");
+            SoundEffectManager.Play("NotePickUp");
 
             alreadyRead = true;
 

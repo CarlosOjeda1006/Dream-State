@@ -4,6 +4,7 @@ public class MenuController : MonoBehaviour
 {
     public GameObject menuCanvas;
     public GameObject healthBar;
+    public GameObject noteViewerPanel;
 
     public GameObject player;
 
@@ -18,6 +19,9 @@ public class MenuController : MonoBehaviour
     {
         if (Input.GetButtonDown("Inventory"))
         {
+            if (noteViewerPanel.activeSelf)
+                return;
+
             bool isActive = !menuCanvas.activeSelf;
 
             SoundEffectManager.Play("Inventory_Open");
