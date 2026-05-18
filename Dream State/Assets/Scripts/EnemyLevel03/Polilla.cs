@@ -3,94 +3,150 @@ using UnityEngine.AI;
 
 public class Polilla : MonoBehaviour
 {
+    public enum State
+    {
+        Patrol,
+        MoveToLight,
+        Idle,
+        Attack
+    }
+
     [Header("References")]
     public NavMeshAgent agent;
 
-    [Header("Movement")]
-    public float moveSpeed = 3f;
-    public float rotationSpeed = 6f;
+    public MothLightTracker lightTracker;
+    public MothPatrol patrol;
+    public MothIdle idle;
+    public MothAttack attack;
 
-    [Header("Light Detection")]
-    public float detectionRadius = 15f;
-    public float refreshRate = 0.5f;
-    public float intensityMultiplier = 2f;
+    public Transform target;
 
-    LuzPoililla currentTarget;
-
-    float nextRefreshTime;
+    public State currentState;
 
     void Start()
     {
         if (agent == null)
             agent = GetComponent<NavMeshAgent>();
 
-        agent.speed = moveSpeed;
         agent.updateRotation = false;
+
+        ChangeState(State.Patrol);
     }
 
     void Update()
     {
-        if (Time.time >= nextRefreshTime)
+        switch (currentState)
         {
-            nextRefreshTime = Time.time + refreshRate;
-            FindBestLight();
-        }
+            case State.Patrol:
+                PatrolUpdate();
+                break;
 
-        if (currentTarget != null)
-        {
-            Vector3 targetPos = currentTarget.transform.position;
+            case State.MoveToLight:
+                MoveToLightUpdate();
+                break;
 
-            agent.isStopped = false;
-            agent.SetDestination(targetPos);
+            case State.Idle:
+                IdleUpdate();
+                break;
 
-            RotateTowards(targetPos);
-        }
-        else
-        {
-            agent.isStopped = true;
+            case State.Attack:
+                AttackUpdate();
+                break;
         }
     }
 
-    void FindBestLight()
+    void PatrolUpdate()
     {
-        float bestScore = -Mathf.Infinity;
-        LuzPoililla bestLight = null;
-
-        foreach (LuzPoililla lightObj in LuzPoililla.AllLights)
+        if (lightTracker.CurrentLight != null)
         {
-            if (lightObj == null || lightObj.lightSource == null)
-                continue;
-
-            if (!lightObj.lightSource.enabled)
-                continue;
-
-            float distance = Vector3.Distance(transform.position, lightObj.transform.position);
-
-            if (distance > detectionRadius)
-                continue;
-
-            float score = (lightObj.lightSource.intensity * intensityMultiplier) - distance;
-
-            if (score > bestScore)
-            {
-                bestScore = score;
-                bestLight = lightObj;
-            }
+            ChangeState(State.MoveToLight);
+            return;
         }
 
-        currentTarget = bestLight;
+        patrol.TickPatrol();
+    }
+
+    void MoveToLightUpdate()
+    {
+        LuzPoililla light = lightTracker.CurrentLight;
+
+        if (light == null)
+        {
+            ChangeState(State.Patrol);
+            return;
+        }
+
+        agent.SetDestination(light.transform.position);
+
+        RotateTowards(light.transform.position);
+
+        if (!agent.pathPending &&
+            agent.remainingDistance <= 1.2f)
+        {
+            ChangeState(State.Idle);
+        }
+    }
+
+    void IdleUpdate()
+    {
+        if (lightTracker.CurrentLight == null)
+        {
+            ChangeState(State.Patrol);
+            return;
+        }
+
+        idle.TickIdle();
+
+        if (target != null)
+        {
+            ChangeState(State.Attack);
+        }
+    }
+
+    void AttackUpdate()
+    {
+        if (target == null)
+        {
+            ChangeState(State.Idle);
+            return;
+        }
+
+        attack.TickAttack(target);
+    }
+
+    public void SetPlayerTarget(Transform player)
+    {
+        target = player;
+    }
+
+    public void ClearPlayerTarget()
+    {
+        target = null;
+    }
+
+    void ChangeState(State newState)
+    {
+        currentState = newState;
+
+        patrol.enabled = newState == State.Patrol;
+        idle.enabled = newState == State.Idle;
     }
 
     void RotateTowards(Vector3 position)
     {
         Vector3 dir = position - transform.position;
+
         dir.y = 0f;
 
-        if (dir.sqrMagnitude > 0.001f)
-        {
-            Quaternion rot = Quaternion.LookRotation(dir);
+        if (dir.sqrMagnitude < 0.001f)
+            return;
 
-            transform.rotation = Quaternion.Slerp(transform.rotation, rot, rotationSpeed * Time.deltaTime);
-        }
+        Quaternion rot = Quaternion.LookRotation(dir);
+
+        transform.rotation = Quaternion.Slerp(
+            transform.rotation,
+            rot,
+            6f * Time.deltaTime
+        );
     }
 }
