@@ -14,6 +14,13 @@ public class Polilla : MonoBehaviour
     [Header("References")]
     public NavMeshAgent agent;
 
+    [Header("Idle")]
+    public float minIdleTime = 4f;
+    public float maxIdleTime = 8f;
+
+    float currentIdleTime;
+    float idleTimer;
+
     public MothLightTracker lightTracker;
     public MothPatrol patrol;
     public MothIdle idle;
@@ -21,10 +28,16 @@ public class Polilla : MonoBehaviour
 
     public Transform target;
 
+    LuzPoililla occupiedLight;
+
     public State currentState;
+
+
 
     void Start()
     {
+
+
         if (agent == null)
             agent = GetComponent<NavMeshAgent>();
 
@@ -72,6 +85,8 @@ public class Polilla : MonoBehaviour
 
         if (light == null)
         {
+            occupiedLight = null;
+
             ChangeState(State.Patrol);
             return;
         }
@@ -83,6 +98,8 @@ public class Polilla : MonoBehaviour
         if (!agent.pathPending &&
             agent.remainingDistance <= 1.2f)
         {
+            occupiedLight = light;
+
             ChangeState(State.Idle);
         }
     }
@@ -91,11 +108,37 @@ public class Polilla : MonoBehaviour
     {
         if (lightTracker.CurrentLight == null)
         {
+            occupiedLight = null;
+
             ChangeState(State.Patrol);
+
+            return;
+        }
+
+        if (lightTracker.CurrentLight != occupiedLight)
+        {
+            ChangeState(State.MoveToLight);
+
             return;
         }
 
         idle.TickIdle();
+
+        idleTimer += Time.deltaTime;
+
+        if (idleTimer >= currentIdleTime)
+        {
+            lightTracker.IgnoreLightTemporarily(
+                occupiedLight,
+                4f
+            );
+
+            occupiedLight = null;
+
+            ChangeState(State.Patrol);
+
+            return;
+        }
 
         if (target != null)
         {
@@ -130,6 +173,14 @@ public class Polilla : MonoBehaviour
 
         patrol.enabled = newState == State.Patrol;
         idle.enabled = newState == State.Idle;
+
+        if (newState == State.Idle)
+        {
+            idleTimer = 0f;
+
+            currentIdleTime =
+                Random.Range(minIdleTime, maxIdleTime);
+        }
     }
 
     void RotateTowards(Vector3 position)

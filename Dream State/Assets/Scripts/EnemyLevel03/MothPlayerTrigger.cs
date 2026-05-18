@@ -4,26 +4,27 @@ public class MothPlayerTrigger : MonoBehaviour
 {
     public Polilla moth;
 
+    Transform player;
+
+    void Start()
+    {
+        player = PlayerSingle.instance.transform;
+    }
+
     void OnTriggerEnter(Collider other)
     {
-        PlayerSingle player =
-            other.GetComponent<PlayerSingle>();
-
-        if (player == null)
+        if (other.transform != player)
             return;
 
         if (moth.lightTracker.CurrentLight == null)
             return;
 
-        moth.SetPlayerTarget(player.transform);
+        moth.SetPlayerTarget(player);
     }
 
     void OnTriggerExit(Collider other)
     {
-        PlayerSingle player =
-            other.GetComponent<PlayerSingle>();
-
-        if (player == null)
+        if (other.transform != player)
             return;
 
         moth.ClearPlayerTarget();

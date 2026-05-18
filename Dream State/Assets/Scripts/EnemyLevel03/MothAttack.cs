@@ -24,7 +24,7 @@ public class MothAttack : MonoBehaviour
 
             if (dmg != null)
             {
-                dmg.TakeDamage(10f);
+                dmg.TakeDamage(0.5f);
             }
         }
     }
