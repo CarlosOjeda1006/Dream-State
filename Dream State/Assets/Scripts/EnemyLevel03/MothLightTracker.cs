@@ -6,12 +6,21 @@ public class MothLightTracker : MonoBehaviour
     public float intensityMultiplier = 2f;
     public float refreshRate = 0.5f;
 
+    public LuzPoililla ignoredLight;
+
+    float ignoreUntilTime;
+
     public LuzPoililla CurrentLight { get; private set; }
 
     float nextRefresh;
 
     void Update()
     {
+        if (ignoredLight != null && Time.time >= ignoreUntilTime)
+        {
+            ignoredLight = null;
+        }
+
         if (Time.time >= nextRefresh)
         {
             nextRefresh = Time.time + refreshRate;
@@ -28,9 +37,10 @@ public class MothLightTracker : MonoBehaviour
 
         foreach (LuzPoililla lightObj in LuzPoililla.AllLights)
         {
-            if (lightObj == null ||
-                lightObj.lightSource == null ||
-                !lightObj.lightSource.enabled)
+            if (lightObj == ignoredLight)
+                continue;
+
+            if (lightObj == null || lightObj.lightSource == null || !lightObj.lightSource.enabled)
                 continue;
 
             float dist =
@@ -54,5 +64,13 @@ public class MothLightTracker : MonoBehaviour
         }
 
         CurrentLight = best;
+    }
+    public void IgnoreLightTemporarily(
+    LuzPoililla light,
+    float duration)
+    {
+        ignoredLight = light;
+
+        ignoreUntilTime = Time.time + duration;
     }
 }
