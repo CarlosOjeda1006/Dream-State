@@ -3615,7 +3615,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1124522289}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: NoteViewer, Assembly-CSharp
         m_MethodName: OpenNote
         m_Mode: 2
@@ -7543,7 +7543,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1124522289}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: NoteViewer, Assembly-CSharp
         m_MethodName: OpenNote
         m_Mode: 2
@@ -7851,7 +7851,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1124522289}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: NoteViewer, Assembly-CSharp
         m_MethodName: OpenNote
         m_Mode: 2
@@ -9387,7 +9387,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1124522289}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: NoteViewer, Assembly-CSharp
         m_MethodName: OpenNote
         m_Mode: 2
@@ -11119,6 +11119,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FuelCanItem
   itemUIPrefab: {fileID: 3341248199769408129, guid: d3b038e31aefc024d93787ec58da14b3, type: 3}
+  photosTab: {fileID: 0}
+  itemPhoto: {fileID: 0}
+  isPhotoItem: 0
   Name: FuelCan
   refillsGenerator: 1
   pickupIcon: {fileID: 21300000, guid: 40ebd795b2e706a4cbd541107bebb807, type: 3}
@@ -15854,7 +15857,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1124522289}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: NoteViewer, Assembly-CSharp
         m_MethodName: OpenNote
         m_Mode: 2
@@ -16673,7 +16676,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1124522289}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: NoteViewer, Assembly-CSharp
         m_MethodName: OpenNote
         m_Mode: 2
@@ -16895,25 +16898,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119083910}
   m_Mesh: {fileID: -3958770277684823056, guid: 85cb4f22ff3516146917ac2613ed2368, type: 3}
---- !u!1 &1124522284 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2368109485930168125, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
-  m_PrefabInstance: {fileID: 2104196174}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1124522289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1124522284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d098284f0d299fd4fac2e29a34094b5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NoteViewer
-  viewerPanel: {fileID: 535494753}
-  bigImage: {fileID: 1443234001}
 --- !u!1 &1139740650
 GameObject:
   m_ObjectHideFlags: 0
@@ -19936,7 +19920,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1124522289}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: NoteViewer, Assembly-CSharp
         m_MethodName: OpenNote
         m_Mode: 2
@@ -19948,17 +19932,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1443234001 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2721809676866757316, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
-  m_PrefabInstance: {fileID: 2104196174}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &1447712471 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8449757019110345672, guid: dce0bc3e52fbd374aa1362777011b368, type: 3}
@@ -24998,7 +24971,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1124522289}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: NoteViewer, Assembly-CSharp
         m_MethodName: OpenNote
         m_Mode: 2
@@ -26301,7 +26274,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1124522289}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: NoteViewer, Assembly-CSharp
         m_MethodName: OpenNote
         m_Mode: 2
@@ -26558,7 +26531,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1124522289}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: NoteViewer, Assembly-CSharp
         m_MethodName: OpenNote
         m_Mode: 2
@@ -27152,7 +27125,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1124522289}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: NoteViewer, Assembly-CSharp
         m_MethodName: OpenNote
         m_Mode: 2
@@ -27431,7 +27404,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1124522289}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: NoteViewer, Assembly-CSharp
         m_MethodName: OpenNote
         m_Mode: 2
@@ -28777,6 +28750,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -192
       objectReference: {fileID: 0}
+    - target: {fileID: 3614132383710337418, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614132383710337418, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614132383710337418, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenNote
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614132383710337418, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NoteViewer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614132383710337418, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Sprite, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3637240464295588581, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -29016,7 +29009,7 @@ PrefabInstance:
     - target: {fileID: 7577638244260948586, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1124522289}
+      objectReference: {fileID: 0}
     - target: {fileID: 7577638244260948586, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CloseNote
@@ -29164,10 +29157,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3658144953339206724, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1052170918}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2368109485930168125, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1124522289}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
 --- !u!1001 &2105763573
 PrefabInstance:
