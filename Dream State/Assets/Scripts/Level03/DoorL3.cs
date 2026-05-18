@@ -20,6 +20,7 @@ public class DoorL3 : MonoBehaviour, IInteractable
 
     bool isCorrectDoor;
     public DoorNumber doorNumber;
+    public GameObject elevatorKeyCard;
 
     static bool nightmareTriggered = false;
 
@@ -95,7 +96,12 @@ public class DoorL3 : MonoBehaviour, IInteractable
             isOpen = true;
             opened = true;
 
-            Invoke("LoadNextDream", 2f);
+            if (elevatorKeyCard != null)
+            {
+                elevatorKeyCard.SetActive(true);
+            }
+
+            //Invoke("LoadNextDream", 2f);
         }
         else
         {

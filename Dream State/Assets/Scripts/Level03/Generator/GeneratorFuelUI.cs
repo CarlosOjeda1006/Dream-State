@@ -7,7 +7,7 @@ public class GeneratorFuelUI : MonoBehaviour
     public CanvasGroup generatorCanvasGroup;
     public Slider fuelSlider;
     public Text fuelText;
-    public string textPrefix = "Generador: ";
+    public string textPrefix = "Generator: ";
     public bool hideWhenInventoryIsOpen = true;
     public bool hideWhenPauseIsOpen = true;
 

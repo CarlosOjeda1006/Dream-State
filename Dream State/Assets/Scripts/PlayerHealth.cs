@@ -10,19 +10,19 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public float maxHealth = 100f;
     public float currentHealth;
 
-    public GameObject healthBarUI;
+    //public GameObject healthBarUI;
 
     public GameObject deathUI;
     bool isDead;
 
-    public HealthBar healthBar;
+    //public HealthBar healthBar;
     TakeDamage damageFX;
 
 
     void Awake()
     {
         currentHealth = maxHealth;
-        healthBar.SetHealth(currentHealth);
+        //healthBar.SetHealth(currentHealth);
 
         deathUI.SetActive(false);
     }
@@ -40,7 +40,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         damageFX.TriggerDamageEffect();
 
         currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
+        //healthBar.SetHealth(currentHealth);
 
         OnHealthChanged?.Invoke(currentHealth);
         OnDamageTaken?.Invoke(currentHealth);
@@ -67,6 +67,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         Cursor.visible = true;
 
         deathUI.SetActive(true);
-        healthBarUI.SetActive(false);
+        //healthBarUI.SetActive(false);
     }
 }

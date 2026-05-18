@@ -1,55 +1,33 @@
 using UnityEngine;
 
-public class GeneratorInteractor : MonoBehaviour
+public class GeneratorInteractor : MonoBehaviour, IInteractable
 {
     public GeneratorSystem generatorSystem;
-    public FuelInventoryConsumer fuelInventoryConsumer;
-    public Transform player;
-    public float interactionDistance = 3f;
-    public KeyCode interactKey = KeyCode.E;
-    public bool requireFuelItem = true;
+    public InventoryController inventory;
 
-    void Start()
+    public bool CanInteract => true;
+
+    public void Interact()
     {
-        if (generatorSystem == null)
-            generatorSystem = GetComponent<GeneratorSystem>();
-
-        if (fuelInventoryConsumer == null)
-            fuelInventoryConsumer = FindFirstObjectByType<FuelInventoryConsumer>();
-
-        if (player == null && PlayerSingle.instance != null)
-            player = PlayerSingle.instance.transform;
-    }
-
-    void Update()
-    {
-        if (MenuController.isMenuOpen)
-            return;
-
-        if (player == null || generatorSystem == null)
-            return;
-
-        if ((player.position - transform.position).sqrMagnitude > interactionDistance * interactionDistance)
-            return;
-
-        if (!Input.GetKeyDown(interactKey))
-            return;
-
-        TryRefuelGenerator();
-    }
-
-    void TryRefuelGenerator()
-    {
-        if (requireFuelItem)
+        // Check if player has fuel
+        if (!inventory.HasItem("FuelCan"))
         {
-            if (fuelInventoryConsumer == null)
-                return;
+            Debug.Log("Need fuel can");
 
-            if (!fuelInventoryConsumer.ConsumeFuelCan())
-                return;
+            SoundEffectManager.Play("LockedDoor");
+
+            return;
         }
 
+        // Remove fuel from inventory
+        inventory.RemoveItem("FuelCan");
+
+        // Refuel generator
         generatorSystem.Refuel();
+
         SoundEffectManager.Play("Items");
+
+        Debug.Log("Generator refueled");
     }
+
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerCameraFlash : MonoBehaviour
@@ -7,6 +8,9 @@ public class PlayerCameraFlash : MonoBehaviour
 
     [Header("References")]
     public Camera playerCamera;
+
+    [Header("Flash")]
+    public Light flashLight;
 
     [Header("Photo")]
     public float photoRange = 30f;
@@ -21,9 +25,9 @@ public class PlayerCameraFlash : MonoBehaviour
 
     void TakePhoto()
     {
-        // FLASH
         SoundEffectManager.Play("Flash");
-        // UI
+
+        StartCoroutine(FlashEffect());
 
         Debug.DrawRay(
             playerCamera.transform.position,
@@ -31,6 +35,7 @@ public class PlayerCameraFlash : MonoBehaviour
             Color.red,
             1f
         );
+
         RaycastHit hit;
 
         Physics.Raycast(
@@ -39,7 +44,18 @@ public class PlayerCameraFlash : MonoBehaviour
             out hit,
             photoRange
         );
+
         Debug.Log("foto tomada");
+
         OnPhotoTaken?.Invoke(hit);
+    }
+
+    IEnumerator FlashEffect()
+    {
+        flashLight.intensity = 10f;
+
+        yield return new WaitForSeconds(0.05f);
+
+        flashLight.intensity = 0f;
     }
 }

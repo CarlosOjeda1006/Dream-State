@@ -80,5 +80,56 @@ public class InventoryController : MonoBehaviour
         return true;
     }
 
+    public bool HasItem(string itemName)
+    {
+        foreach (Transform slotTransform in inventoryPanel.transform)
+        {
+            Slot slot = slotTransform.GetComponent<Slot>();
+
+            if (slot != null && slot.currentItem != null)
+            {
+                ItemDragHandler drag =
+                    slot.currentItem.GetComponent<ItemDragHandler>();
+
+                if (drag != null && drag.linkedItem != null)
+                {
+                    if (drag.linkedItem.Name == itemName)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+    public bool RemoveItem(string itemName)
+    {
+        foreach (Transform slotTransform in inventoryPanel.transform)
+        {
+            Slot slot = slotTransform.GetComponent<Slot>();
+
+            if (slot != null && slot.currentItem != null)
+            {
+                ItemDragHandler drag =
+                    slot.currentItem.GetComponent<ItemDragHandler>();
+
+                if (drag != null && drag.linkedItem != null)
+                {
+                    if (drag.linkedItem.Name == itemName)
+                    {
+                        Destroy(slot.currentItem);
+
+                        slot.currentItem = null;
+
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
 
 }
