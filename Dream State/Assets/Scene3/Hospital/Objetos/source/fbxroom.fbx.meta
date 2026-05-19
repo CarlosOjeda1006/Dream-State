@@ -1,0 +1,460 @@
+fileFormatVersion: 2
+guid: 660cb1212501ac744b4f23b3ee1ddb73
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flowers1
+    second: {fileID: 2100000, guid: 0e4486e62f6936c4388c9698b0224693, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: beaker2_lambert3SG1
+    second: {fileID: 2100000, guid: cd9bc1f4964ee114d86ff0530ae2cdf9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bed3_blinn1SG1
+    second: {fileID: 2100000, guid: 564809a36988c0c4fbf8f3ef6bbaf9e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bed3_initialShadingGroup1
+    second: {fileID: 2100000, guid: dad6ed41a1a182c4498245ada5849171, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bed3_lambert10SG1
+    second: {fileID: 2100000, guid: ec4858e2de8c9084298fd37b4e447a19, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bed3_lambert11SG1
+    second: {fileID: 2100000, guid: ae607066fc137d84e908ba6a1b8db7dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bed3_lambert6SG1
+    second: {fileID: 2100000, guid: 572d199b45bc92b498d8adb5da609b9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bed3_lambert8SG1
+    second: {fileID: 2100000, guid: 52645642737b6d24aa64662143c1ca38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bed3_lambert9SG1
+    second: {fileID: 2100000, guid: 994d5fd7d3be46d449b5d8f032451c41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bedsidetable_blinn1SG1
+    second: {fileID: 2100000, guid: 61eb1b4de4a59bb46bcc97036077a8e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bedsidetable_lambert2SG1
+    second: {fileID: 2100000, guid: 2b1781241e280a148929e6d05bd86dd8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bedsidetable_lambert3SG1
+    second: {fileID: 2100000, guid: b9255d18911a5974b89ce2814f5d61ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn1
+    second: {fileID: 2100000, guid: ed6e9d7c7fade9342a240e67a6ad007d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn2
+    second: {fileID: 2100000, guid: 5afc326d651830b4aad57cb4291f205d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book1_lambert3SG1
+    second: {fileID: 2100000, guid: f8d5761c5cb30d14493fedd931c3d577, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book2_lambert4SG1
+    second: {fileID: 2100000, guid: cbfe52b96232dcc41b02bc3d3331e7e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: child_pic_1
+    second: {fileID: 2100000, guid: 4106cadb80b2e614897ebabd012eed3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: childpic_2
+    second: {fileID: 2100000, guid: b34ebfbfa08583c48832595ba7b2ce62, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: divider1_initialShadingGroup1
+    second: {fileID: 2100000, guid: ae6928f262721ba41908f41a835e62fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: divider1_lambert3SG1
+    second: {fileID: 2100000, guid: 29a30b487a8619045aa3cb00aa6b7854, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: divider1_lambert4SG1
+    second: {fileID: 2100000, guid: 01d3316bdba0f634ca7c5ab7ffd94456, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor
+    second: {fileID: 2100000, guid: 95743a0e2cc89c2459ad9175116504cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert11
+    second: {fileID: 2100000, guid: 3aa669a9d43fde543b0fe80d2bcb37fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert12
+    second: {fileID: 2100000, guid: ee460530cb75e2c4a817835166cdb33a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert14
+    second: {fileID: 2100000, guid: 3ff76e29c380a1546be87b34bf37efe2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: cc97d52d975e48f409d3c8680fe8b1fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert21
+    second: {fileID: 2100000, guid: b834559e3514c12469da093d3760def6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert23
+    second: {fileID: 2100000, guid: 1971b37890f1a384b8e4aec4aa9646fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert4
+    second: {fileID: 2100000, guid: bf596dce6ae202c45811de0fd6b51acb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert7
+    second: {fileID: 2100000, guid: 8c0d21882cf1c984c832b048a08f2473, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert8
+    second: {fileID: 2100000, guid: 9c6a5a8a7411e7240a202747e6468c7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: medicinebottle1_blinn2SG1
+    second: {fileID: 2100000, guid: e0afe8bb77dcca74e8a1b110631e29cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__lambert4
+    second: {fileID: 2100000, guid: 693657be9ea1af0498142e56819ba4ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: portrait2_initialShadingGroup1
+    second: {fileID: 2100000, guid: a010c93bd6502ee4db2160b92051d78e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: portrait2_lambert2SG1
+    second: {fileID: 2100000, guid: 64c555cb9ef77434b93dd17572cf088b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shelf_initialShadingGroup1
+    second: {fileID: 2100000, guid: d03b7e2e00d9f534186c9d6709cd6cad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shelf_lambert2SG1
+    second: {fileID: 2100000, guid: d8d7a671bb71a64488ee6bd953a737e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shelf_lambert3SG1
+    second: {fileID: 2100000, guid: 4f5465690af30a54a9e4b77203275079, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shelf_lambert4SG1
+    second: {fileID: 2100000, guid: a16a239c10b4410498a37a5476a2f266, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: table_initialShadingGroup1
+    second: {fileID: 2100000, guid: 61101931a39217c428ac4d070bd8782f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: table_lambert2SG1
+    second: {fileID: 2100000, guid: dd520c98d7b35804b9532f8c6a773ea5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: table_lambert3SG1
+    second: {fileID: 2100000, guid: 1a4ad77ada0ebcf439028ad6f1491b8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: table_lambert4SG1
+    second: {fileID: 2100000, guid: 1cbce6d04e2b3d04b81ec8efaac142cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: table_lambert5SG1
+    second: {fileID: 2100000, guid: 497bb34c39932b24bb0a0f95926b609e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: table_lambert6SG1
+    second: {fileID: 2100000, guid: 7225546ab3da57f4092146197a1f8a4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: table_pasted__blinn1SG2
+    second: {fileID: 2100000, guid: ed1357c462b21764fb864cc396f79fda, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vase_initialShadingGroup1
+    second: {fileID: 2100000, guid: fdf17bdaa92af4f4eb67a72586c5a99a, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 1
+    second: {fileID: 2800000, guid: da68c15e4740a814594986a09cf1c37d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 19b929907411cc4a6466f676fd35937a
+    second: {fileID: 2800000, guid: a8daa72458c1acf478fb72b3ea6d310c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 3
+    second: {fileID: 2800000, guid: 6ffc4994e655d1d4e88b8c32bbd9e3d7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 360_F_433772331_iPo5eqvn3bqhKB3vBpRPyGVKvUaDs9CQ
+    second: {fileID: 2800000, guid: fc96e2fc0962f9a49b1713d9c6739a63, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 360_F_487925497_9VgoDuc7U9XvZU4rjCLj7mTw6SrPycmj
+    second: {fileID: 2800000, guid: ef2e45f6a9b90ed46bcda835295bc494, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Flowers
+    second: {fileID: 2800000, guid: 3f83c9c488a114a4f85f9ae37eff26a5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WoodPlanksDirty0045_1_350
+    second: {fileID: 2800000, guid: 5f0182c6e9a8ca749b494536afba231d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: beakeruvmapcopy
+    second: {fileID: 2800000, guid: e4370ab207b531e4b828d65f5d23e055, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: blanketuvmap_copy
+    second: {fileID: 2800000, guid: 5e02bee47d651634fb7908e5a4aad928, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: book1 uvmap copy
+    second: {fileID: 2800000, guid: 51375c613aa0e9845981ca3478d3ff4e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: book2 uvmap copy
+    second: {fileID: 2800000, guid: 5c91987fdc512e947a6d9866ed31f5dd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bottle uv map copy
+    second: {fileID: 2800000, guid: 836ab6d189fbc6c49b0cb2e1b3dcf95a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: curtain
+    second: {fileID: 2800000, guid: 97ddf3ae1ce04424c982a4b2a4d6051a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: door handle uv map copy
+    second: {fileID: 2800000, guid: fd71e484334d54a4aa230ba139122358, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: flooruvmap
+    second: {fileID: 2800000, guid: 5d02e112be15f5c47b8e2d27b1a04ba9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: mattressuvmapcopy
+    second: {fileID: 2800000, guid: 98dcf042824d7e74f86bfe97bea08b7d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: metal_0002_color_1k
+    second: {fileID: 2800000, guid: eccb541d7bcfc5a439e4494beed13eaf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: nun_portrait
+    second: {fileID: 2800000, guid: 39f3e77e56434f74db7c8de0ed431bae, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pillowuvmapcopy
+    second: {fileID: 2800000, guid: 6c63f9697ae8c5b4d91f9d13f92f78a5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pipe uv map copy
+    second: {fileID: 2800000, guid: 8d17228904a61b741b5a7a8ac895ea66, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wall 1 uvmap copy
+    second: {fileID: 2800000, guid: 355077eed9b685b47beaac74c0ac4a75, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wood texture
+    second: {fileID: 2800000, guid: ad960770e40034c41bebcac4d1f90643, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wowowoww
+    second: {fileID: 2800000, guid: 39bd80c530d5d864c9f50643c47afada, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
