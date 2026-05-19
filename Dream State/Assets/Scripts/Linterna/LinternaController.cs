@@ -90,7 +90,10 @@ public class LinternaController : MonoBehaviour
             flashlightModel.SetActive(isOn);
 
             if (isOn)
+            {
+                DiffManager.Instance.flashlightUsed++;
                 SoundEffectManager.Play("FlashlightOn");
+            }
         }
     }
 

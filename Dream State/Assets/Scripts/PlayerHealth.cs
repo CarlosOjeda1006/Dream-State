@@ -57,7 +57,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     {
         if (isDead) return;
 
-        
+        DiffManager.Instance.deaths++;
         isDead = true;
         OnDeath?.Invoke();
         GetComponent<CharacterController>().enabled = false;

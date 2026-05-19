@@ -35,6 +35,7 @@ public class PlayerPickUp : MonoBehaviour
         // THROW
         if (Input.GetMouseButtonDown(0) && heldObject != null)
         {
+            DiffManager.Instance.bottlesThrown++;
             Throw();
         }
 
