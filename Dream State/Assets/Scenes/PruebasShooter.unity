@@ -208,8 +208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dbd51505d4a54643b1258e2a655bda9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhotoBossController
-  playerCamera: {fileID: 2046508975}
-  playerCameraTransform: {fileID: 2046508973}
+  playerCamera: {fileID: 1042622174}
+  playerCameraTransform: {fileID: 1042622173}
   points:
   - {fileID: 1608513362}
   - {fileID: 654502569}

@@ -58,6 +58,8 @@ public class PhotoBossController : MonoBehaviour
             points[Random.Range(0, points.Length)];
         Debug.Log(currentPoint);
         transform.position = currentPoint.transform.position;
+
+        RotateTowardsPlayer();
         // AQUI:
         // reproducir sonido direccional
         // activar whisper
@@ -155,5 +157,21 @@ public class PhotoBossController : MonoBehaviour
         Debug.Log("BOSS DEFEATED");
 
         // cinematic unlock door etc
+    }
+
+    void RotateTowardsPlayer()
+    {
+        if (playerCameraTransform == null)
+            return;
+
+        Vector3 dir =
+            playerCameraTransform.position - transform.position;
+
+        dir.y = 0f;
+
+        if (dir.sqrMagnitude < 0.001f)
+            return;
+
+        transform.rotation = Quaternion.LookRotation(dir);
     }
 }

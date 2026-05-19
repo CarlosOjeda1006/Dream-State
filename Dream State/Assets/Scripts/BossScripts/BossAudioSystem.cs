@@ -42,6 +42,8 @@ public class BossAudioSystem : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+
+        DefineState();
     }
 
     public void PlayDirectionSound(BossDirectionPoint.Direction dir)
@@ -57,6 +59,7 @@ public class BossAudioSystem : MonoBehaviour
                     northPassive,
                     northMid,
                     northCrazy);
+
 
                 break;
 
@@ -130,6 +133,28 @@ public class BossAudioSystem : MonoBehaviour
         lastClipPlayed = selectedClip;
 
         oneShotSource.PlayOneShot(selectedClip);
+    }
+
+    public void DefineState()
+    {
+        if (DiffManager.Instance.flashlightUsed < 3 && DiffManager.Instance.bottlesThrown == 0)
+        {
+            currentState = BossState.Passive;
+        }
+        else if(DiffManager.Instance.deaths == 0)
+        {
+            currentState = BossState.Passive;
+        }
+
+        if (DiffManager.Instance.flashlightUsed >= 3 && DiffManager.Instance.bottlesThrown == 0)
+        {
+            currentState = BossState.Mid;
+        }
+
+        if (DiffManager.Instance.flashlightUsed >=3 && DiffManager.Instance.bottlesThrown > 0)
+        {
+            currentState = BossState.Crazy;
+        }
     }
 
     public void ResetBools()

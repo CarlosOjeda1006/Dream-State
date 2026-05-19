@@ -21,4 +21,15 @@ public class DiffManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    static void AutoCreate()
+    {
+        if (Instance != null)
+            return;
+
+        GameObject obj = new GameObject("GameManager");
+
+        obj.AddComponent<DiffManager>();
+    }
 }
