@@ -18,6 +18,8 @@ public class HideSpot : MonoBehaviour
     {
         if (interactUI != null)
             interactUI.SetActive(false);
+
+
     }
 
     public void TryInteract()
@@ -38,7 +40,7 @@ public class HideSpot : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         PlayerHideController player =
-            other.GetComponent<PlayerHideController>();
+            other.GetComponentInParent<PlayerHideController>();
 
         if (player == null)
             return;
@@ -58,7 +60,7 @@ public class HideSpot : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        PlayerHideController player = other.GetComponent<PlayerHideController>();
+        PlayerHideController player = other.GetComponentInParent<PlayerHideController>();
 
         if (player == null)
             return;

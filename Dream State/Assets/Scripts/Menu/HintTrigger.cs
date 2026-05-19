@@ -7,7 +7,10 @@ public class HintTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        //Cambie el compareTag
+        PlayerSingle player = other.GetComponent<PlayerSingle>();
+
+        if (player != null)
         {
             InstructionsUI.Instance.ShowInstruction(hintMessage);
             SoundEffectManager.Play("Hint");
