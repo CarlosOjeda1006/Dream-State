@@ -6,21 +6,11 @@ public class HideSpot : MonoBehaviour
     public Transform hidePoint;
     public Transform exitPoint;
 
-    [Header("UI")]
-    public GameObject interactUI;
-
     bool playerInsideTrigger;
     bool isOccupied;
 
     PlayerHideController currentPlayer;
 
-    void Start()
-    {
-        if (interactUI != null)
-            interactUI.SetActive(false);
-
-
-    }
 
     public void TryInteract()
     {
@@ -54,8 +44,6 @@ public class HideSpot : MonoBehaviour
 
         player.SetCurrentHideSpot(this);
 
-        if (interactUI != null)
-            interactUI.SetActive(true);
     }
 
     void OnTriggerExit(Collider other)
@@ -69,16 +57,12 @@ public class HideSpot : MonoBehaviour
 
         currentPlayer = null;
 
-        if (interactUI != null)
-            interactUI.SetActive(false);
     }
 
     public void SetOccupied(bool value)
     {
         isOccupied = value;
 
-        if (interactUI != null)
-            interactUI.SetActive(false);
     }
 
 }
