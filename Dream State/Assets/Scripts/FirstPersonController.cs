@@ -14,6 +14,15 @@ public class FirstPersonController : MonoBehaviour
     public float mouseSensitivity = 2f;
     public float lookXLimit = 80f;
 
+    [Header("Stamina")]
+    public float maxStamina = 5f;
+    public float staminaDrain = 1f;
+    public float staminaRegen = 0.7f;
+    public float currentStamina;
+
+    bool isSprinting;
+    bool wasSprinting;
+
     [HideInInspector]
     public float speedMultiplier = 1f;
     
@@ -37,6 +46,7 @@ public class FirstPersonController : MonoBehaviour
         if (characterController == null)
             characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        currentStamina = maxStamina;
 
         LockCursor(true);
     }
@@ -85,14 +95,40 @@ public class FirstPersonController : MonoBehaviour
         float moveZ = Input.GetAxisRaw(axisV);
 
         Vector3 move = (transform.right * moveX + transform.forward * moveZ).normalized;
-        float baseSpeed = Input.GetButton("Run") ? sprintSpeed : walkSpeed;
+        bool wantsToSprint = Input.GetButton("Run") && moveZ > 0;
+
+        isSprinting = wantsToSprint && currentStamina > 0f;
+
+        float baseSpeed = isSprinting ? sprintSpeed : walkSpeed;
+
         float currentSpeed = baseSpeed * speedMultiplier;
 
         characterController.Move(move * currentSpeed * Time.deltaTime);
+        
+        if (isSprinting)
+        {
+            currentStamina -= staminaDrain * Time.deltaTime;
+        }
+        else
+        {
+            currentStamina += staminaRegen * Time.deltaTime;
+        }
 
+        currentStamina = Mathf.Clamp(currentStamina, 0f, maxStamina);
         if (isGrounded && velocity.y < 0f)
         {
             velocity.y = groundedGravity;
+        }
+
+        if (wasSprinting != isSprinting)
+        {
+            wasSprinting = isSprinting;
+
+            if (playingFootsteps)
+            {
+                StopFootsteps();
+                StartFootsteps();
+            }
         }
 
 
@@ -146,8 +182,12 @@ public class FirstPersonController : MonoBehaviour
     void StartFootsteps()
     {
         playingFootsteps = true;
-        InvokeRepeating(nameof(PlayFootstep), 0f, footstepSpeed);
+
+        float interval = isSprinting ? 0.3f : footstepSpeed;
+
+        InvokeRepeating(nameof(PlayFootstep), 0f, interval);
     }
+
     void StopFootsteps()
     {
         playingFootsteps = false;
