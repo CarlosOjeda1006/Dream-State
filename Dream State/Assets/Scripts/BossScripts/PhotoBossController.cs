@@ -22,7 +22,18 @@ public class PhotoBossController : MonoBehaviour
     public float responseTime = 3f;
     public int successRequired = 5;
 
+    [Header("Boss Audio")]
+    public BossAudioSystem bossAudioSystem;
     int currentSuccesses;
+
+    [Header("Police tape")]
+    public GameObject policeTape;
+    public GameObject camera;
+    public GameObject light;
+    [Header("Visuals")]
+    public GameObject otherVisualhead;
+    public GameObject otherVisualhair;
+    public GameObject otherVisualbody;
 
     BossDirectionPoint currentPoint;
 
@@ -60,10 +71,8 @@ public class PhotoBossController : MonoBehaviour
         transform.position = currentPoint.transform.position;
 
         RotateTowardsPlayer();
-        // AQUI:
-        // reproducir sonido direccional
-        // activar whisper
-        // etc
+
+        bossAudioSystem.PlayDirectionSound(currentPoint.direction);
 
         if (currentRoutine != null)
         {
@@ -156,7 +165,13 @@ public class PhotoBossController : MonoBehaviour
 
         Debug.Log("BOSS DEFEATED");
 
-        // cinematic unlock door etc
+        policeTape.SetActive(false);
+        camera.SetActive(false);
+        light.SetActive(true);
+
+        otherVisualbody.SetActive(false);
+        otherVisualhead.SetActive(false);
+        otherVisualhair.SetActive(false);
     }
 
     void RotateTowardsPlayer()
