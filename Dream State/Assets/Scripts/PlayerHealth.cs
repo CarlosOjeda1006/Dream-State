@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     bool isDead;
 
     //public HealthBar healthBar;
-    TakeDamage damageFX;
+    //TakeDamage damageFX;
 
 
     void Awake()
@@ -28,7 +28,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     }
     void Start()
     {
-        damageFX = GetComponentInChildren<TakeDamage>();
+        //damageFX = GetComponentInChildren<TakeDamage>();
     }
 
     public void TakeDamage(float damage)
@@ -37,7 +37,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
             return;
 
         damage = Mathf.Max(damage, 0f);
-        damageFX.TriggerDamageEffect();
+        //damageFX.TriggerDamageEffect();
 
         currentHealth -= damage;
         //healthBar.SetHealth(currentHealth);

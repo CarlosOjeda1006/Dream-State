@@ -30,7 +30,7 @@ public class InstructionsUI : MonoBehaviour
 
         instructionsText.text = message;
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(5f);
 
         instructionsBox.SetActive(false);
 

@@ -8,7 +8,6 @@ public class Keypad : MonoBehaviour
     public OpenKeypad keypadController;
     public GameObject player;
     public GameObject keypadOB;
-    public GameObject hud;
 
     public SymbolPuzzleLogic puzzleLogic;
     public GameObject notesTab;
@@ -67,7 +66,6 @@ public class Keypad : MonoBehaviour
     public void Exit()
     {
         keypadOB.SetActive(false);
-        hud.SetActive(true);
 
         player.GetComponent<FirstPersonController>().enabled = true;
 

@@ -6,11 +6,16 @@ public class OpalLines : MonoBehaviour
 {
     [SerializeField] GameObject instructionsBox;
 
+    [TextArea]
+    public string line;
+
+    public string soundName;
+
     private bool hasPlayed = false;
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && hasPlayed != true)
+        if (other.CompareTag("Player") && !hasPlayed)
         {
             StartCoroutine(Message());
         }
@@ -18,18 +23,23 @@ public class OpalLines : MonoBehaviour
 
     IEnumerator Message()
     {
-
         instructionsBox.SetActive(true);
+
         TMP_Text text = instructionsBox.GetComponent<TMP_Text>();
 
-        text.text = "That drawing, it must mean something.";
-        SoundEffectManager.Play("MeanSomething");
+        text.text = line;
+
+        if (!string.IsNullOrEmpty(soundName))
+        {
+            SoundEffectManager.Play(soundName);
+        }
 
         yield return new WaitForSeconds(2.5f);
 
         instructionsBox.SetActive(false);
 
-
         hasPlayed = true;
+
+        gameObject.SetActive(false);
     }
 }

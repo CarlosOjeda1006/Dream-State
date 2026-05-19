@@ -104,6 +104,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemUIPrefab: {fileID: 878794435073874701}
+  photosTab: {fileID: 0}
+  itemPhoto: {fileID: 0}
+  isPhotoItem: 0
   Name: Pig
 --- !u!135 &-9218006972339622156
 SphereCollider:

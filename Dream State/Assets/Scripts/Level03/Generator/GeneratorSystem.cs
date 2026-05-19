@@ -14,11 +14,15 @@ public class GeneratorSystem : MonoBehaviour
     public float FuelNormalized => maxFuelTime <= 0f ? 0f : Mathf.Clamp01(currentFuelTime / maxFuelTime);
     public bool HasFuel => currentFuelTime > 0f;
 
+    [Header("Audio")]
+    public GeneratorAudio generatorAudio;
+
     void Awake()
     {
         RefreshLights();
         currentFuelTime = startWithFuel ? maxFuelTime : 0f;
         SetLights(HasFuel);
+        generatorAudio.PlayOn();
     }
 
     void Update()
@@ -32,6 +36,7 @@ public class GeneratorSystem : MonoBehaviour
         {
             currentFuelTime = 0f;
             SetLights(false);
+            generatorAudio.PlayOff();
         }
     }
 
@@ -39,6 +44,7 @@ public class GeneratorSystem : MonoBehaviour
     {
         currentFuelTime = maxFuelTime;
         SetLights(true);
+        generatorAudio.PlayOn();
     }
 
     public void RefreshLights()

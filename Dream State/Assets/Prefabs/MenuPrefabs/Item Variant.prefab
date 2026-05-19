@@ -86,6 +86,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7543797411888591345, guid: dc7f11f0a9354354b90cf64e1a50297c, type: 3}
+      propertyPath: linkedItem
+      value: 
+      objectReference: {fileID: 247215147791250906}
     - target: {fileID: 878794435073874701, guid: dc7f11f0a9354354b90cf64e1a50297c, type: 3}
       propertyPath: m_Name
       value: Item Variant
@@ -178,6 +182,17 @@ PrefabInstance:
       addedObject: {fileID: 2706091941642030306}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc7f11f0a9354354b90cf64e1a50297c, type: 3}
+--- !u!114 &247215147791250906 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8799966607921505567, guid: dc7f11f0a9354354b90cf64e1a50297c, type: 3}
+  m_PrefabInstance: {fileID: 8750929330370285765}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32049bb6be9dc504ea7d0f3fa1ab067d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
 --- !u!224 &6491935779503842029 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2550857006055240232, guid: dc7f11f0a9354354b90cf64e1a50297c, type: 3}

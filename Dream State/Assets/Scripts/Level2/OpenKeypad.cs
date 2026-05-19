@@ -9,7 +9,6 @@ public class OpenKeypad : MonoBehaviour, IInteractable
 
     public bool CanInteract => !isSolved;
 
-    public GameObject hud;
     public GameObject player;
 
     public void Interact()
@@ -23,7 +22,6 @@ public class OpenKeypad : MonoBehaviour, IInteractable
     void OpenKeyPad()
     {
         keypadOB.SetActive(true);
-        hud.SetActive(false);
 
         player.GetComponent<FirstPersonController>().enabled = false;
 
