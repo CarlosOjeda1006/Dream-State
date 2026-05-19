@@ -1567,7 +1567,6 @@ MonoBehaviour:
   keypadController: {fileID: 0}
   player: {fileID: 0}
   keypadOB: {fileID: 0}
-  hud: {fileID: 0}
   puzzleLogic: {fileID: 0}
   notesTab: {fileID: 0}
   canOpenDoors: 0
@@ -2644,7 +2643,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Salir
+  m_text: Exit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ac79ccc041e641942b358ffa20fd91dc, type: 2}
   m_sharedMaterial: {fileID: 4361254208355846050, guid: ac79ccc041e641942b358ffa20fd91dc, type: 2}
@@ -2887,7 +2886,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Nuevo Intento
+  m_text: Try Again
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ac79ccc041e641942b358ffa20fd91dc, type: 2}
   m_sharedMaterial: {fileID: 4361254208355846050, guid: ac79ccc041e641942b358ffa20fd91dc, type: 2}
@@ -4836,7 +4835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5125505144784236974
 RectTransform:
   m_ObjectHideFlags: 0

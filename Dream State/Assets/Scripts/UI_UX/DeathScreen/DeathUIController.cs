@@ -20,7 +20,7 @@ public class DeathUIController : MonoBehaviour
 
         StopAllAudio();
 
-        SceneManager.LoadScene("Level_01");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void StopAllAudio()
