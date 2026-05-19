@@ -20,9 +20,13 @@ public class GeneratorSystem : MonoBehaviour
     void Awake()
     {
         RefreshLights();
+
         currentFuelTime = startWithFuel ? maxFuelTime : 0f;
+
         SetLights(HasFuel);
-        generatorAudio.PlayOn();
+
+        if (HasFuel)
+            generatorAudio.PlayOn();
     }
 
     void Update()

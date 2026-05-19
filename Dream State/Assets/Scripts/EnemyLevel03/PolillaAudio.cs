@@ -2,15 +2,34 @@ using UnityEngine;
 
 public class PolillaAudio : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [Header("Sources")]
+    public AudioSource loopSource;
+
+    [Header("Clips")]
+    public AudioClip patrolClip;
+    public AudioClip attackClip;
+
     void Start()
     {
-        
+        PlayPatrol();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlayPatrol()
     {
-        
+        if (loopSource.clip == patrolClip)
+            return;
+
+        loopSource.Stop();
+        loopSource.clip = patrolClip;
+        loopSource.loop = true;
+        loopSource.Play();
+    }
+
+    public void PlayAttack()
+    {
+        loopSource.Stop();
+        loopSource.clip = attackClip;
+        loopSource.loop = true;
+        loopSource.Play();
     }
 }

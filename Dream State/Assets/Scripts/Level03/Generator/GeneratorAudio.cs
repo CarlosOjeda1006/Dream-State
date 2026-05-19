@@ -10,17 +10,12 @@ public class GeneratorAudio : MonoBehaviour
     public AudioClip onClip;
     public AudioClip offClip;
 
-    void Start()
-    {
-        PlayOn();
-    }
 
     public void PlayOn()
     {
-        if (loopSource.clip == onClip)
+        if (loopSource.isPlaying)
             return;
 
-        loopSource.Stop();
         loopSource.clip = onClip;
         loopSource.loop = true;
         loopSource.Play();
@@ -28,6 +23,7 @@ public class GeneratorAudio : MonoBehaviour
 
     public void PlayOff()
     {
+        loopSource.Stop();
         oneShotSource.PlayOneShot(offClip);
     }
 }

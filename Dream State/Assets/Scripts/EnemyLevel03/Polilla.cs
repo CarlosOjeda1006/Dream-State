@@ -33,6 +33,8 @@ public class Polilla : MonoBehaviour
 
     public State currentState;
 
+    [Header("Audio")]
+    public PolillaAudio polillaAudio;
 
 
     void Start()
@@ -78,6 +80,7 @@ public class Polilla : MonoBehaviour
             return;
         }
         animator.SetBool("isWalking", true);
+        polillaAudio.PlayPatrol();
 
         patrol.TickPatrol();
     }
@@ -159,6 +162,7 @@ public class Polilla : MonoBehaviour
 
         attack.TickAttack(target);
         animator.SetBool("isRunning", true);
+        polillaAudio.PlayAttack();
     }
 
     public void SetPlayerTarget(Transform player)
