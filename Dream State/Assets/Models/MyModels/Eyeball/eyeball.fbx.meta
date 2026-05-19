@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 98b8fcc2cfedfe044bc617d3fe841045
+guid: 2d245c2cf8c64fe46965928e5556aa36
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: eyeball
-    second: {fileID: -1179775610923492014, guid: 2d245c2cf8c64fe46965928e5556aa36, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
