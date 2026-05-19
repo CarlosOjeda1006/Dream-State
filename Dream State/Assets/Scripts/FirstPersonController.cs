@@ -54,6 +54,11 @@ public class FirstPersonController : MonoBehaviour
         animator.SetBool("isJumping", !characterController.isGrounded);
     }
 
+    void OnDisable()
+    {
+        StopFootsteps();
+    }
+
     void HandleMouseLook()
     {
 
