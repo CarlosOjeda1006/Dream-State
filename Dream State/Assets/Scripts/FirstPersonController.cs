@@ -16,6 +16,8 @@ public class FirstPersonController : MonoBehaviour
 
     [HideInInspector]
     public float speedMultiplier = 1f;
+    
+    public bool canMove = true;
 
     private bool playingFootsteps = false;
     public float footstepSpeed = 0.5f;
@@ -47,6 +49,9 @@ public class FirstPersonController : MonoBehaviour
         HandleMouseLook();
         HandleMovement();
         HandleCursorToggle();
+
+        if (!canMove)
+            return;
 
 
         //animations

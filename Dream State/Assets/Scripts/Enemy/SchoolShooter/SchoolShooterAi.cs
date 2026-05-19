@@ -17,6 +17,7 @@ public class SchoolShooterAI : MonoBehaviour
     public NavMeshAgent agent;
     public ShooterVision vision;
     public ShooterCombat combat;
+    public Animator animator;
 
     public ShooterHearingTrigger hearing;
 
@@ -35,7 +36,6 @@ public class SchoolShooterAI : MonoBehaviour
     public float killDistance = 1.5f;
 
     [Header("Audio")]
-    private Animator animator;
     public ShooterEnemyAudio enemyAudio;
 
     [Header("Territory")]
@@ -77,7 +77,6 @@ public class SchoolShooterAI : MonoBehaviour
 
         GoToNextPatrolPoint();
 
-        animator = GetComponentInChildren<Animator>();
     }
 
     void Update()

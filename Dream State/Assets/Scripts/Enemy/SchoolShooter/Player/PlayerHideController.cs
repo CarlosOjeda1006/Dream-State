@@ -6,7 +6,7 @@ public class PlayerHideController : MonoBehaviour
     public CharacterController characterController;
     public FirstPersonController movement;
 
-    bool isHidden;
+    public bool IsHidden { get; private set; }
 
     HideSpot currentSpot;
 
@@ -23,21 +23,21 @@ public class PlayerHideController : MonoBehaviour
 
     void Update()
     {
-        if (!isHidden)
-            return;
-
         if (Input.GetKeyDown(KeyCode.E))
         {
-            ExitHideSpot();
+            if (currentSpot != null)
+            {
+                currentSpot.TryInteract();
+            }
         }
     }
 
     public void EnterHideSpot(HideSpot spot)
     {
-        if (isHidden)
+        if (IsHidden)
             return;
 
-        isHidden = true;
+        IsHidden = true;
 
         currentSpot = spot;
 
@@ -53,15 +53,15 @@ public class PlayerHideController : MonoBehaviour
 
         characterController.enabled = true;
 
-        movement.enabled = false;
+        movement.canMove = false;
     }
 
     public void ExitHideSpot()
     {
-        if (!isHidden)
+        if (!IsHidden)
             return;
 
-        isHidden = false;
+        IsHidden = false;
 
         characterController.enabled = false;
 
@@ -70,15 +70,15 @@ public class PlayerHideController : MonoBehaviour
 
         characterController.enabled = true;
 
-        movement.enabled = true;
+        movement.canMove = true;
 
         currentSpot.SetOccupied(false);
 
         currentSpot = null;
     }
 
-    public bool IsHidden()
+    public void SetCurrentHideSpot(HideSpot spot)
     {
-        return isHidden;
+        currentSpot = spot;
     }
 }

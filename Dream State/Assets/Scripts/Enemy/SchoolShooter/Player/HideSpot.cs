@@ -20,23 +20,25 @@ public class HideSpot : MonoBehaviour
             interactUI.SetActive(false);
     }
 
-    void Update()
+    public void TryInteract()
     {
-        if (!playerInsideTrigger)
+        if (currentPlayer == null)
             return;
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (currentPlayer.IsHidden)
         {
-            if (currentPlayer == null)
-                return;
-
+            currentPlayer.ExitHideSpot();
+        }
+        else
+        {
             currentPlayer.EnterHideSpot(this);
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        PlayerHideController player = other.GetComponent<PlayerHideController>();
+        PlayerHideController player =
+            other.GetComponent<PlayerHideController>();
 
         if (player == null)
             return;
@@ -47,6 +49,8 @@ public class HideSpot : MonoBehaviour
         playerInsideTrigger = true;
 
         currentPlayer = player;
+
+        player.SetCurrentHideSpot(this);
 
         if (interactUI != null)
             interactUI.SetActive(true);
@@ -74,4 +78,5 @@ public class HideSpot : MonoBehaviour
         if (interactUI != null)
             interactUI.SetActive(false);
     }
+
 }
