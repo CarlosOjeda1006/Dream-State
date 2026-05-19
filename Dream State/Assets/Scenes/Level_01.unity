@@ -18504,6 +18504,22 @@ PrefabInstance:
       propertyPath: Name
       value: Earphones
       objectReference: {fileID: 0}
+    - target: {fileID: 8799966607921505567, guid: dc7f11f0a9354354b90cf64e1a50297c, type: 3}
+      propertyPath: itemPhoto
+      value: 
+      objectReference: {fileID: 9027119258488163134}
+    - target: {fileID: 8799966607921505567, guid: dc7f11f0a9354354b90cf64e1a50297c, type: 3}
+      propertyPath: photosTab
+      value: 
+      objectReference: {fileID: 9027119258488163132}
+    - target: {fileID: 8799966607921505567, guid: dc7f11f0a9354354b90cf64e1a50297c, type: 3}
+      propertyPath: isPhotoItem
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8799966607921505567, guid: dc7f11f0a9354354b90cf64e1a50297c, type: 3}
+      propertyPath: instructionsBox
+      value: 
+      objectReference: {fileID: 699841759}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -20877,6 +20893,11 @@ GameObject:
 --- !u!1 &9027119258488163133 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8833117035796649578, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+  m_PrefabInstance: {fileID: 9027119258488163131}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9027119258488163134 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6913652023509746065, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
   m_PrefabInstance: {fileID: 9027119258488163131}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807

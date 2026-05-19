@@ -17,6 +17,7 @@ public class Polilla : MonoBehaviour
     [Header("Idle")]
     public float minIdleTime = 4f;
     public float maxIdleTime = 8f;
+    private Animator animator;
 
     float currentIdleTime;
     float idleTimer;
@@ -44,6 +45,7 @@ public class Polilla : MonoBehaviour
         agent.updateRotation = false;
 
         ChangeState(State.Patrol);
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -75,6 +77,7 @@ public class Polilla : MonoBehaviour
             ChangeState(State.MoveToLight);
             return;
         }
+        animator.SetBool("isWalking", true);
 
         patrol.TickPatrol();
     }
@@ -155,6 +158,7 @@ public class Polilla : MonoBehaviour
         }
 
         attack.TickAttack(target);
+        animator.SetBool("isRunning", true);
     }
 
     public void SetPlayerTarget(Transform player)
