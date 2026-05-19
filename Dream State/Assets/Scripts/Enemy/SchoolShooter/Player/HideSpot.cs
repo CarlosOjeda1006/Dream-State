@@ -36,8 +36,7 @@ public class HideSpot : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        PlayerHideController player =
-            other.GetComponent<PlayerHideController>();
+        PlayerHideController player = other.GetComponent<PlayerHideController>();
 
         if (player == null)
             return;
@@ -55,8 +54,7 @@ public class HideSpot : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        PlayerHideController player =
-            other.GetComponent<PlayerHideController>();
+        PlayerHideController player = other.GetComponent<PlayerHideController>();
 
         if (player == null)
             return;

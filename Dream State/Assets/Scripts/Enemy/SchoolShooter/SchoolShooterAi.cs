@@ -197,6 +197,8 @@ public class SchoolShooterAI : MonoBehaviour
 
         agent.isStopped = true;
 
+        Debug.Log(animator);
+
         animator.SetBool("detectedSomething", true);
 
         enemyAudio.PlaySearching();
