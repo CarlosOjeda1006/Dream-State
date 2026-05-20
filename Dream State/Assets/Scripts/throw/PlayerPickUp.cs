@@ -17,7 +17,7 @@ public class PlayerPickUp : MonoBehaviour
         DetectObject();
 
         // PICKUP / INTERACT
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E)) // Aqui agregar el KeyCode.GetJoystickButton2
         {
             // interactables
             if (interactable != null && heldObject == null)
