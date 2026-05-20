@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class TabController : MonoBehaviour
 {
@@ -9,10 +10,29 @@ public class TabController : MonoBehaviour
     bool isFirstTime = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    /*
     void Start()
     {
         //siempre abre a la primer page
         ActivateTab(0);
+    }
+    */
+    int lastTab = -1;
+
+    void Update()
+    {
+        GameObject selected = EventSystem.current.currentSelectedGameObject;
+        if (selected == null) return;
+
+        for (int i = 0; i < tabImages.Length; i++)
+        {
+            if (selected == tabImages[i].gameObject && lastTab != i)
+            {
+                ActivateTab(i);
+                lastTab = i;
+                break;
+            }
+        }
     }
 
     public void ActivateTab(int tabNo)

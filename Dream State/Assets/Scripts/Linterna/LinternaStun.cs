@@ -8,7 +8,7 @@ public class LinternaStun : MonoBehaviour
     public float stunDuration = 3f;
     public float cooldown = 1.5f;
 
-    public KeyCode stunKey = KeyCode.F;
+    //public KeyCode stunKey = KeyCode.F;
 
     [Header("Efecto de Flash")]
     public Light flashLight;
@@ -22,7 +22,8 @@ public class LinternaStun : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(stunKey) && Time.time >= nextUseTime && linterna.isOn)
+
+        if (Input.GetButtonDown("LinternaAttack") && Time.time >= nextUseTime && linterna.isOn) 
         {
             StartCoroutine(FlashAndStun());
             nextUseTime = Time.time + cooldown;

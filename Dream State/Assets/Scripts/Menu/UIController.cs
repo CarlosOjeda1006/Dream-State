@@ -19,7 +19,7 @@ public class UIController : MonoBehaviour
 
             //para controlar el texto
             actionBox.GetComponent<TMPro.TMP_Text>().text = actionText;
-            commandBox.GetComponent<TMPro.TMP_Text>().text = "[E] " + commandText;
+            commandBox.GetComponent<TMPro.TMP_Text>().text = "[X] " + commandText;
         }
         else
         {

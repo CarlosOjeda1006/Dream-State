@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventSystem
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 696732228}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &5663343
@@ -469,6 +469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24340b41976a25d48b83bc233d9fb414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu_Scene
+  firstButton: {fileID: 696732228}
 --- !u!1 &128895222
 GameObject:
   m_ObjectHideFlags: 0

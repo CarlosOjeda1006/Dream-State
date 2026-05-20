@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.EventSystems;
 public class MenuController : MonoBehaviour
 {
     public GameObject menuCanvas;
@@ -7,6 +7,8 @@ public class MenuController : MonoBehaviour
     public GameObject noteViewerPanel;
 
     public GameObject player;
+
+    public GameObject firstTab;
 
     public static bool isMenuOpen = false;
 
@@ -28,6 +30,10 @@ public class MenuController : MonoBehaviour
 
             menuCanvas.SetActive(isActive);
             //healthBar.SetActive(!isActive);
+            if (isActive)
+            {
+                EventSystem.current.SetSelectedGameObject(firstTab);
+            }
 
             isMenuOpen = isActive;
 

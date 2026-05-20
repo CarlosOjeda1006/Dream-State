@@ -31,7 +31,7 @@ public class Item : MonoBehaviour
             itemPhoto.SetActive(true);
 
             InstructionsUI.Instance.ShowInstruction(
-                "New Photo Added [Press TAB to view]."
+                "New Photo Added [Press LB to view]."
             );
 
             SoundEffectManager.Play("Clue");

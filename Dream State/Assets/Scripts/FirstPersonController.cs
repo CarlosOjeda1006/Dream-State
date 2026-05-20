@@ -132,10 +132,7 @@ public class FirstPersonController : MonoBehaviour
         }
 
 
-        /*
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        */
+
         if (isGrounded && (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump")))
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);

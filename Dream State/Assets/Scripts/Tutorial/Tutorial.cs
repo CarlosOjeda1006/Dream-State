@@ -5,7 +5,7 @@ public class Tutorial : MonoBehaviour
 {
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Jump"))
         {
             SceneManager.LoadScene("Level_01");
         }
