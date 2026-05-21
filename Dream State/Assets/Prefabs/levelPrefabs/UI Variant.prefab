@@ -9182,6 +9182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NoteViewer
   viewerPanel: {fileID: 6908702391970289095}
   bigImage: {fileID: 2721809676866757316}
+  firstButton: {fileID: 5297819354368186216}
 --- !u!1 &2567602533753943408 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3911650796927045167, guid: 89b3430c766ab024287225275a0dcced, type: 3}

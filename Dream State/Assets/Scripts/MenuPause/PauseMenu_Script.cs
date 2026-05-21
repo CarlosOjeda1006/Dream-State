@@ -33,7 +33,7 @@ public class PauseMenu_Script : MonoBehaviour
 
     public void Reanudar()
     {
-        Debug.Log("REANUDAR");
+        //Debug.Log("REANUDAR");
         menuPausa.SetActive(false);
         Time.timeScale = 1f;
         enPausa = false;
@@ -45,7 +45,7 @@ public class PauseMenu_Script : MonoBehaviour
 
     public void Pausar()
     {
-        Debug.Log("PAUSAR");
+        //Debug.Log("PAUSAR");
         menuPausa.SetActive(true);
         EventSystem.current.SetSelectedGameObject(firstButton);
 
