@@ -9,6 +9,8 @@ public class PauseMenu_Script : MonoBehaviour
     private bool enPausa = false;
 
     public GameObject firstButton;
+    private float nextPauseTime = 0f;
+    public float pauseCooldown = 0.2f;
 
     void Start()
     {
@@ -20,6 +22,8 @@ public class PauseMenu_Script : MonoBehaviour
     {
         if (Input.GetButtonDown("Pause"))
         {
+            Debug.Log("Pause pressed from: " + gameObject.name);
+
             if (enPausa)
                 Reanudar();
             else
@@ -29,6 +33,7 @@ public class PauseMenu_Script : MonoBehaviour
 
     public void Reanudar()
     {
+        Debug.Log("REANUDAR");
         menuPausa.SetActive(false);
         Time.timeScale = 1f;
         enPausa = false;
@@ -40,6 +45,7 @@ public class PauseMenu_Script : MonoBehaviour
 
     public void Pausar()
     {
+        Debug.Log("PAUSAR");
         menuPausa.SetActive(true);
         EventSystem.current.SetSelectedGameObject(firstButton);
 

@@ -6015,7 +6015,7 @@ MonoBehaviour:
   m_ActionsAsset: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_PointAction: {fileID: -1654692200621890270, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_MoveAction: {fileID: -8784545083839296357, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_SubmitAction: {fileID: -8784545083839296357, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_CancelAction: {fileID: 7727032971491509709, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_LeftClickAction: {fileID: 3001919216989983466, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_MiddleClickAction: {fileID: -2185481485913320682, guid: 052faaac586de48259a63d0c4782560b, type: 3}
@@ -20261,6 +20261,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8de033cf477503b48ae4945cf9738faa, type: 3}
+--- !u!1 &5629125249631069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6381249676719553695, guid: 8de033cf477503b48ae4945cf9738faa, type: 3}
+  m_PrefabInstance: {fileID: 5629125249631068}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2295536278788690295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20366,6 +20371,10 @@ PrefabInstance:
       propertyPath: menuPausa
       value: 
       objectReference: {fileID: 1403923991}
+    - target: {fileID: 5192647106089109506, guid: 7e8bad5e04be59944aa62bde67cbb944, type: 3}
+      propertyPath: firstButton
+      value: 
+      objectReference: {fileID: 5629125249631069}
     - target: {fileID: 8318482496630450997, guid: 7e8bad5e04be59944aa62bde67cbb944, type: 3}
       propertyPath: m_LocalPosition.x
       value: 864.2366
@@ -20471,6 +20480,10 @@ PrefabInstance:
       propertyPath: ojo3
       value: 
       objectReference: {fileID: 382779159}
+    - target: {fileID: 9118867594670230985, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9221002077418517675, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 960
@@ -21510,7 +21523,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 606230538}
   - {fileID: 3526007722698082256}
-  - {fileID: 2627931158622973789}
   - {fileID: 961984327}
   - {fileID: 410087041}
   - {fileID: 832575519}
@@ -21534,6 +21546,7 @@ SceneRoots:
   - {fileID: 670667568}
   - {fileID: 990644929}
   - {fileID: 5629125249631068}
+  - {fileID: 2627931158622973789}
   - {fileID: 1606535687}
   - {fileID: 641617489}
   - {fileID: 840946826}
