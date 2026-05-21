@@ -5531,7 +5531,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bc938e57011d4ec4b814c70cbc97fb8a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2ad2937b274363749b22bd0423df9407, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9183,6 +9183,7 @@ MonoBehaviour:
   viewerPanel: {fileID: 6908702391970289095}
   bigImage: {fileID: 2721809676866757316}
   firstButton: {fileID: 5297819354368186216}
+  previousSelected: {fileID: 0}
 --- !u!1 &2567602533753943408 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3911650796927045167, guid: 89b3430c766ab024287225275a0dcced, type: 3}
