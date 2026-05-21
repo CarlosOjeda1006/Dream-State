@@ -32,7 +32,7 @@ public class NotePickUp : MonoBehaviour, IInteractable
     {
         instructionsBox.SetActive(true);
 
-        instructionsBox.GetComponent<TMP_Text>().text = "New Clue Added [Press TAB to view].";
+        instructionsBox.GetComponent<TMP_Text>().text = "New Clue Added [Press LB to view].";
 
         SoundEffectManager.Play("Clue");
 

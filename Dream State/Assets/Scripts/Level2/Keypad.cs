@@ -34,7 +34,7 @@ public class Keypad : MonoBehaviour
     }
     public void Number(int number)
     {
-        textOB.text += number.ToString(); //para que los números salgan consecutivamente
+        textOB.text += number.ToString(); //para que los nï¿½meros salgan consecutivamente
         SoundEffectManager.Play("PlayKeypad");
     }
     public void Execute()
@@ -87,7 +87,7 @@ public class Keypad : MonoBehaviour
 
         instructionsBox.SetActive(true);
 
-        instructionsBox.GetComponent<TMP_Text>().text = "New Clue Added [Press TAB to view].";
+        instructionsBox.GetComponent<TMP_Text>().text = "New Clue Added [Press LB to view].";
 
         SoundEffectManager.Play("Clue");
 
