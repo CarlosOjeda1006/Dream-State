@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu_Script : MonoBehaviour
@@ -6,6 +7,8 @@ public class PauseMenu_Script : MonoBehaviour
     public GameObject menuPausa;
     public static bool isPaused;
     private bool enPausa = false;
+
+    public GameObject firstButton;
 
     void Start()
     {
@@ -15,7 +18,7 @@ public class PauseMenu_Script : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetButtonDown("Pause"))
         {
             if (enPausa)
                 Reanudar();
@@ -38,6 +41,8 @@ public class PauseMenu_Script : MonoBehaviour
     public void Pausar()
     {
         menuPausa.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(firstButton);
+
         Time.timeScale = 0f;
         enPausa = true;
         isPaused = true;

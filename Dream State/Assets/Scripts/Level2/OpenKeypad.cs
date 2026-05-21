@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class OpenKeypad : MonoBehaviour, IInteractable
 {
@@ -11,6 +12,8 @@ public class OpenKeypad : MonoBehaviour, IInteractable
 
     public GameObject player;
 
+    public GameObject firstButton;
+
     public void Interact()
     {
         if (!CanInteract) return;
@@ -22,6 +25,8 @@ public class OpenKeypad : MonoBehaviour, IInteractable
     void OpenKeyPad()
     {
         keypadOB.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(firstButton);
+
 
         player.GetComponent<FirstPersonController>().enabled = false;
 

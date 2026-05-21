@@ -1,8 +1,14 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class DeathUIController : MonoBehaviour
 {
+    public GameObject firstButton;
+    private void Start()
+    {
+        EventSystem.current.SetSelectedGameObject(firstButton);
+    }
     public void MainMenu()
     {
         Time.timeScale = 1f;

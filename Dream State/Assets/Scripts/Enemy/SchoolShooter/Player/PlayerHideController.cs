@@ -23,7 +23,7 @@ public class PlayerHideController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetButtonDown("AccionE"))
         {
             if (currentSpot != null)
             {

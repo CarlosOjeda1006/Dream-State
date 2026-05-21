@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
+
 
 public class Keypad : MonoBehaviour
 {
@@ -28,7 +30,7 @@ public class Keypad : MonoBehaviour
     private void Start()
     {
         keypadOB.SetActive(false);
-        
+
     }
     public void Number(int number)
     {

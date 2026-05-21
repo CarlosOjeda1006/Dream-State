@@ -7,6 +7,8 @@ public class PlayerPickUp : MonoBehaviour
     public float interactDistance = 3f;
     public float throwForce = 10f;
 
+    bool dropPressedFrame = false;
+
     ThrowableDistractionObject currentObject;
     ThrowableDistractionObject heldObject;
 
@@ -33,17 +35,20 @@ public class PlayerPickUp : MonoBehaviour
         }
 
         // THROW
-        if (Input.GetMouseButtonDown(0) && heldObject != null)
+        if (Input.GetButtonDown("Throw") && heldObject != null)
         {
             DiffManager.Instance.bottlesThrown++;
             Throw();
         }
 
-        // DROP
-        if (Input.GetKeyDown(KeyCode.R) && heldObject != null)
+        // DROP DPad Vrtical
+        bool dropPressedNow = Input.GetAxisRaw("Drop") > 0.5f;
+        if (dropPressedNow && !dropPressedFrame && heldObject != null)
         {
             Drop();
         }
+
+        dropPressedFrame = dropPressedNow;
     }
 
     void DetectObject()
