@@ -9,8 +9,6 @@ public class PauseMenu_Script : MonoBehaviour
     private bool enPausa = false;
 
     public GameObject firstButton;
-    private float nextPauseTime = 0f;
-    public float pauseCooldown = 0.2f;
 
     void Start()
     {
