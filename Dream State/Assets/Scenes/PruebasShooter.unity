@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: menuPausa
       value: 
       objectReference: {fileID: 1885544278}
+    - target: {fileID: 5192647106089109506, guid: 7e8bad5e04be59944aa62bde67cbb944, type: 3}
+      propertyPath: firstButton
+      value: 
+      objectReference: {fileID: 1106400967}
     - target: {fileID: 8318482496630450997, guid: 7e8bad5e04be59944aa62bde67cbb944, type: 3}
       propertyPath: m_LocalPosition.x
       value: 864.2366
@@ -2266,6 +2270,11 @@ MonoBehaviour:
   playerCamera: {fileID: 973319224}
   flashLight: {fileID: 1708427652}
   photoRange: 30
+--- !u!1 &1106400967 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6381249676719553695, guid: 8de033cf477503b48ae4945cf9738faa, type: 3}
+  m_PrefabInstance: {fileID: 1885544277}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1179954988
 GameObject:
   m_ObjectHideFlags: 0

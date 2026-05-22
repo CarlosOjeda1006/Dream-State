@@ -17,7 +17,7 @@ public class PlayerCameraFlash : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetButtonDown("Linterna"))
         {
             TakePhoto();
         }
