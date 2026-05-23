@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SALIR
+  m_text: EXIT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8ae4a191e16721249bf607203f29a389, type: 2}
   m_sharedMaterial: {fileID: -3569894652306886431, guid: 8ae4a191e16721249bf607203f29a389, type: 2}
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: REANUDAR
+  m_text: RESUME
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8ae4a191e16721249bf607203f29a389, type: 2}
   m_sharedMaterial: {fileID: -3569894652306886431, guid: 8ae4a191e16721249bf607203f29a389, type: 2}
@@ -680,7 +680,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pausa
+  m_text: PAUSE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8ae4a191e16721249bf607203f29a389, type: 2}
   m_sharedMaterial: {fileID: -3569894652306886431, guid: 8ae4a191e16721249bf607203f29a389, type: 2}

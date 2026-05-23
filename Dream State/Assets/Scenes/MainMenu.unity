@@ -1361,7 +1361,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Nuevo Juego
+  m_text: New Game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dbb0f2e8b0fd80942b5f9ad123286078, type: 2}
   m_sharedMaterial: {fileID: 4374861933159690336, guid: dbb0f2e8b0fd80942b5f9ad123286078, type: 2}
@@ -2936,7 +2936,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Salir
+  m_text: Exit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dbb0f2e8b0fd80942b5f9ad123286078, type: 2}
   m_sharedMaterial: {fileID: 4374861933159690336, guid: dbb0f2e8b0fd80942b5f9ad123286078, type: 2}
@@ -3206,7 +3206,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ajustes
+  m_text: Settings
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dbb0f2e8b0fd80942b5f9ad123286078, type: 2}
   m_sharedMaterial: {fileID: 4374861933159690336, guid: dbb0f2e8b0fd80942b5f9ad123286078, type: 2}
@@ -3542,7 +3542,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Continuar
+  m_text: Continue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dbb0f2e8b0fd80942b5f9ad123286078, type: 2}
   m_sharedMaterial: {fileID: 4374861933159690336, guid: dbb0f2e8b0fd80942b5f9ad123286078, type: 2}

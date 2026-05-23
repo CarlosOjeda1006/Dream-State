@@ -251,7 +251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA1Gracias por jugar!"
+  m_text: "\xA1Thanks for playing!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8ae4a191e16721249bf607203f29a389, type: 2}
   m_sharedMaterial: {fileID: -3569894652306886431, guid: 8ae4a191e16721249bf607203f29a389, type: 2}
@@ -1582,15 +1582,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Programaci\xF3n / Desarrollo\n\r\nSebastian Alejandro Nava Diaz\r\nAndrea
-    Monroy Gomez\r\nCarlos Ojeda Hern\xE1ndez\r\n\n\n\r\nArte visual\n\r\nAndrea
-    Monroy Gomez\r\nAna Paulina Ramos Torres\r\nPaulina Garcia Guerrero\r\n\n\n\r\nDise\xF1o
-    de juego\n\r\nSebastian Alejandro Nava Diaz\r\nAndrea Monroy Gomez\r\nEquipo
-    Boliviano\r\n\n\n\r\nM\xFAsica y sonido\n\r\nAndrea Monroy Gomez\r\nAna Paulina
-    Ramos Torres\r\nPaulina Garcia Guerrero\r\n\n\n\r\nProducci\xF3n / Direcci\xF3n\n\r\nEquipo
-    Boliviano\r\n\n\n\r\nTesters / QA\n\r\nKevin Omar Arzate\r\nEquipo Boliviano\r\n\n\n\r\nConsultores
-    o asesores\n\r\nGiancarlo Xavier Benitez Villacreses\r\nKevin Omar Arzate\r\n\n\n\r\nHerramientas
-    y motores\n\r\nUnity 6\r\nBlender\n\n\n\r\n\r\nEquipo Boliviano\r\n\r\n\n\n"
+  m_text: "Programming / Development\n\r\nSebastian Alejandro Nava Diaz\r\nAndrea
+    Monroy Gomez\r\nCarlos Ojeda Hern\xE1ndez\r\n\n\n\r\nVisual Art\n\r\nAndrea Monroy
+    Gomez\r\nAna Paulina Ramos Torres\r\nPaulina Garcia Guerrero\r\n\n\n\r\nGame
+    Design\n\r\nSebastian Alejandro Nava Diaz\r\nAndrea Monroy Gomez\r\nEquipo Boliviano\r\n\n\r\nMusic
+    and Sound\n\r\nAndrea Monroy Gomez\r\nAna Paulina Ramos Torres\r\nPaulina Garcia
+    Guerrero\r\n\n\n\r\nProduction / Direction\n\r\nEquipo Boliviano\r\n\n\n\r\nTesters
+    / QA\n\r\nKevin Omar Arzate\r\nEquipo Boliviano\r\n\n\n\r\nAdvisors\n\r\nGiancarlo
+    Xavier Benitez Villacreses\r\nKevin Omar Arzate\r\n\n\n\r\nTools and Engines\n\r\nUnity
+    6\r\nBlender\n\n\n\r\n\r\nEquipo Boliviano\r\n\r\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8ae4a191e16721249bf607203f29a389, type: 2}
   m_sharedMaterial: {fileID: -3569894652306886431, guid: 8ae4a191e16721249bf607203f29a389, type: 2}
