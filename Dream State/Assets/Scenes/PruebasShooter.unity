@@ -1211,6 +1211,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3590296987045837687, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+      propertyPath: chapterImage
+      value: 
+      objectReference: {fileID: 1804520609}
     - target: {fileID: 3822388479118630311, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2610,6 +2614,17 @@ Transform:
 --- !u!114 &1799948595 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8164793830214438279, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+  m_PrefabInstance: {fileID: 410007382}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &1804520609 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8157762127437479787, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
   m_PrefabInstance: {fileID: 410007382}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

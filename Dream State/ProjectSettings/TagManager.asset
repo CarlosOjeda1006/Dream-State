@@ -15,7 +15,7 @@ TagManager:
   - UI
   - Obstacle
   - PostProcessing
-  - 
+  - Canvas_ChapterScreen
   - 
   - 
   - 
@@ -42,6 +42,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Canvas_ChapterScreen
+    uniqueID: 3114480015
+    locked: 0
+  - name: Canvas_GameplayUI
+    uniqueID: 4081035229
     locked: 0
   m_RenderingLayers:
   - Default

@@ -9,6 +9,7 @@ public class InventoryController : MonoBehaviour
     public GameObject[] itemPrefabs;
 
     public string[] requiredDreamItems;
+    public ItemGlow[] itemGlows;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,10 +42,11 @@ public class InventoryController : MonoBehaviour
                 drag.linkedItem = itemData;
                 newItem.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
                 slot.currentItem = newItem;
+                UpdateGlows();
+
                 return true;
             }
         }
-
         Debug.Log("Inventory is full");
         return false;
     }
@@ -121,6 +123,7 @@ public class InventoryController : MonoBehaviour
                         Destroy(slot.currentItem);
 
                         slot.currentItem = null;
+                        UpdateGlows();
 
                         return true;
                     }
@@ -129,6 +132,20 @@ public class InventoryController : MonoBehaviour
         }
 
         return false;
+    }
+    [System.Serializable]
+    public class ItemGlow
+    {
+        public string itemName;
+        public GameObject glowObject;
+    }
+    void UpdateGlows()
+    {
+        foreach (ItemGlow ig in itemGlows)
+        {
+            bool hasItem = HasItem(ig.itemName);
+            ig.glowObject.SetActive(hasItem);
+        }
     }
 
 
