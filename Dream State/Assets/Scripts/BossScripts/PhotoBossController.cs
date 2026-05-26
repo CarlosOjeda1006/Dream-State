@@ -28,12 +28,16 @@ public class PhotoBossController : MonoBehaviour
 
     [Header("Police tape")]
     public GameObject policeTape;
+    public GameObject multiplePoliceTapes;
     public GameObject camera;
     public GameObject light;
+    public GameObject mainLight;
+    public GameObject finalDoor;
     [Header("Visuals")]
     public GameObject otherVisualhead;
     public GameObject otherVisualhair;
     public GameObject otherVisualbody;
+
 
     BossDirectionPoint currentPoint;
 
@@ -53,7 +57,9 @@ public class PhotoBossController : MonoBehaviour
 
     void Start()
     {
-        StartEncounter();
+        otherVisualbody.SetActive(false);
+        otherVisualhead.SetActive(false);
+        otherVisualhair.SetActive(false);
     }
 
     void StartEncounter()
@@ -168,6 +174,7 @@ public class PhotoBossController : MonoBehaviour
         policeTape.SetActive(false);
         camera.SetActive(false);
         light.SetActive(true);
+        finalDoor.SetActive(true);
 
         otherVisualbody.SetActive(false);
         otherVisualhead.SetActive(false);
@@ -188,5 +195,31 @@ public class PhotoBossController : MonoBehaviour
             return;
 
         transform.rotation = Quaternion.LookRotation(dir);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            StartCoroutine(BeginEncounterSequence());
+
+            GetComponent<Collider>().enabled = false;
+        }
+    }
+    IEnumerator BeginEncounterSequence()
+    {
+        mainLight.SetActive(false);
+        InstructionsUI.Instance.ShowInstruction(
+            "<color=#B84848><b>You can't let her touch you. You must capture The Other inside a memory. Press Left Click to take a picture.</b></color>"
+        );
+        policeTape.SetActive(true);
+        multiplePoliceTapes.SetActive(true);
+        otherVisualbody.SetActive(true);
+        otherVisualhead.SetActive(true);
+        otherVisualhair.SetActive(true);
+
+        yield return new WaitForSeconds(3f);
+
+        StartEncounter();
     }
 }
