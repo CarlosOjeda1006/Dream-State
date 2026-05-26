@@ -26,6 +26,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     }
     void Start()
     {
+        BoltCuttersController.hasBoltCutters = false;
         damageFX = GetComponentInChildren<TakeDamage>();
     }
 
@@ -47,6 +48,10 @@ public class PlayerHealth : MonoBehaviour, IDamageable
             SoundEffectManager.Play("PlayerDeath");
             currentHealth = 0f;
             Die();
+        }
+        if(currentHealth < 20f)
+        {
+            SoundEffectManager.Play("Heartbeat");
         }
     }
 

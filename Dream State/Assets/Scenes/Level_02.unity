@@ -18021,7 +18021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a3803c6b5a59549b0d24bd42e7d9f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoltCuttersController
-  instructionsBox: {fileID: 0}
+  instructionsBox: {fileID: 1108367475}
   Visual: {fileID: 725487717}
 --- !u!1001 &727067139
 PrefabInstance:
@@ -21426,7 +21426,7 @@ PrefabInstance:
       objectReference: {fileID: 1018720869}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: soundEffectGroups.Array.size
-      value: 36
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: soundEffectGroups.Array.data[22].name
@@ -21485,6 +21485,10 @@ PrefabInstance:
       value: Pause
       objectReference: {fileID: 0}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
+      propertyPath: soundEffectGroups.Array.data[36].name
+      value: heartBeat
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: soundEffectGroups.Array.data[22].audioClips.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -21538,6 +21542,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: soundEffectGroups.Array.data[35].audioClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
+      propertyPath: soundEffectGroups.Array.data[36].audioClips.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
@@ -21608,6 +21616,10 @@ PrefabInstance:
       propertyPath: 'soundEffectGroups.Array.data[35].audioClips.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: da99644144982224f98374abfb1bd7ac, type: 3}
+    - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
+      propertyPath: 'soundEffectGroups.Array.data[36].audioClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 6f453f351828d3e46ba7259e496f479e, type: 3}
     - target: {fileID: 4102280344842044839, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: m_Name
       value: GameController Variant

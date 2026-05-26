@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8145830877642111313, guid: 70a9f5ffad54beb4280a6bd5422a42b6, type: 3}
       propertyPath: soundEffectGroups.Array.size
-      value: 26
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 8145830877642111313, guid: 70a9f5ffad54beb4280a6bd5422a42b6, type: 3}
       propertyPath: soundEffectGroups.Array.data[9].name
@@ -125,6 +125,10 @@ PrefabInstance:
       value: Pause
       objectReference: {fileID: 0}
     - target: {fileID: 8145830877642111313, guid: 70a9f5ffad54beb4280a6bd5422a42b6, type: 3}
+      propertyPath: soundEffectGroups.Array.data[26].name
+      value: Heartbeat
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145830877642111313, guid: 70a9f5ffad54beb4280a6bd5422a42b6, type: 3}
       propertyPath: soundEffectGroups.Array.data[9].audioClips.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -190,6 +194,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8145830877642111313, guid: 70a9f5ffad54beb4280a6bd5422a42b6, type: 3}
       propertyPath: soundEffectGroups.Array.data[25].audioClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145830877642111313, guid: 70a9f5ffad54beb4280a6bd5422a42b6, type: 3}
+      propertyPath: soundEffectGroups.Array.data[26].audioClips.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8145830877642111313, guid: 70a9f5ffad54beb4280a6bd5422a42b6, type: 3}
@@ -284,6 +292,10 @@ PrefabInstance:
       propertyPath: 'soundEffectGroups.Array.data[25].audioClips.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: da99644144982224f98374abfb1bd7ac, type: 3}
+    - target: {fileID: 8145830877642111313, guid: 70a9f5ffad54beb4280a6bd5422a42b6, type: 3}
+      propertyPath: 'soundEffectGroups.Array.data[26].audioClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 6f453f351828d3e46ba7259e496f479e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
