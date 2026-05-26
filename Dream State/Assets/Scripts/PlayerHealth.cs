@@ -10,25 +10,23 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public float maxHealth = 100f;
     public float currentHealth;
 
-    //public GameObject healthBarUI;
-
+    [Header("Death")]
     public GameObject deathUI;
+    public GameObject[] LevelUI; 
     bool isDead;
 
-    //public HealthBar healthBar;
-    //TakeDamage damageFX;
+    TakeDamage damageFX;
 
 
     void Awake()
     {
         currentHealth = maxHealth;
-        //healthBar.SetHealth(currentHealth);
 
         deathUI.SetActive(false);
     }
     void Start()
     {
-        //damageFX = GetComponentInChildren<TakeDamage>();
+        damageFX = GetComponentInChildren<TakeDamage>();
     }
 
     public void TakeDamage(float damage)
@@ -37,10 +35,9 @@ public class PlayerHealth : MonoBehaviour, IDamageable
             return;
 
         damage = Mathf.Max(damage, 0f);
-        //damageFX.TriggerDamageEffect();
+        damageFX.TriggerDamageEffect();
 
         currentHealth -= damage;
-        //healthBar.SetHealth(currentHealth);
 
         OnHealthChanged?.Invoke(currentHealth);
         OnDamageTaken?.Invoke(currentHealth);
@@ -62,11 +59,14 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         OnDeath?.Invoke();
         GetComponent<CharacterController>().enabled = false;
         GetComponent<FirstPersonController>().enabled = false;
+        foreach (GameObject ui in LevelUI)
+        {
+            ui.SetActive(false);
+        }
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
         deathUI.SetActive(true);
-        //healthBarUI.SetActive(false);
     }
 }

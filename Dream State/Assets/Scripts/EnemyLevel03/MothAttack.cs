@@ -5,7 +5,7 @@ public class MothAttack : MonoBehaviour
 {
     public NavMeshAgent agent;
 
-    public float attackDistance = 1.5f;
+    public float attackDistance = 3f;
     public float moveSpeed = 5f;
 
     public void TickAttack(Transform target)

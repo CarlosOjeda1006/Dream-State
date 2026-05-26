@@ -71,7 +71,7 @@ public class ShooterVision : MonoBehaviour
         // RANGE CHECK
         if (distSqr > visionRangeSqr)
         {
-            Debug.Log("OUT OF RANGE");
+            //Debug.Log("OUT OF RANGE");
             return;
         }
 

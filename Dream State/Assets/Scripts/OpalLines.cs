@@ -12,6 +12,7 @@ public class OpalLines : MonoBehaviour
     public string soundName;
 
     private bool hasPlayed = false;
+    public bool shouldDissapear;
 
     void OnTriggerEnter(Collider other)
     {
@@ -40,6 +41,6 @@ public class OpalLines : MonoBehaviour
 
         hasPlayed = true;
 
-        gameObject.SetActive(false);
+        if (shouldDissapear) gameObject.SetActive(false);
     }
 }

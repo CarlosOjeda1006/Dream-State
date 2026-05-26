@@ -50,7 +50,7 @@ public class ElevatorController : MonoBehaviour, IInteractable
     }
     void LoadNextDream()
     {
-        SceneManager.LoadScene("Pruebas Level 3");
+        SceneManager.LoadScene("PruebasShooter");
     }
 
     void PlayLockedFeedback()

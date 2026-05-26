@@ -142,7 +142,8 @@ GameObject:
   - component: {fileID: 40101558}
   - component: {fileID: 40101556}
   - component: {fileID: 40101560}
-  - component: {fileID: 40101559}
+  - component: {fileID: 40101561}
+  - component: {fileID: 40101562}
   m_Layer: 0
   m_Name: yellowDoorR_Drawing
   m_TagString: Untagged
@@ -238,21 +239,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DataHandling
   color: 2
   dir: 0
---- !u!114 &40101559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 40101555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f12a4b6f09be3a5479b27eaaa337d476, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OpalLines
-  instructionsBox: {fileID: 699841759}
-  line: "That drawing\u2026 it must mean something."
-  soundName: MeanSomething
 --- !u!65 &40101560
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -274,6 +260,39 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 117.75964, y: 114.74516, z: 64.388306}
   m_Center: {x: 4.175286, y: 5.348258, z: -32.09415}
+--- !u!114 &40101561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40101555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb799863bb2f03b4287922bfa815addd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NotePickUp
+  note: {fileID: 40101555}
+  notesTab: {fileID: 555760069}
+  notesPages: {fileID: 1992261468}
+  notesSolution: {fileID: 1578949110}
+  instructionsBox: {fileID: 699841759}
+--- !u!114 &40101562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40101555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12a4b6f09be3a5479b27eaaa337d476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OpalLines
+  instructionsBox: {fileID: 699841759}
+  line: "That drawing\u2026 it must mean something."
+  soundName: MeanSomething
+  shouldDissapear: 0
 --- !u!1001 &41588126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -895,6 +914,138 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &100683512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 100683513}
+  - component: {fileID: 100683515}
+  - component: {fileID: 100683514}
+  - component: {fileID: 100683516}
+  m_Layer: 5
+  m_Name: blueDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &100683513
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100683512}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0526316, y: 1.0526316, z: 1.0526316}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 233752712}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1155.85, y: -451.35004}
+  m_SizeDelta: {x: 6399.9995, y: 3599.9998}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &100683514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100683512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 2f0dd1d57aa120749bacfc0e293bdfed, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &100683515
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100683512}
+  m_CullTransparentMesh: 1
+--- !u!114 &100683516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100683512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.7607843, b: 0.5882353, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1476484336}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1646370090}
+        m_TargetAssemblyTypeName: NoteViewer, Assembly-CSharp
+        m_MethodName: OpenNote
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 2f0dd1d57aa120749bacfc0e293bdfed, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &103305685 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 98b8fcc2cfedfe044bc617d3fe841045, type: 3}
@@ -2549,6 +2700,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!224 &233752712 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3658144953339206724, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+  m_PrefabInstance: {fileID: 9027119258488163131}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &236644629
 GameObject:
   m_ObjectHideFlags: 0
@@ -3080,6 +3236,7 @@ GameObject:
   - component: {fileID: 329202632}
   - component: {fileID: 329202636}
   - component: {fileID: 329202637}
+  - component: {fileID: 329202638}
   m_Layer: 0
   m_Name: yellowDoorL_Drawing
   m_TagString: Untagged
@@ -3211,6 +3368,24 @@ MonoBehaviour:
   instructionsBox: {fileID: 699841759}
   line: "That drawing\u2026 it must mean something."
   soundName: MeanSomething
+  shouldDissapear: 0
+--- !u!114 &329202638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329202631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb799863bb2f03b4287922bfa815addd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NotePickUp
+  note: {fileID: 329202631}
+  notesTab: {fileID: 555760069}
+  notesPages: {fileID: 1992261468}
+  notesSolution: {fileID: 1578949110}
+  instructionsBox: {fileID: 699841759}
 --- !u!1 &331394458 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -393431757816502282, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
@@ -5589,6 +5764,11 @@ Transform:
   - {fileID: 1079324820}
   m_Father: {fileID: 44670377}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &555760069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3044418614933420601, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+  m_PrefabInstance: {fileID: 9027119258488163131}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &564537677 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7243004265055104951, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
@@ -6635,6 +6815,7 @@ GameObject:
   - component: {fileID: 694096373}
   - component: {fileID: 694096377}
   - component: {fileID: 694096378}
+  - component: {fileID: 694096379}
   m_Layer: 0
   m_Name: greenDoorL_Drawing
   m_TagString: Untagged
@@ -6766,6 +6947,24 @@ MonoBehaviour:
   instructionsBox: {fileID: 699841759}
   line: "That drawing\u2026 it must mean something."
   soundName: MeanSomething
+  shouldDissapear: 0
+--- !u!114 &694096379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694096372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb799863bb2f03b4287922bfa815addd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NotePickUp
+  note: {fileID: 694096372}
+  notesTab: {fileID: 555760069}
+  notesPages: {fileID: 1992261468}
+  notesSolution: {fileID: 1840225203}
+  instructionsBox: {fileID: 699841759}
 --- !u!1001 &699817836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7165,6 +7364,138 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 286b6f720dd13984eb2b791a8e5baf8d, type: 3}
+--- !u!1 &771051340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 771051341}
+  - component: {fileID: 771051343}
+  - component: {fileID: 771051342}
+  - component: {fileID: 771051344}
+  m_Layer: 5
+  m_Name: orangeDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &771051341
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771051340}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0526316, y: 1.0526316, z: 1.0526316}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 233752712}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1155.85, y: -220.35}
+  m_SizeDelta: {x: 6399.9995, y: 3599.9998}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &771051342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771051340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: dd907b579870f5e4cb753d65820d6d85, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &771051343
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771051340}
+  m_CullTransparentMesh: 1
+--- !u!114 &771051344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771051340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.7607843, b: 0.5882353, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1476484336}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1646370090}
+        m_TargetAssemblyTypeName: NoteViewer, Assembly-CSharp
+        m_MethodName: OpenNote
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: dd907b579870f5e4cb753d65820d6d85, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &778692987 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2755387827957430985, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
@@ -9071,6 +9402,7 @@ GameObject:
   - component: {fileID: 861499756}
   - component: {fileID: 861499760}
   - component: {fileID: 861499761}
+  - component: {fileID: 861499762}
   m_Layer: 0
   m_Name: redDoorL_Drawing
   m_TagString: Untagged
@@ -9202,6 +9534,24 @@ MonoBehaviour:
   instructionsBox: {fileID: 699841759}
   line: "That drawing\u2026 it must mean something."
   soundName: MeanSomething
+  shouldDissapear: 0
+--- !u!114 &861499762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861499755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb799863bb2f03b4287922bfa815addd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NotePickUp
+  note: {fileID: 861499755}
+  notesTab: {fileID: 555760069}
+  notesPages: {fileID: 1992261468}
+  notesSolution: {fileID: 1517235149}
+  instructionsBox: {fileID: 699841759}
 --- !u!4 &862942181 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 357555469206900567, guid: 2b5684b36636e3947ba657269d00571a, type: 3}
@@ -9406,6 +9756,7 @@ GameObject:
   - component: {fileID: 898587456}
   - component: {fileID: 898587460}
   - component: {fileID: 898587461}
+  - component: {fileID: 898587462}
   m_Layer: 0
   m_Name: purpleDoorR_Drawing
   m_TagString: Untagged
@@ -9537,6 +9888,24 @@ MonoBehaviour:
   instructionsBox: {fileID: 699841759}
   line: "That drawing\u2026 it must mean something."
   soundName: MeanSomething
+  shouldDissapear: 0
+--- !u!114 &898587462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898587455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb799863bb2f03b4287922bfa815addd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NotePickUp
+  note: {fileID: 898587455}
+  notesTab: {fileID: 555760069}
+  notesPages: {fileID: 1992261468}
+  notesSolution: {fileID: 1259098908}
+  instructionsBox: {fileID: 699841759}
 --- !u!1001 &902902026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12353,6 +12722,138 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.40645707, y: 0.49748865, z: 0.40645695}
   m_Center: {x: -0.0009260848, y: 0.24874432, z: 0.00000020116568}
+--- !u!1 &1259098908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1259098909}
+  - component: {fileID: 1259098911}
+  - component: {fileID: 1259098910}
+  - component: {fileID: 1259098912}
+  m_Layer: 5
+  m_Name: purpleDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1259098909
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259098908}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0526316, y: 1.0526316, z: 1.0526316}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 233752712}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 260.95, y: -682.35004}
+  m_SizeDelta: {x: 6399.9995, y: 3599.9998}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1259098910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259098908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 7398e5dc5b95ad14a98c4911bfaa12df, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1259098911
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259098908}
+  m_CullTransparentMesh: 1
+--- !u!114 &1259098912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259098908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.7607843, b: 0.5882353, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1476484336}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1646370090}
+        m_TargetAssemblyTypeName: NoteViewer, Assembly-CSharp
+        m_MethodName: OpenNote
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 7398e5dc5b95ad14a98c4911bfaa12df, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1270373641 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1447761044891374575, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
@@ -12518,6 +13019,7 @@ GameObject:
   - component: {fileID: 1300001290}
   - component: {fileID: 1300001293}
   - component: {fileID: 1300001294}
+  - component: {fileID: 1300001295}
   m_Layer: 0
   m_Name: orangeDoorL_Drawing
   m_TagString: Untagged
@@ -12649,6 +13151,24 @@ MonoBehaviour:
   instructionsBox: {fileID: 699841759}
   line: "That drawing\u2026 it must mean something."
   soundName: MeanSomething
+  shouldDissapear: 0
+--- !u!114 &1300001295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300001288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb799863bb2f03b4287922bfa815addd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NotePickUp
+  note: {fileID: 1300001288}
+  notesTab: {fileID: 555760069}
+  notesPages: {fileID: 1992261468}
+  notesSolution: {fileID: 771051340}
+  instructionsBox: {fileID: 699841759}
 --- !u!1 &1334387842
 GameObject:
   m_ObjectHideFlags: 0
@@ -13409,6 +13929,7 @@ GameObject:
   - component: {fileID: 1371019958}
   - component: {fileID: 1371019962}
   - component: {fileID: 1371019963}
+  - component: {fileID: 1371019964}
   m_Layer: 0
   m_Name: purpleDoorL_Drawing
   m_TagString: Untagged
@@ -13540,6 +14061,24 @@ MonoBehaviour:
   instructionsBox: {fileID: 699841759}
   line: "That drawing\u2026 it must mean something."
   soundName: MeanSomething
+  shouldDissapear: 0
+--- !u!114 &1371019964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371019957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb799863bb2f03b4287922bfa815addd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NotePickUp
+  note: {fileID: 1371019957}
+  notesTab: {fileID: 555760069}
+  notesPages: {fileID: 1992261468}
+  notesSolution: {fileID: 1259098908}
+  instructionsBox: {fileID: 699841759}
 --- !u!1001 &1373866185
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13905,6 +14444,7 @@ GameObject:
   - component: {fileID: 1463188672}
   - component: {fileID: 1463188676}
   - component: {fileID: 1463188677}
+  - component: {fileID: 1463188678}
   m_Layer: 0
   m_Name: greenDoorR_Drawing
   m_TagString: Untagged
@@ -14036,6 +14576,24 @@ MonoBehaviour:
   instructionsBox: {fileID: 699841759}
   line: "That drawing\u2026 it must mean something."
   soundName: MeanSomething
+  shouldDissapear: 0
+--- !u!114 &1463188678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463188671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb799863bb2f03b4287922bfa815addd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NotePickUp
+  note: {fileID: 1463188671}
+  notesTab: {fileID: 555760069}
+  notesPages: {fileID: 1992261468}
+  notesSolution: {fileID: 1840225203}
+  instructionsBox: {fileID: 699841759}
 --- !u!1001 &1471163636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14156,6 +14714,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1946162511}
   m_SourcePrefab: {fileID: 100100000, guid: 2d245c2cf8c64fe46965928e5556aa36, type: 3}
+--- !u!114 &1476484336 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 264097064005746627, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+  m_PrefabInstance: {fileID: 9027119258488163131}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &1484805904
 GameObject:
   m_ObjectHideFlags: 0
@@ -14428,6 +14997,138 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2550857006055240232, guid: dc7f11f0a9354354b90cf64e1a50297c, type: 3}
   m_PrefabInstance: {fileID: 1499690195}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1517235149
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1517235150}
+  - component: {fileID: 1517235152}
+  - component: {fileID: 1517235151}
+  - component: {fileID: 1517235153}
+  m_Layer: 5
+  m_Name: redDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1517235150
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517235149}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0526316, y: 1.0526316, z: 1.0526316}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 233752712}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 260.95, y: -451.35004}
+  m_SizeDelta: {x: 6399.9995, y: 3599.9998}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1517235151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517235149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 36824d94555d85044bb56944382d7b32, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1517235152
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517235149}
+  m_CullTransparentMesh: 1
+--- !u!114 &1517235153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517235149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.7607843, b: 0.5882353, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1476484336}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1646370090}
+        m_TargetAssemblyTypeName: NoteViewer, Assembly-CSharp
+        m_MethodName: OpenNote
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 36824d94555d85044bb56944382d7b32, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1524068933
 GameObject:
   m_ObjectHideFlags: 0
@@ -14938,6 +15639,7 @@ GameObject:
   - component: {fileID: 1543951836}
   - component: {fileID: 1543951840}
   - component: {fileID: 1543951841}
+  - component: {fileID: 1543951842}
   m_Layer: 0
   m_Name: redDoorR_Drawing
   m_TagString: Untagged
@@ -15069,6 +15771,24 @@ MonoBehaviour:
   instructionsBox: {fileID: 699841759}
   line: "That drawing\u2026 it must mean something."
   soundName: MeanSomething
+  shouldDissapear: 0
+--- !u!114 &1543951842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543951835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb799863bb2f03b4287922bfa815addd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NotePickUp
+  note: {fileID: 1543951835}
+  notesTab: {fileID: 555760069}
+  notesPages: {fileID: 1992261468}
+  notesSolution: {fileID: 1517235149}
+  instructionsBox: {fileID: 699841759}
 --- !u!1001 &1551705809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15264,6 +15984,7 @@ GameObject:
   - component: {fileID: 1566989002}
   - component: {fileID: 1566989006}
   - component: {fileID: 1566989007}
+  - component: {fileID: 1566989008}
   m_Layer: 0
   m_Name: orangeDoorR_Drawing
   m_TagString: Untagged
@@ -15395,6 +16116,24 @@ MonoBehaviour:
   instructionsBox: {fileID: 699841759}
   line: "That drawing\u2026 it must mean something."
   soundName: MeanSomething
+  shouldDissapear: 0
+--- !u!114 &1566989008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566989001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb799863bb2f03b4287922bfa815addd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NotePickUp
+  note: {fileID: 1566989001}
+  notesTab: {fileID: 555760069}
+  notesPages: {fileID: 1992261468}
+  notesSolution: {fileID: 771051340}
+  instructionsBox: {fileID: 699841759}
 --- !u!4 &1573388313 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5573079539878795174, guid: 286b6f720dd13984eb2b791a8e5baf8d, type: 3}
@@ -15553,6 +16292,138 @@ Transform:
   - {fileID: 1805690406}
   m_Father: {fileID: 840946826}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1578949110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1578949111}
+  - component: {fileID: 1578949113}
+  - component: {fileID: 1578949112}
+  - component: {fileID: 1578949114}
+  m_Layer: 5
+  m_Name: yellowDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1578949111
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578949110}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0526316, y: 1.0526316, z: 1.0526316}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 233752712}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 260.95, y: -220.35}
+  m_SizeDelta: {x: 6399.9995, y: 3599.9998}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1578949112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578949110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 46b9b286ddadb1e43bfb4dbf9ce22b08, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1578949113
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578949110}
+  m_CullTransparentMesh: 1
+--- !u!114 &1578949114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578949110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.7607843, b: 0.5882353, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1476484336}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1646370090}
+        m_TargetAssemblyTypeName: NoteViewer, Assembly-CSharp
+        m_MethodName: OpenNote
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 46b9b286ddadb1e43bfb4dbf9ce22b08, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1581817299
 GameObject:
   m_ObjectHideFlags: 0
@@ -16686,6 +17557,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ffe10237ac1ac047bc23ceaaca6c736, type: 3}
+--- !u!114 &1646370090 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5578043105338464986, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+  m_PrefabInstance: {fileID: 9027119258488163131}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d098284f0d299fd4fac2e29a34094b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NoteViewer
 --- !u!1 &1691900303
 GameObject:
   m_ObjectHideFlags: 0
@@ -18059,6 +18941,138 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2550857006055240232, guid: dc7f11f0a9354354b90cf64e1a50297c, type: 3}
   m_PrefabInstance: {fileID: 1818839405}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1840225203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1840225204}
+  - component: {fileID: 1840225206}
+  - component: {fileID: 1840225205}
+  - component: {fileID: 1840225207}
+  m_Layer: 5
+  m_Name: greenDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1840225204
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840225203}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0526316, y: 1.0526316, z: 1.0526316}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 233752712}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1155.85, y: -682.35004}
+  m_SizeDelta: {x: 6399.9995, y: 3599.9998}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1840225205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840225203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 1408b61cb5272534d934cdd78bec30a9, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1840225206
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840225203}
+  m_CullTransparentMesh: 1
+--- !u!114 &1840225207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840225203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.7607843, b: 0.5882353, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1476484336}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1646370090}
+        m_TargetAssemblyTypeName: NoteViewer, Assembly-CSharp
+        m_MethodName: OpenNote
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 1408b61cb5272534d934cdd78bec30a9, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1883232017 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3233546823982028080, guid: b4aff28bb533def4ab8a36c4d9865634, type: 3}
@@ -18660,6 +19674,7 @@ GameObject:
   - component: {fileID: 1977162101}
   - component: {fileID: 1977162105}
   - component: {fileID: 1977162106}
+  - component: {fileID: 1977162107}
   m_Layer: 0
   m_Name: blueDoorR_Drawing
   m_TagString: Untagged
@@ -18791,6 +19806,24 @@ MonoBehaviour:
   instructionsBox: {fileID: 699841759}
   line: "That drawing\u2026 it must mean something."
   soundName: MeanSomething
+  shouldDissapear: 0
+--- !u!114 &1977162107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977162100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb799863bb2f03b4287922bfa815addd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NotePickUp
+  note: {fileID: 1977162100}
+  notesTab: {fileID: 555760069}
+  notesPages: {fileID: 1992261468}
+  notesSolution: {fileID: 100683512}
+  instructionsBox: {fileID: 699841759}
 --- !u!1001 &1980722912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18932,6 +19965,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HousesActivate
   objectToActivateL: {fileID: 1699812721}
   objectToActivateR: {fileID: 1132702706}
+--- !u!1 &1992261468 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6693098285811086179, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+  m_PrefabInstance: {fileID: 9027119258488163131}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2012367743 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5034813184266722508, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
@@ -19595,6 +20633,7 @@ MonoBehaviour:
   instructionsBox: {fileID: 699841759}
   line: "The houses\u2026 they all seem to share the same colors as that drawing."
   soundName: SameColors
+  shouldDissapear: 0
 --- !u!65 &2070819544
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20014,6 +21053,7 @@ GameObject:
   - component: {fileID: 2136193548}
   - component: {fileID: 2136193552}
   - component: {fileID: 2136193553}
+  - component: {fileID: 2136193554}
   m_Layer: 0
   m_Name: blueDoorL_Drawing
   m_TagString: Untagged
@@ -20145,6 +21185,24 @@ MonoBehaviour:
   instructionsBox: {fileID: 699841759}
   line: "That drawing\u2026 it must mean something."
   soundName: MeanSomething
+  shouldDissapear: 0
+--- !u!114 &2136193554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136193547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb799863bb2f03b4287922bfa815addd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NotePickUp
+  note: {fileID: 2136193547}
+  notesTab: {fileID: 555760069}
+  notesPages: {fileID: 1992261468}
+  notesSolution: {fileID: 100683512}
+  instructionsBox: {fileID: 699841759}
 --- !u!114 &2140583163 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3016236318026429570, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
@@ -20350,6 +21408,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Opalplayer
       objectReference: {fileID: 0}
+    - target: {fileID: 5393627731944166812, guid: ac6a69ef1f76f0240b1e9df571146204, type: 3}
+      propertyPath: maxStamina
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5393627731944166812, guid: ac6a69ef1f76f0240b1e9df571146204, type: 3}
+      propertyPath: staminaDrain
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5393627731944166812, guid: ac6a69ef1f76f0240b1e9df571146204, type: 3}
+      propertyPath: staminaRegen
+      value: 1.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20446,11 +21516,15 @@ PrefabInstance:
       objectReference: {fileID: 1179862593}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: soundEffectGroups.Array.size
-      value: 25
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: soundEffectGroups.Array.data[24].name
       value: SameColors
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
+      propertyPath: soundEffectGroups.Array.data[25].name
+      value: Pause
       objectReference: {fileID: 0}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: soundEffectGroups.Array.data[24].audioClips.Array.size
@@ -20460,6 +21534,10 @@ PrefabInstance:
       propertyPath: 'soundEffectGroups.Array.data[24].audioClips.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: 389055d974b9e3a42bd814bde9b785a3, type: 3}
+    - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
+      propertyPath: 'soundEffectGroups.Array.data[25].audioClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: da99644144982224f98374abfb1bd7ac, type: 3}
     - target: {fileID: 4102280344842044839, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: m_Name
       value: GameController
@@ -20849,6 +21927,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -307.85
       objectReference: {fileID: 0}
+    - target: {fileID: 1447761044891374575, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1570506869031828962, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -21181,6 +22263,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -192
       objectReference: {fileID: 0}
+    - target: {fileID: 4007600385985495597, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4124392432869718191, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -21194,6 +22280,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4714384539143214086, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5034813184266722508, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -21305,6 +22395,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -307.85
       objectReference: {fileID: 0}
+    - target: {fileID: 6693098285811086179, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6856755231335276153, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
       propertyPath: player
       value: 
@@ -21370,8 +22464,12 @@ PrefabInstance:
       value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 8007410824251374455, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -441
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007410824251374455, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 92.3
+      value: 94.8
       objectReference: {fileID: 0}
     - target: {fileID: 8300341329207215724, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
       propertyPath: m_IsActive
@@ -21455,7 +22553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8831202151063280685, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 860.00006
+      value: 1014.84
       objectReference: {fileID: 0}
     - target: {fileID: 8831202151063280685, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -21494,6 +22592,24 @@ PrefabInstance:
     - {fileID: 7573629954454741031, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
     - {fileID: 6049459127419649844, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3658144953339206724, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 1578949111}
+    - targetCorrespondingSourceObject: {fileID: 3658144953339206724, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 1517235150}
+    - targetCorrespondingSourceObject: {fileID: 3658144953339206724, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1259098909}
+    - targetCorrespondingSourceObject: {fileID: 3658144953339206724, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 771051341}
+    - targetCorrespondingSourceObject: {fileID: 3658144953339206724, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 100683513}
+    - targetCorrespondingSourceObject: {fileID: 3658144953339206724, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
+      insertIndex: 5
+      addedObject: {fileID: 1840225204}
     - targetCorrespondingSourceObject: {fileID: 3267469716631249842, guid: 4601a0c99929778479ccd5d25d70754d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2048911541}

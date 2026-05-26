@@ -65,9 +65,7 @@ public class MothLightTracker : MonoBehaviour
 
         CurrentLight = best;
     }
-    public void IgnoreLightTemporarily(
-    LuzPoililla light,
-    float duration)
+    public void IgnoreLightTemporarily(LuzPoililla light, float duration)
     {
         ignoredLight = light;
 

@@ -20,7 +20,7 @@ public class PauseMenu_Script : MonoBehaviour
     {
         if (Input.GetButtonDown("Pause"))
         {
-            Debug.Log("Pause pressed from: " + gameObject.name);
+            SoundEffectManager.Play("Pause");
 
             if (enPausa)
                 Reanudar();

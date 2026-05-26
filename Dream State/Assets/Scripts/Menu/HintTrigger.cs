@@ -4,6 +4,7 @@ public class HintTrigger : MonoBehaviour
 {
     [TextArea]
     public string hintMessage;
+    public bool shouldDissapear;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,6 +16,7 @@ public class HintTrigger : MonoBehaviour
             InstructionsUI.Instance.ShowInstruction(hintMessage);
             SoundEffectManager.Play("Hint");
 
+            if(shouldDissapear)
             gameObject.SetActive(false);
         }
     }

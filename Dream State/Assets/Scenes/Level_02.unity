@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
+  m_AmbientSkyColor: {r: 0.088050246, g: 0.088050246, b: 0.088050246, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -6243,6 +6243,7 @@ MonoBehaviour:
   line: "That symbol\u2026 it\u2019s the same as one of the doors outside. But it
     looks like a hangman game."
   soundName: HangMan
+  shouldDissapear: 0
 --- !u!4 &254543624 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 670e9ab602834f049b0dac77d6a298d8, type: 3}
@@ -11416,6 +11417,7 @@ MonoBehaviour:
   line: "That symbol\u2026 it\u2019s the same as one of the doors outside. But it
     looks like a hangman game."
   soundName: HangMan
+  shouldDissapear: 0
 --- !u!1001 &437069134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16028,6 +16030,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Opalplayer
       objectReference: {fileID: 0}
+    - target: {fileID: 7340890110970518191, guid: ac6a69ef1f76f0240b1e9df571146204, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7340890110970518191, guid: ac6a69ef1f76f0240b1e9df571146204, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.11320752
+      objectReference: {fileID: 0}
+    - target: {fileID: 7340890110970518191, guid: ac6a69ef1f76f0240b1e9df571146204, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.0946956
+      objectReference: {fileID: 0}
+    - target: {fileID: 7340890110970518191, guid: ac6a69ef1f76f0240b1e9df571146204, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.08081165
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -17807,7 +17825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FenceController
   gateLock: {fileID: 308499840}
-  instructionsBox: {fileID: 0}
+  instructionsBox: {fileID: 1108367475}
 --- !u!65 &725487719
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18478,6 +18496,7 @@ MonoBehaviour:
   line: "That symbol\u2026 it\u2019s the same as one of the doors outside. But it
     looks like a hangman game."
   soundName: HangMan
+  shouldDissapear: 0
 --- !u!4 &762758203 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 670e9ab602834f049b0dac77d6a298d8, type: 3}
@@ -21086,7 +21105,7 @@ PrefabInstance:
       objectReference: {fileID: 1018720869}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: soundEffectGroups.Array.size
-      value: 34
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: soundEffectGroups.Array.data[22].name
@@ -21137,6 +21156,14 @@ PrefabInstance:
       value: Sprint
       objectReference: {fileID: 0}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
+      propertyPath: soundEffectGroups.Array.data[34].name
+      value: Hint
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
+      propertyPath: soundEffectGroups.Array.data[35].name
+      value: Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: soundEffectGroups.Array.data[22].audioClips.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -21182,6 +21209,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: soundEffectGroups.Array.data[33].audioClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
+      propertyPath: soundEffectGroups.Array.data[34].audioClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
+      propertyPath: soundEffectGroups.Array.data[35].audioClips.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
@@ -21244,6 +21279,14 @@ PrefabInstance:
       propertyPath: 'soundEffectGroups.Array.data[33].audioClips.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: 788d0be3ecc844b45852467339e5eed2, type: 3}
+    - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
+      propertyPath: 'soundEffectGroups.Array.data[34].audioClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: e8ce32214834eef4994603999834f63e, type: 3}
+    - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
+      propertyPath: 'soundEffectGroups.Array.data[35].audioClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: da99644144982224f98374abfb1bd7ac, type: 3}
     - target: {fileID: 4102280344842044839, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: m_Name
       value: GameController Variant
@@ -28227,6 +28270,7 @@ MonoBehaviour:
   line: "That symbol\u2026 it\u2019s the same as one of the doors outside. But it
     looks like a hangman game."
   soundName: HangMan
+  shouldDissapear: 0
 --- !u!4 &1116107473 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3816d3bb263e84b41a7333a1cf6fde88, type: 3}
@@ -32495,6 +32539,7 @@ MonoBehaviour:
   line: "That symbol\u2026 it\u2019s the same as one of the doors outside. But it
     looks like a hangman game."
   soundName: HangMan
+  shouldDissapear: 0
 --- !u!1001 &1268748249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36079,6 +36124,7 @@ MonoBehaviour:
   line: "That symbol\u2026 it\u2019s the same as one of the doors outside. But it
     looks like a hangman game."
   soundName: HangMan
+  shouldDissapear: 0
 --- !u!224 &1391911754 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2550857006055240232, guid: dc7f11f0a9354354b90cf64e1a50297c, type: 3}
@@ -40168,6 +40214,7 @@ MonoBehaviour:
   line: "That symbol\u2026 it\u2019s the same as one of the doors outside. But it
     looks like a hangman game."
   soundName: HangMan
+  shouldDissapear: 0
 --- !u!1 &1567414002 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100006, guid: 670e9ab602834f049b0dac77d6a298d8, type: 3}
@@ -40996,6 +41043,7 @@ MonoBehaviour:
   line: "That symbol\u2026 it\u2019s the same as one of the doors outside. But it
     looks like a hangman game."
   soundName: HangMan
+  shouldDissapear: 0
 --- !u!1001 &1598316739
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48393,6 +48441,7 @@ MonoBehaviour:
   line: "That symbol\u2026 it\u2019s the same as one of the doors outside. But it
     looks like a hangman game."
   soundName: HangMan
+  shouldDissapear: 0
 --- !u!1001 &1887068527
 PrefabInstance:
   m_ObjectHideFlags: 0

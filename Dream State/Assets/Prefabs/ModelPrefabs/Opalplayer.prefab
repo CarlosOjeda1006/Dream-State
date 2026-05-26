@@ -390,7 +390,12 @@ MonoBehaviour:
   groundedGravity: -5
   mouseSensitivity: 2
   lookXLimit: 80
+  maxStamina: 12
+  staminaDrain: 0.4
+  staminaRegen: 1.1
+  currentStamina: 0
   speedMultiplier: 1
+  canMove: 1
   footstepSpeed: 0.5
 --- !u!114 &7899869001549816442
 MonoBehaviour:
@@ -406,9 +411,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 100
   currentHealth: 0
-  healthBarUI: {fileID: 0}
   deathUI: {fileID: 0}
-  healthBar: {fileID: 0}
+  LevelUI: []
 --- !u!114 &3781220914681698976
 MonoBehaviour:
   m_ObjectHideFlags: 0
