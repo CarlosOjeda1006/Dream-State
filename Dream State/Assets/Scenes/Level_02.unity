@@ -16141,6 +16141,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Opalplayer
       objectReference: {fileID: 0}
+    - target: {fileID: 5393627731944166812, guid: ac6a69ef1f76f0240b1e9df571146204, type: 3}
+      propertyPath: maxStamina
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5393627731944166812, guid: ac6a69ef1f76f0240b1e9df571146204, type: 3}
+      propertyPath: staminaDrain
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5393627731944166812, guid: ac6a69ef1f76f0240b1e9df571146204, type: 3}
+      propertyPath: staminaRegen
+      value: 1.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7340890110970518191, guid: ac6a69ef1f76f0240b1e9df571146204, type: 3}
       propertyPath: m_ClearFlags
       value: 2
@@ -55654,6 +55666,10 @@ PrefabInstance:
         progress to another dream. The answer is more hidden than it seems.
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4475489458404982367, guid: 083ab8e3a3f94a24da389d9d0cc0f97c, type: 3}
+      propertyPath: shouldDissapear
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5659438734023201005, guid: 083ab8e3a3f94a24da389d9d0cc0f97c, type: 3}
       propertyPath: m_Size.x

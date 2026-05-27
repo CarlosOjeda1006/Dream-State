@@ -5109,7 +5109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5393627731944166812, guid: ac6a69ef1f76f0240b1e9df571146204, type: 3}
       propertyPath: staminaDrain
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5393627731944166812, guid: ac6a69ef1f76f0240b1e9df571146204, type: 3}
       propertyPath: staminaRegen
@@ -6089,7 +6089,7 @@ PrefabInstance:
       objectReference: {fileID: 1732053628}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: soundEffectGroups.Array.size
-      value: 30
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: soundEffectGroups.Array.data[23].name
@@ -6120,6 +6120,10 @@ PrefabInstance:
       value: Pause
       objectReference: {fileID: 0}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
+      propertyPath: soundEffectGroups.Array.data[30].name
+      value: Heartbeat
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: soundEffectGroups.Array.data[23].audioClips.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -6145,6 +6149,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: soundEffectGroups.Array.data[29].audioClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
+      propertyPath: soundEffectGroups.Array.data[30].audioClips.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
@@ -6175,6 +6183,10 @@ PrefabInstance:
       propertyPath: 'soundEffectGroups.Array.data[29].audioClips.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: da99644144982224f98374abfb1bd7ac, type: 3}
+    - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
+      propertyPath: 'soundEffectGroups.Array.data[30].audioClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 6f453f351828d3e46ba7259e496f479e, type: 3}
     - target: {fileID: 4102280344842044839, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: m_Name
       value: GameController Variant

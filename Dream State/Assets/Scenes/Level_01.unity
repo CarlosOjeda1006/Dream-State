@@ -24273,7 +24273,7 @@ PrefabInstance:
       objectReference: {fileID: 1179862593}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: soundEffectGroups.Array.size
-      value: 26
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: soundEffectGroups.Array.data[24].name
@@ -24282,6 +24282,10 @@ PrefabInstance:
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: soundEffectGroups.Array.data[25].name
       value: Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
+      propertyPath: soundEffectGroups.Array.data[26].name
+      value: Heartbeat
       objectReference: {fileID: 0}
     - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: soundEffectGroups.Array.data[24].audioClips.Array.size
@@ -24295,6 +24299,10 @@ PrefabInstance:
       propertyPath: 'soundEffectGroups.Array.data[25].audioClips.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: da99644144982224f98374abfb1bd7ac, type: 3}
+    - target: {fileID: 2105100178040676767, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
+      propertyPath: 'soundEffectGroups.Array.data[26].audioClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 6f453f351828d3e46ba7259e496f479e, type: 3}
     - target: {fileID: 4102280344842044839, guid: f6fec50ded385c84cb1aa7836b0e228e, type: 3}
       propertyPath: m_Name
       value: GameController
