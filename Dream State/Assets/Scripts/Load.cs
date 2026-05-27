@@ -52,14 +52,19 @@ public class Load : MonoBehaviour
         if (progressBar != null) progressBar.value = 1f;
 
         if (progressText != null)
-            progressText.text = "Press any button to continue...";
+            progressText.text = "Press 'X' button to continue...";
 
         // Esperamos a que el jugador presione una tecla para entrar a la acción
-        while (!Input.anyKey)
+        while (
+            
+            !Input.GetButtonDown("AccionE")
+)
         {
             yield return null;
         }
-
+        /*!Input.anyKeyDown &&
+            !Input.GetButtonDown("Submit") &&
+            !Input.GetButtonDown("Cancel") &&*/
         // Activamos el nivel
         operation.allowSceneActivation = true;
     }
