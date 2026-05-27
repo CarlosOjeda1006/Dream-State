@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 public class MainMenu_Scene : MonoBehaviour
 {
     public GameObject firstButton;
+    
 
     public void LoadLevelOne()
     {
-        SceneManager.LoadScene("Tutorial");
+        Load.SceneToLoad = "Level_01";
+        SceneManager.LoadScene("Loading");
     }
 
     public void ExitGame()

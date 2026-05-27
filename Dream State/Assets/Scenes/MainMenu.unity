@@ -627,7 +627,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &168492157
 Transform:
   m_ObjectHideFlags: 0
@@ -655,8 +655,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b182fef7d73cb7b42b9febb60d44cffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Loading_Scenes
-  panelLoading: {fileID: 756788657}
-  barraCarga: {fileID: 1305079796}
 --- !u!1 &209913148
 GameObject:
   m_ObjectHideFlags: 0

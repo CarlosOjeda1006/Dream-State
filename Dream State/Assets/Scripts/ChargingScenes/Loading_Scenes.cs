@@ -5,20 +5,21 @@ using UnityEngine.UI;
 
 public class Loading_Scenes : MonoBehaviour
 {
-    public GameObject panelLoading;
-    public Slider barraCarga;
+    /*public GameObject panelLoading;
+    public Slider barraCarga;*/
 
-    void Start()
+    /*void Start()
     {
         panelLoading.SetActive(false);
-    }
+    }*/
 
     public void NuevoJuego()
     {
-        StartCoroutine(CargarAsync("Tutorial"));
+        Load.SceneToLoad = "Level_01";
+        SceneManager.LoadScene("LoadingScene");
     }
 
-    IEnumerator CargarAsync(string nombreEscena)
+    /*IEnumerator CargarAsync(string nombreEscena)
     {
         panelLoading.SetActive(true);
 
@@ -34,7 +35,7 @@ public class Loading_Scenes : MonoBehaviour
 
             yield return null;
         }
-    }
+    }*/
 }
 
 
