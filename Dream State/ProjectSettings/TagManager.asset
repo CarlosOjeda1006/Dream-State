@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Item
   - GeneratorLight
+  - camera
   layers:
   - Default
   - TransparentFX

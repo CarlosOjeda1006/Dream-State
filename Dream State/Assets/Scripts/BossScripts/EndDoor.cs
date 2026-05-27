@@ -33,6 +33,9 @@ public class EndDoor : MonoBehaviour, IInteractable
         isOpen = true;
         opened = true;
         LoadNextDream();
+        StartCoroutine(
+    FadeController.Instance.FadeOut("Credits", 3f)
+);
     }
 
     void LoadNextDream()

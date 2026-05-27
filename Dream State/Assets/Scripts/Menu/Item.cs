@@ -10,6 +10,8 @@ public class Item : MonoBehaviour
     public GameObject itemUIPrefab;
     public GameObject photosTab;
     public GameObject itemPhoto;
+    public GameObject floorCamera;
+    public GameObject handCamera;
     public bool isPhotoItem;
     public string Name;
 
@@ -35,6 +37,11 @@ public class Item : MonoBehaviour
             );
 
             SoundEffectManager.Play("Clue");
+        }
+        if(tag == "camera")
+        {
+            floorCamera.SetActive(false);
+            handCamera.SetActive(true);
         }
 
     }

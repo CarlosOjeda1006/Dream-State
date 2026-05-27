@@ -64,6 +64,7 @@ public class PhotoBossController : MonoBehaviour
 
     void StartEncounter()
     {
+        Debug.Log("Encounter started");
         PickNextDirection();
     }
 
@@ -78,6 +79,7 @@ public class PhotoBossController : MonoBehaviour
 
         RotateTowardsPlayer();
 
+        Debug.Log("Playing direction sound");
         bossAudioSystem.PlayDirectionSound(currentPoint.direction);
 
         if (currentRoutine != null)
