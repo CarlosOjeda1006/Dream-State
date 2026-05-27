@@ -7,7 +7,7 @@ public class FlickerLight : MonoBehaviour
     public float minTime = 0.05f;
     public float maxTime = 0.2f;
 
-    void Start()
+    public void Start()
     {
         StartCoroutine(Flicker());
     }

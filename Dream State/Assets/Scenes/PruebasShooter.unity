@@ -286,6 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf773654321d6044b98aa4ebad0faad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EndDoor
+  fadeController: {fileID: 1035567720}
 --- !u!23 &84967896
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1260,7 +1261,6 @@ GameObject:
   - component: {fileID: 370011819}
   - component: {fileID: 370011818}
   - component: {fileID: 370011817}
-  - component: {fileID: 370011816}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1268,19 +1268,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &370011816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 370011815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95ca54ca4d2e61d4f85c2627d0a58567, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FadeController
-  fadeImage: {fileID: 431684043}
 --- !u!114 &370011817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3072,6 +3059,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1035567717
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1035567719}
+  - component: {fileID: 1035567720}
+  m_Layer: 0
+  m_Name: FadeController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1035567719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035567717}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -19.02427, y: 20.13828, z: -20.24542}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1035567720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035567717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95ca54ca4d2e61d4f85c2627d0a58567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FadeController
+  fadeCanvas: {fileID: 370011819}
+  fadeImage: {fileID: 431684043}
 --- !u!1 &1038108388 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5644259236683268062, guid: fc7daba0a9be4d84ea349a33d8971f2f, type: 3}
@@ -4289,3 +4322,4 @@ SceneRoots:
   - {fileID: 614324944}
   - {fileID: 751190852}
   - {fileID: 370011820}
+  - {fileID: 1035567719}

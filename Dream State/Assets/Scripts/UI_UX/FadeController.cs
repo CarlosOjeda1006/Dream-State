@@ -5,26 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class FadeController : MonoBehaviour
 {
-    public static FadeController Instance;
-
+    [Header("Cosas")]
+    public Canvas fadeCanvas;
     public Image fadeImage;
 
-    void Awake()
+    public void StartFade(string sceneName)
     {
-        Instance = this;
+        StartCoroutine(Fade(sceneName));
     }
 
-    public IEnumerator FadeOut(string sceneName, float duration)
+    IEnumerator Fade(string sceneName)
     {
-        float timer = 0f;
+        fadeCanvas.enabled = true;
 
         Color color = fadeImage.color;
 
-        while (timer < duration)
-        {
-            timer += Time.deltaTime;
+        float alpha = 0f;
 
-            float alpha = timer / duration;
+        while (alpha < 1f)
+        {
+            alpha += Time.deltaTime;
 
             fadeImage.color =
                 new Color(color.r, color.g, color.b, alpha);

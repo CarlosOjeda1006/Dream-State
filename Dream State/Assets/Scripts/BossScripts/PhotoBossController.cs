@@ -212,7 +212,7 @@ public class PhotoBossController : MonoBehaviour
     {
         mainLight.SetActive(false);
         InstructionsUI.Instance.ShowInstruction(
-            "<color=#B84848><b>You can't let her touch you. You must capture The Other inside a memory. Press Left Click to take a picture.</b></color>"
+            "<color=#B84848><b>You can't let her touch you. You must capture The Other inside a memory. Press RB to take a picture.</b></color>"
         );
         policeTape.SetActive(true);
         multiplePoliceTapes.SetActive(true);

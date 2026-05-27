@@ -10,6 +10,9 @@ public class EndDoor : MonoBehaviour, IInteractable
 
     private Animator animator;
 
+    public FadeController fadeController;
+
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -32,10 +35,8 @@ public class EndDoor : MonoBehaviour, IInteractable
 
         isOpen = true;
         opened = true;
-        LoadNextDream();
-        StartCoroutine(
-    FadeController.Instance.FadeOut("Credits", 3f)
-);
+        //LoadNextDream();
+        fadeController.StartFade("Credits");
     }
 
     void LoadNextDream()
